@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  body { @apply bg-white text-gray-900; }
+}
+
+@layer components {
+  .prose-blog h2 { @apply text-2xl font-bold mt-10 mb-4 text-gray-900; }
+  .prose-blog h3 { @apply text-xl font-bold mt-8 mb-3 text-gray-800; }
+  .prose-blog p { @apply text-gray-700 leading-relaxed mb-5 text-base; }
+  .prose-blog ul { @apply list-disc pl-6 mb-5 space-y-2; }
+  .prose-blog ol { @apply list-decimal pl-6 mb-5 space-y-2; }
+  .prose-blog li { @apply text-gray-700 leading-relaxed; }
+  .prose-blog strong { @apply font-bold text-gray-900; }
+  .prose-blog a { @apply text-brand underline hover:text-brand-dark; }
+  .prose-blog blockquote { @apply border-l-4 border-brand pl-5 italic text-gray-600 my-6; }
+  .prose-blog hr { @apply border-gray-200 my-8; }
+  .prose-blog code { @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono; }
+}

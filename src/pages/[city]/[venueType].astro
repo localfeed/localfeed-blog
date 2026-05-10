@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import LocalPage from '../../layouts/LocalPage.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('local');
+  return pages.map(page => ({
+    params: {
+      city: page.data.citySlug,
+      venueType: page.data.venueTypeSlug,
+    },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+<LocalPage
+  title={page.data.title}
+  description={page.data.description}
+  city={page.data.city}
+  venueType={page.data.venueType}
+  citySlug={page.data.citySlug}
+  venueTypeSlug={page.data.venueTypeSlug}
+>
+  <Content />
+</LocalPage>

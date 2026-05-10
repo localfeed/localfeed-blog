@@ -1,0 +1,135 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+
+const allPosts = await getCollection('blog', ({ data }) => data.status === 'published');
+const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const CATEGORY_META: Record<string, { label: string; color: string; bg: string }> = {
+  'venue-marketing':    { label: 'Venue Marketing',     color: '#3B82F6', bg: 'rgba(59,130,246,0.08)' },
+  'platform-comparison':{ label: 'Platform Comparison', color: '#EF4444', bg: 'rgba(239,68,68,0.08)' },
+  'operator-insights':  { label: 'Operator Insights',   color: '#10B981', bg: 'rgba(16,185,129,0.08)' },
+  'off-peak':           { label: 'Off-Peak Strategy',   color: '#8B5CF6', bg: 'rgba(139,92,246,0.08)' },
+  'local-seo':          { label: 'Local Discovery',     color: '#E57B3C', bg: 'rgba(229,123,60,0.08)' },
+};
+
+const categories = [...new Set(posts.map(p => p.data.category))];
+const [featured, ...rest] = posts;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "LocalFeed Blog",
+  "url": "https://blog.localfeed.app",
+  "description": "NZ hospitality insights, venue marketing, and platform analysis.",
+  "publisher": { "@type": "Organization", "name": "LocalFeed", "url": "https://localfeed.app" }
+};
+---
+<Base
+  title="LocalFeed Blog — NZ Hospitality Insights & Venue Marketing"
+  description="Real insights for NZ restaurant, cafe, and bar owners. Venue marketing, platform comparisons, off-peak strategy, and honest operator thinking."
+  schema={schema}
+>
+  <!-- Sticky nav -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;">
+        <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:30px;height:30px;object-fit:contain;" onerror="this.style.display='none'" />
+        <span style="font-size:0.95rem;font-weight:800;color:#0D0D0D;">LocalFeed Blog</span>
+      </a>
+      <a href="https://localfeed.app/list-venue" style="font-size:0.82rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.45rem 1.1rem;border-radius:10px;text-decoration:none;">
+        List your venue free
+      </a>
+    </div>
+  </nav>
+
+  <!-- Dark hero -->
+  <section style="background:#080808;padding:5rem 1.5rem 3.5rem;overflow:hidden;position:relative;">
+    <div style="position:absolute;top:-80px;left:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(229,123,60,0.18) 0%,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-60px;right:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,124,110,0.12) 0%,transparent 70%);filter:blur(80px);pointer-events:none;"></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;">
+      <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 0.875rem;border-radius:100px;border:1px solid rgba(229,123,60,0.4);background:rgba(229,123,60,0.08);margin-bottom:1.75rem;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#E57B3C;display:inline-block;"></span>
+        <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#E57B3C;">NZ Hospitality Intelligence</span>
+      </div>
+      <h1 style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;color:#fff;line-height:1;letter-spacing:-0.03em;margin-bottom:1.25rem;">
+        The blog<br />
+        <span style="background:linear-gradient(90deg,#E57B3C,#F57C6E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">venues trust.</span>
+      </h1>
+      <p style="font-size:1.05rem;color:#9CA3AF;max-width:500px;line-height:1.6;margin-bottom:2rem;">
+        Marketing tactics, platform economics, and real operator thinking. Written for NZ hospo, not a marketing brief.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:2rem;">
+        <div><span style="font-size:2rem;font-weight:900;color:#fff;">{posts.length}</span><span style="font-size:0.85rem;color:#6B7280;margin-left:0.4rem;">articles</span></div>
+        <div><span style="font-size:2rem;font-weight:900;color:#fff;">300+</span><span style="font-size:0.85rem;color:#6B7280;margin-left:0.4rem;">local pages</span></div>
+        <div><span style="font-size:2rem;font-weight:900;color:#fff;">$0</span><span style="font-size:0.85rem;color:#6B7280;margin-left:0.4rem;">paid traffic</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category pills -->
+  <div style="background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:0.75rem 1.5rem;overflow-x:auto;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;gap:0.5rem;flex-wrap:nowrap;">
+      {categories.map(cat => {
+        const meta = CATEGORY_META[cat];
+        return meta ? (
+          <span style={`flex-shrink:0;padding:0.3rem 0.875rem;border-radius:100px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:${meta.color};background:${meta.bg};`}>
+            {meta.label}
+          </span>
+        ) : null;
+      })}
+    </div>
+  </div>
+
+  <!-- Posts -->
+  <main style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem 5rem;">
+    {featured && (
+      <a href={`/blog/${featured.slug}`} style="display:block;margin-bottom:1.5rem;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#0f0f0f,#1a1208);min-height:320px;padding:2.5rem;text-decoration:none;position:relative;">
+        <div style="position:absolute;top:0;right:0;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(229,123,60,0.2) 0%,transparent 70%);filter:blur(40px);"></div>
+        {(() => {
+          const cat = CATEGORY_META[featured.data.category];
+          return cat ? (
+            <span style={`display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${cat.color};border:1px solid ${cat.color}40;background:${cat.color}12;padding:0.2rem 0.7rem;border-radius:100px;margin-bottom:1rem;`}>
+              {cat.label}
+            </span>
+          ) : null;
+        })()}
+        <h2 style="font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:900;color:#fff;line-height:1.2;max-width:600px;margin-bottom:0.75rem;">
+          {featured.data.title}
+        </h2>
+        {featured.data.description && (
+          <p style="font-size:0.95rem;color:#9CA3AF;max-width:520px;line-height:1.6;margin-bottom:1.25rem;">{featured.data.description}</p>
+        )}
+        <span style="font-size:0.82rem;font-weight:700;color:#E57B3C;">Read article →</span>
+      </a>
+    )}
+
+    {rest.length > 0 && (
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;">
+        {rest.map(post => <PostCard post={post} />)}
+      </div>
+    )}
+  </main>
+
+  <!-- Footer CTA -->
+  <section style="background:#080808;padding:4rem 1.5rem;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(229,123,60,0.15) 0%,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
+    <div style="position:relative;max-width:540px;margin:0 auto;">
+      <p style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#E57B3C;margin-bottom:1rem;">Commission-free venue discovery</p>
+      <h2 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;">Keep 100% of<br/>your food bill.</h2>
+      <p style="font-size:0.95rem;color:#9CA3AF;margin-bottom:2rem;line-height:1.6;">Set your own deals. Own your customers. No commissions, no forced discounts.</p>
+      <a href="https://localfeed.app/list-venue" style="display:inline-block;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.95rem;padding:0.875rem 2.25rem;border-radius:16px;text-decoration:none;box-shadow:0 16px 40px -12px rgba(229,123,60,0.5);">
+        List your venue free
+      </a>
+    </div>
+  </section>
+
+  <footer style="background:#0D0D0D;padding:1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.05);">
+    <p style="font-size:0.8rem;color:#6B7280;">
+      <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a> — commission-free venue discovery for NZ. Built in Tauranga.
+      <span style="margin:0 0.5rem;">·</span>
+      <a href="https://localfeed.app/blog" style="color:#6B7280;text-decoration:none;">Main site</a>
+    </p>
+  </footer>
+</Base>

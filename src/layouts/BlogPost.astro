@@ -1,0 +1,175 @@
+---
+import Base from './Base.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  author: string;
+  category: string;
+  tags: string[];
+  readTime?: string;
+  targetKeyword?: string;
+  slug: string;
+  relatedPosts?: any[];
+}
+
+const {
+  title,
+  description,
+  date,
+  author,
+  category,
+  tags,
+  readTime,
+  slug,
+  relatedPosts = [],
+} = Astro.props;
+
+const canonicalUrl = `https://blog.localfeed.app/blog/${slug}`;
+const dateStr = date.toISOString();
+const dateDisplay = date.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const CATEGORY_LABELS: Record<string, string> = {
+  'venue-marketing': 'Venue Marketing',
+  'platform-comparison': 'Platform Comparison',
+  'operator-insights': 'Operator Insights',
+  'off-peak': 'Off-Peak Strategy',
+  'local-seo': 'Local Discovery',
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": dateStr,
+  "dateModified": dateStr,
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "url": "https://localfeed.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LocalFeed",
+    "url": "https://localfeed.app",
+    "logo": { "@type": "ImageObject", "url": "https://localfeed.app/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  "keywords": tags.join(', '),
+  "articleSection": CATEGORY_LABELS[category] || category,
+};
+---
+<Base
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  ogType="article"
+  article={{ publishedTime: dateStr, author, tags }}
+  schema={schema}
+>
+  <!-- Nav -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;">
+    <div style="max-width:720px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;">
+        <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:28px;height:28px;object-fit:contain;" onerror="this.style.display='none'" />
+        <span style="font-size:0.9rem;font-weight:800;color:#0D0D0D;">LocalFeed Blog</span>
+      </a>
+      <a href="https://localfeed.app/list-venue" style="font-size:0.8rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.4rem 1rem;border-radius:10px;text-decoration:none;">
+        List your venue
+      </a>
+    </div>
+  </nav>
+
+  <!-- Reading progress bar -->
+  <div id="progress-bar" style="position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E57B3C,#F57C6E);transform-origin:left;transform:scaleX(0);z-index:100;transition:transform 0.1s;"></div>
+
+  <article style="max-width:720px;margin:0 auto;padding:2.5rem 1.5rem 4rem;">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" style="margin-bottom:1.5rem;font-size:0.8rem;color:#9CA3AF;">
+      <a href="/" style="color:#E57B3C;text-decoration:none;">Blog</a>
+      <span style="margin:0 0.4rem;">/</span>
+      <span>{CATEGORY_LABELS[category] || category}</span>
+    </nav>
+
+    <!-- Category badge -->
+    <div style="margin-bottom:1rem;">
+      <span style="display:inline-block;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#E57B3C;background:rgba(229,123,60,0.1);border:1px solid rgba(229,123,60,0.3);padding:0.25rem 0.75rem;border-radius:100px;">
+        {CATEGORY_LABELS[category] || category}
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;line-height:1.15;color:#0D0D0D;margin-bottom:1rem;letter-spacing:-0.02em;">
+      {title}
+    </h1>
+
+    <!-- Description -->
+    <p style="font-size:1.1rem;color:#6B7280;line-height:1.6;margin-bottom:1.5rem;">{description}</p>
+
+    <!-- Meta row -->
+    <div style="display:flex;align-items:center;gap:1rem;padding:1rem 0;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);margin-bottom:2.5rem;font-size:0.8rem;color:#9CA3AF;flex-wrap:wrap;">
+      <span style="display:flex;align-items:center;gap:0.4rem;">
+        <span style="font-weight:600;color:#374151;">{author}</span>
+      </span>
+      <span>·</span>
+      <time datetime={dateStr}>{dateDisplay}</time>
+      {readTime && <><span>·</span><span>{readTime} min read</span></>}
+    </div>
+
+    <!-- Content -->
+    <div class="prose-blog">
+      <slot />
+    </div>
+
+    <!-- Tags -->
+    {tags.length > 0 && (
+      <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,0.06);">
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+          {tags.map(tag => (
+            <span style="font-size:0.75rem;font-weight:600;color:#6B7280;background:#F3F4F6;padding:0.25rem 0.75rem;border-radius:100px;">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- CTA -->
+    <div style="margin-top:3rem;padding:2rem;background:linear-gradient(135deg,#080808,#1a0f00);border-radius:20px;text-align:center;">
+      <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#E57B3C;margin-bottom:0.75rem;">Commission-free venue discovery</p>
+      <h3 style="font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:0.75rem;line-height:1.2;">List your venue free.</h3>
+      <p style="font-size:0.9rem;color:#9CA3AF;margin-bottom:1.5rem;line-height:1.5;">No booking commissions. No forced discounts. Set your own deals, keep your margin.</p>
+      <a href="https://localfeed.app/list-venue" style="display:inline-block;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.9rem;padding:0.75rem 2rem;border-radius:14px;text-decoration:none;">
+        Get started — it's free
+      </a>
+    </div>
+  </article>
+
+  <!-- Related posts -->
+  {relatedPosts.length > 0 && (
+    <div style="background:#F9FAFB;border-top:1px solid rgba(0,0,0,0.06);padding:3rem 1.5rem;">
+      <RelatedPosts posts={relatedPosts} />
+    </div>
+  )}
+
+  <!-- Footer -->
+  <footer style="background:#0D0D0D;padding:2rem 1.5rem;text-align:center;">
+    <p style="font-size:0.8rem;color:#6B7280;">
+      <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a> — commission-free venue discovery for NZ. Built in Tauranga.
+    </p>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('progress-bar');
+    if (bar) {
+      document.addEventListener('scroll', () => {
+        const el = document.documentElement;
+        const pct = el.scrollTop / (el.scrollHeight - el.clientHeight);
+        bar.style.transform = `scaleX(${Math.min(1, pct)})`;
+      }, { passive: true });
+    }
+  </script>
+</Base>

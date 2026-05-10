@@ -1,0 +1,83 @@
+---
+import Base from './Base.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  city: string;
+  venueType: string;
+  citySlug: string;
+  venueTypeSlug: string;
+}
+
+const { title, description, city, venueType, citySlug, venueTypeSlug } = Astro.props;
+const canonicalUrl = `https://blog.localfeed.app/${citySlug}/${venueTypeSlug}`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "description": description,
+  "url": canonicalUrl,
+  "about": {
+    "@type": "LocalBusiness",
+    "name": `${venueType} in ${city}`,
+    "areaServed": {
+      "@type": "City",
+      "name": city,
+      "addressCountry": "NZ"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LocalFeed",
+    "url": "https://localfeed.app"
+  }
+};
+---
+<Base title={title} description={description} canonical={canonicalUrl} schema={schema}>
+  <!-- Nav -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;">
+    <div style="max-width:860px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;">
+        <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:28px;height:28px;object-fit:contain;" onerror="this.style.display='none'" />
+        <span style="font-size:0.9rem;font-weight:800;color:#0D0D0D;">LocalFeed Blog</span>
+      </a>
+      <a href="https://localfeed.app/list-venue" style="font-size:0.8rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.4rem 1rem;border-radius:10px;text-decoration:none;">
+        List your venue
+      </a>
+    </div>
+  </nav>
+
+  <main style="max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 5rem;">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" style="margin-bottom:1.5rem;font-size:0.8rem;color:#9CA3AF;">
+      <a href="/" style="color:#E57B3C;text-decoration:none;">Blog</a>
+      <span style="margin:0 0.4rem;">/</span>
+      <span style="text-transform:capitalize;">{city}</span>
+      <span style="margin:0 0.4rem;">/</span>
+      <span style="text-transform:capitalize;">{venueType}</span>
+    </nav>
+
+    <div class="prose-blog">
+      <slot />
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:3rem;padding:2.5rem;background:linear-gradient(135deg,#080808,#1a0f00);border-radius:20px;text-align:center;">
+      <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#E57B3C;margin-bottom:0.75rem;">Free for NZ diners</p>
+      <h3 style="font-size:1.75rem;font-weight:900;color:#fff;margin-bottom:0.75rem;">Find the best {venueType} in {city}.</h3>
+      <p style="font-size:0.9rem;color:#9CA3AF;margin-bottom:1.5rem;line-height:1.5;">No booking fees. No forced discounts. Real deals from venues that set their own offers.</p>
+      <a href="https://localfeed.app" style="display:inline-block;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.9rem;padding:0.75rem 2rem;border-radius:14px;text-decoration:none;margin-bottom:0.75rem;">
+        Discover {city} on LocalFeed
+      </a>
+      <p style="font-size:0.75rem;color:#6B7280;">Are you a venue owner? <a href="https://localfeed.app/list-venue" style="color:#E57B3C;">List free →</a></p>
+    </div>
+  </main>
+
+  <footer style="background:#0D0D0D;padding:2rem 1.5rem;text-align:center;">
+    <p style="font-size:0.8rem;color:#6B7280;">
+      <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a> — commission-free venue discovery for NZ. Built in Tauranga.
+    </p>
+  </footer>
+</Base>

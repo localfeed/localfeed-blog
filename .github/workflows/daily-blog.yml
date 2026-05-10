@@ -1,0 +1,88 @@
+name: Daily Blog Post
+
+on:
+  schedule:
+    - cron: '0 19 * * 1-5'  # 7am NZT weekdays (19:00 UTC Sunday-Thursday)
+  workflow_dispatch:
+    inputs:
+      keyword:
+        description: 'Blog keyword/topic (overrides queue)'
+        required: false
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get keyword from queue
+        id: keyword
+        run: |
+          KEYWORD="${{ github.event.inputs.keyword }}"
+          if [ -z "$KEYWORD" ]; then
+            QUEUE="${{ secrets.BLOG_TOPIC_QUEUE }}"
+            KEYWORD=$(echo "$QUEUE" | head -n1 | tr -d '\r')
+          fi
+          if [ -z "$KEYWORD" ]; then
+            echo "No keyword found in queue or input. Skipping."
+            exit 0
+          fi
+          echo "keyword=$KEYWORD" >> $GITHUB_OUTPUT
+          echo "Using keyword: $KEYWORD"
+
+      - name: Generate blog post via Claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          KEYWORD="${{ steps.keyword.outputs.keyword }}"
+          SLUG=$(echo "$KEYWORD" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9 -]//g' | sed 's/ /-/g' | sed 's/-\+/-/g')
+          TODAY=$(date +%Y-%m-%d)
+
+          SYSTEM_PROMPT="${{ secrets.BLOG_SYSTEM_PROMPT }}"
+
+          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+            -H "x-api-key: $ANTHROPIC_API_KEY" \
+            -H "anthropic-version: 2023-06-01" \
+            -H "content-type: application/json" \
+            -d "{
+              \"model\": \"claude-sonnet-4-6\",
+              \"max_tokens\": 4096,
+              \"system\": $(echo "$SYSTEM_PROMPT" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))'),
+              \"messages\": [{
+                \"role\": \"user\",
+                \"content\": \"Write a complete SEO blog post for LocalFeed about: $KEYWORD\n\nTarget keyword: $KEYWORD\nDate: $TODAY\nSlug: $SLUG\"
+              }]
+            }")
+
+          CONTENT=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          print(data['content'][0]['text'])
+          ")
+
+          mkdir -p src/content/blog
+          echo "$CONTENT" > "src/content/blog/${SLUG}.md"
+          echo "Generated: src/content/blog/${SLUG}.md"
+
+      - name: Commit and push
+        run: |
+          git config user.name "LocalFeed Blog Bot"
+          git config user.email "blog-bot@localfeed.app"
+          git add src/content/blog/
+          git diff --staged --quiet || git commit -m "content: auto-publish $(date +%Y-%m-%d) — ${{ steps.keyword.outputs.keyword }}"
+          git push origin main

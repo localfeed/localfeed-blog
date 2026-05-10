@@ -1,0 +1,21 @@
+---
+export interface Props {
+  posts: any[];
+}
+const { posts } = Astro.props;
+---
+{posts.length > 0 && (
+  <div style="max-width:720px;margin:0 auto;">
+    <h2 style="font-size:1.1rem;font-weight:800;color:#0D0D0D;margin-bottom:1.25rem;">Related reading</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`} style="display:block;padding:1rem;background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:12px;text-decoration:none;transition:box-shadow 0.2s;">
+          <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#E57B3C;display:block;margin-bottom:0.4rem;">
+            {post.data.category}
+          </span>
+          <span style="font-size:0.85rem;font-weight:700;color:#0D0D0D;line-height:1.4;display:block;">{post.data.title}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+)}
