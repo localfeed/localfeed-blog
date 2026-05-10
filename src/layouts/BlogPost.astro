@@ -14,17 +14,7 @@ export interface Props {
   relatedPosts?: any[];
 }
 
-const {
-  title,
-  description,
-  date,
-  author,
-  category,
-  tags,
-  readTime,
-  slug,
-  relatedPosts = [],
-} = Astro.props;
+const { title, description, date, author, category, tags, readTime, slug, relatedPosts = [] } = Astro.props;
 
 const canonicalUrl = `https://blog.localfeed.app/blog/${slug}`;
 const dateStr = date.toISOString();
@@ -46,145 +36,281 @@ const CATEGORY_META: Record<string, { label: string; color: string; bg: string }
 const cat = CATEGORY_META[category] ?? CATEGORY_META['venue-marketing'];
 
 const schema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": title,
-  "description": description,
-  "datePublished": dateStr,
-  "dateModified": dateStr,
-  "author": { "@type": "Person", "name": author, "url": "https://localfeed.app" },
-  "publisher": {
-    "@type": "Organization",
-    "name": "LocalFeed",
-    "url": "https://localfeed.app",
-    "logo": { "@type": "ImageObject", "url": "https://localfeed.app/logo.png" }
-  },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
-  "keywords": tags.join(', '),
-  "articleSection": cat.label,
+  "@context": "https://schema.org", "@type": "Article",
+  headline: title, description,
+  datePublished: dateStr, dateModified: dateStr,
+  author: { "@type": "Person", name: author, url: "https://localfeed.app" },
+  publisher: { "@type": "Organization", name: "LocalFeed", url: "https://localfeed.app",
+    logo: { "@type": "ImageObject", url: "https://localfeed.app/logo.png" } },
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+  keywords: tags.join(', '),
+  articleSection: cat.label,
 };
 ---
 
-<Base
-  title={title}
-  description={description}
-  canonical={canonicalUrl}
-  ogType="article"
-  article={{ publishedTime: dateStr, author, tags }}
-  schema={schema}
->
-  <!-- Reading progress bar -->
-  <div id="progress-bar" style="position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E57B3C,#F57C6E);transform-origin:left;transform:scaleX(0);z-index:200;transition:transform 0.1s linear;"></div>
+<Base title={title} description={description} canonical={canonicalUrl} ogType="article"
+  article={{ publishedTime: dateStr, author, tags }} schema={schema}>
+
+  <style is:global>
+    /* ── Reading progress bar ── */
+    #rp-bar {
+      position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 999;
+      background: linear-gradient(90deg, #E57B3C, #F57C6E);
+      transform-origin: left; transform: scaleX(0);
+      transition: transform 0.1s linear;
+    }
+
+    /* ── Prose body ── */
+    .pb {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.875;
+      color: #1a1a1a;
+    }
+    .pb p {
+      margin-bottom: 1.75rem;
+      color: #1a1a1a;
+    }
+    /* Lead paragraph */
+    .pb .lp {
+      font-size: 1.2rem;
+      color: #374151;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    /* Drop cap */
+    .pb .lp::first-letter {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: 4.75rem;
+      font-weight: 900;
+      line-height: 0.78;
+      float: left;
+      margin-right: 0.18rem;
+      margin-top: 0.1rem;
+      color: #E57B3C;
+    }
+    /* H2 */
+    .pb h2 {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: 1.875rem;
+      font-weight: 800;
+      color: #111;
+      border-left: 4px solid #E57B3C;
+      padding-left: 1rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.25;
+      clear: both;
+    }
+    .pb h2:not(:first-child) {
+      padding-top: 2.5rem;
+    }
+    .pb h2:not(:first-child)::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(90deg, #e5e7eb 0%, transparent 100%);
+      margin-bottom: 2.5rem;
+      margin-left: -1rem;
+    }
+    /* H3 */
+    .pb h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #E57B3C;
+      margin-top: 2rem;
+      margin-bottom: 0.625rem;
+      clear: both;
+    }
+    /* Lists */
+    .pb ul { padding-left: 1.5rem; margin-bottom: 1.75rem; }
+    .pb ol { padding-left: 1.5rem; margin-bottom: 1.75rem; }
+    .pb li { margin-bottom: 0.5rem; color: #1a1a1a; line-height: 1.7; }
+    .pb ul > li { list-style-type: disc; }
+    .pb ol > li { list-style-type: decimal; }
+    /* Inline */
+    .pb strong { font-weight: 700; color: #111; }
+    .pb a { color: #E57B3C; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    .pb a:hover { color: #D4632C; }
+    .pb code { font-family: 'JetBrains Mono', monospace; background: #f3f4f6; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.875rem; }
+    .pb hr { border: none; border-top: 1px solid #e5e7eb; margin: 2.5rem 0; clear: both; }
+    /* Pull quotes */
+    .pb blockquote {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      line-height: 1.65;
+      color: #1a1a1a;
+      background: #FFF8F0;
+      border-left: 5px solid #E57B3C;
+      border-radius: 0 14px 14px 0;
+      padding: 1.75rem 2rem 1.75rem 3rem;
+      margin: 2.5rem 0;
+      position: relative;
+      clear: both;
+    }
+    .pb blockquote::before {
+      content: '\201C';
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 7rem;
+      line-height: 1;
+      position: absolute;
+      top: -0.5rem;
+      left: 0.5rem;
+      color: #E57B3C;
+      opacity: 0.2;
+      font-style: normal;
+      pointer-events: none;
+    }
+    .pb blockquote p {
+      margin: 0;
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
+    }
+    /* Tags */
+    .tag-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6B7280;
+      background: #F3F4F6;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      cursor: default;
+      transition: all 0.15s;
+    }
+    .tag-pill:hover { background: #E57B3C; color: white; border-color: #E57B3C; }
+    /* Related cards */
+    .rel-card {
+      display: block;
+      padding: 1.25rem;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      text-decoration: none;
+      border-top-width: 3px;
+      border-top-style: solid;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .rel-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+    .rel-card-cat { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; display: block; margin-bottom: 0.45rem; }
+    .rel-card-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: #0D0D0D; line-height: 1.35; display: block; margin-bottom: 0.45rem; transition: color 0.15s; }
+    .rel-card:hover .rel-card-title { color: #E57B3C; }
+    .rel-card-meta { font-size: 0.72rem; color: #9CA3AF; }
+  </style>
+
+  <!-- Progress bar -->
+  <div id="rp-bar"></div>
 
   <!-- Nav -->
-  <nav id="site-nav" style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;transition:box-shadow 0.3s;">
+  <nav style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;">
     <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
       <a href="/" style="display:flex;align-items:center;gap:0.6rem;text-decoration:none;">
         <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:26px;height:26px;object-fit:contain;" onerror="this.style.display='none'" />
-        <span style="font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:800;color:#0D0D0D;letter-spacing:-0.01em;">LocalFeed Blog</span>
+        <div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:800;color:#0D0D0D;line-height:1;">LocalFeed Blog</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#9CA3AF;letter-spacing:0.06em;margin-top:1px;">The NZ hospitality insider</div>
+        </div>
       </a>
       <div style="display:flex;align-items:center;gap:1.25rem;">
-        <a href="/" style="font-size:0.82rem;font-weight:500;color:#6B7280;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#0D0D0D'" onmouseout="this.style.color='#6B7280'">All articles</a>
-        <a href="https://localfeed.app/list-venue" style="font-size:0.8rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.4rem 1rem;border-radius:10px;text-decoration:none;">
-          List your venue
-        </a>
+        <a href="/" style="font-size:0.82rem;font-weight:500;color:#6B7280;text-decoration:none;">All articles</a>
+        <a href="https://localfeed.app/list-venue" style="font-size:0.8rem;font-weight:700;color:white;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.4rem 1.1rem;border-radius:10px;text-decoration:none;">List your venue</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <header style="background:#F9F7F4;border-bottom:1px solid rgba(0,0,0,0.06);padding:3.5rem 1.5rem 3rem;">
-    <div style="max-width:720px;margin:0 auto;">
+  <header style={`background:#F9F7F4;border-bottom:1px solid rgba(0,0,0,0.06);padding:3.5rem 1.5rem 3rem;border-top:4px solid ${cat.color};`}>
+    <div style="max-width:740px;margin:0 auto;">
 
       <!-- Breadcrumb -->
-      <nav aria-label="breadcrumb" style="font-size:0.78rem;color:#9CA3AF;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.4rem;">
+      <nav style="font-size:0.78rem;color:#9CA3AF;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.4rem;">
         <a href="/" style="color:#E57B3C;text-decoration:none;font-weight:500;">Blog</a>
         <span>›</span>
         <span>{cat.label}</span>
       </nav>
 
-      <!-- Category + meta row -->
+      <!-- Category pill + meta row -->
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.5rem;">
-        <span style={`display:inline-flex;align-items:center;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${cat.color};background:${cat.bg};border:1px solid ${cat.color}30;padding:0.3rem 0.875rem;border-radius:100px;`}>
+        <span style={`display:inline-flex;align-items:center;gap:0.4rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${cat.color};background:${cat.bg};border:1px solid ${cat.color}30;padding:0.3rem 0.875rem;border-radius:100px;`}>
+          <span style={`display:inline-block;width:6px;height:6px;border-radius:50%;background:${cat.color};`}></span>
           {cat.label}
         </span>
-        <span style="font-size:0.8rem;color:#9CA3AF;display:flex;align-items:center;gap:0.75rem;">
-          {readTime && <span>{readTime} min read</span>}
+        <span style="font-size:0.8rem;color:#9CA3AF;display:flex;align-items:center;gap:0.65rem;">
+          {readTime && <span>{readTime.toString().replace(/\s*min\s*read\s*$/i,'').trim()} min read</span>}
           {readTime && <span>·</span>}
           <time datetime={dateStr}>{dateDisplay}</time>
         </span>
       </div>
 
       <!-- Title -->
-      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,2.875rem);font-weight:900;line-height:1.15;color:#111;margin-bottom:1.25rem;letter-spacing:-0.02em;">
+      <h1 style="font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:clamp(2.1rem,5vw,3rem);font-weight:900;line-height:1.15;color:#111;margin-bottom:1.25rem;letter-spacing:-0.02em;">
         {title}
       </h1>
 
-      <!-- Description / deck -->
+      <!-- Deck -->
       {description && (
-        <p style="font-family:'Inter',sans-serif;font-size:1.1rem;color:#6B7280;line-height:1.65;margin-bottom:1.75rem;max-width:60ch;">
+        <p style="font-family:'Inter',sans-serif;font-size:1.1rem;color:#6B7280;line-height:1.7;margin-bottom:1.75rem;max-width:58ch;">
           {description}
         </p>
       )}
 
-      <!-- Author line + divider -->
-      <div style="display:flex;align-items:center;gap:0.75rem;padding-top:1.25rem;border-top:1px solid rgba(0,0,0,0.08);">
-        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#E57B3C,#D4632C);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <span style="font-family:'Playfair Display',serif;font-size:0.9rem;font-weight:900;color:white;">B</span>
+      <!-- Author -->
+      <div style="display:flex;align-items:center;gap:0.875rem;padding-top:1.25rem;border-top:1px solid rgba(0,0,0,0.08);">
+        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#E57B3C,#D4632C);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:white;">B</span>
         </div>
-        <span style="font-size:0.85rem;font-weight:600;color:#374151;">{author}</span>
-        <span style="color:#d1d5db;">·</span>
-        <span style="font-size:0.85rem;color:#9CA3AF;">LocalFeed</span>
+        <div>
+          <span style="font-size:0.875rem;font-weight:700;color:#111;display:block;line-height:1.2;">{author}</span>
+          <span style="font-size:0.75rem;color:#9CA3AF;">LocalFeed · NZ Hospo</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Article body -->
-  <article style="max-width:720px;margin:0 auto;padding:3rem 1.5rem 2rem;">
-    <div class="prose-blog">
+  <!-- Article -->
+  <article style="max-width:740px;margin:0 auto;padding:3rem 1.5rem 2rem;">
+    <div class="pb" id="prose-body">
       <slot />
     </div>
 
     <!-- Tags -->
     {tags.length > 0 && (
-      <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,0.06);clear:both;">
-        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-          {tags.map(tag => (
-            <span style="font-size:0.75rem;font-weight:600;color:#6B7280;background:#F3F4F6;border:1px solid rgba(0,0,0,0.07);padding:0.25rem 0.75rem;border-radius:100px;transition:all 0.15s;cursor:default;"
-              onmouseover="this.style.background='#E57B3C';this.style.color='white';this.style.borderColor='#E57B3C'"
-              onmouseout="this.style.background='#F3F4F6';this.style.color='#6B7280';this.style.borderColor='rgba(0,0,0,0.07)'">
-              {tag}
-            </span>
-          ))}
-        </div>
+      <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,0.06);clear:both;display:flex;flex-wrap:wrap;gap:0.5rem;">
+        {tags.map(tag => <span class="tag-pill">{tag}</span>)}
       </div>
     )}
   </article>
 
-  <!-- CTA block -->
-  <div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem;">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;background:#1a1a1a;border-radius:18px;padding:2rem 2.25rem;border-left:4px solid #E57B3C;">
+  <!-- CTA strip -->
+  <div style="max-width:740px;margin:0 auto;padding:0 1.5rem 3rem;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;background:#1a1a1a;border-radius:20px;padding:2rem 2.25rem;border-left:5px solid #E57B3C;">
       <div>
-        <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#E57B3C;margin-bottom:0.5rem;">Commission-free venue discovery</p>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:0.4rem;line-height:1.25;">List your venue on LocalFeed</h3>
-        <p style="font-size:0.88rem;color:#9CA3AF;line-height:1.5;">No commissions. No forced deals. Designed for NZ venues.</p>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;color:#E57B3C;margin-bottom:0.5rem;">Commission-free venue discovery</p>
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:800;color:white;margin-bottom:0.4rem;line-height:1.25;">List your venue on LocalFeed</h3>
+        <p style="font-size:0.875rem;color:#9CA3AF;line-height:1.55;">No commissions. No forced deals. Designed for NZ venues.</p>
       </div>
-      <a href="https://localfeed.app/list-venue" style="flex-shrink:0;display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:12px;text-decoration:none;white-space:nowrap;">
+      <a href="https://localfeed.app/list-venue" style="flex-shrink:0;display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#E57B3C,#D4632C);color:white;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:12px;text-decoration:none;white-space:nowrap;">
         Get started →
       </a>
     </div>
   </div>
 
-  <!-- Author block -->
-  <div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3.5rem;">
-    <div style="display:flex;align-items:flex-start;gap:1.25rem;border:1px solid rgba(0,0,0,0.07);border-radius:18px;padding:1.75rem;background:#FAFAFA;">
-      <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#E57B3C,#D4632C);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <span style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:white;">B</span>
+  <!-- Author card -->
+  <div style="max-width:740px;margin:0 auto;padding:0 1.5rem 3.5rem;">
+    <div style="display:flex;align-items:flex-start;gap:1.25rem;border:1px solid rgba(0,0,0,0.07);border-radius:20px;padding:1.75rem;background:#FAFAFA;">
+      <div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#E57B3C,#D4632C);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <span style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:white;">B</span>
       </div>
       <div>
-        <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#111;margin-bottom:0.15rem;">{author}</p>
-        <p style="font-size:0.78rem;color:#9CA3AF;margin-bottom:0.75rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.02em;">Founder, LocalFeed · 20 years hospo · France · Australia · New Zealand</p>
-        <p style="font-size:0.88rem;color:#374151;line-height:1.6;">Building the platform NZ venues actually needed. Commission-free. No forced deals. Set your own terms, keep your customers.</p>
+        <p style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#111;margin-bottom:0.2rem;">{author}</p>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#9CA3AF;margin-bottom:0.75rem;letter-spacing:0.02em;">Founder, LocalFeed · 20 years hospo · France · Australia · New Zealand</p>
+        <p style="font-size:0.9rem;color:#374151;line-height:1.65;">Building the platform NZ venues actually needed. Commission-free. No forced deals. Set your own terms, keep your customers.</p>
       </div>
     </div>
   </div>
@@ -192,17 +318,17 @@ const schema = {
   <!-- Related posts -->
   {relatedPosts.length > 0 && (
     <div style="background:#F9F7F4;border-top:1px solid rgba(0,0,0,0.06);padding:3rem 1.5rem 4rem;">
-      <div style="max-width:720px;margin:0 auto;">
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:#111;margin-bottom:1.5rem;">Keep reading</h2>
+      <div style="max-width:740px;margin:0 auto;">
+        <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:800;color:#111;margin-bottom:1.5rem;letter-spacing:-0.01em;">Keep reading</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
           {relatedPosts.map((p: any) => {
             const relCat = CATEGORY_META[p.data.category] ?? CATEGORY_META['venue-marketing'];
             const relDate = p.data.date.toLocaleDateString('en-NZ', { month: 'short', year: 'numeric' });
             return (
-              <a href={`/blog/${p.slug}`} class="related-card" style={`border-top-color:${relCat.color};`}>
-                <span class="related-cat" style={`color:${relCat.color};`}>{relCat.label}</span>
-                <span class="related-title">{p.data.title}</span>
-                <span class="related-meta">{p.data.readTime && `${p.data.readTime} min · `}{relDate}</span>
+              <a href={`/blog/${p.slug}`} class="rel-card" style={`border-top-color:${relCat.color};`}>
+                <span class="rel-card-cat" style={`color:${relCat.color};`}>{relCat.label}</span>
+                <span class="rel-card-title">{p.data.title}</span>
+                <span class="rel-card-meta">{p.data.readTime && `${p.data.readTime} min · `}{relDate}</span>
               </a>
             );
           })}
@@ -213,7 +339,7 @@ const schema = {
 
   <!-- Footer -->
   <footer style="background:#0D0D0D;padding:1.75rem 1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.05);">
-    <p style="font-size:0.8rem;color:#6B7280;font-family:'Inter',sans-serif;">
+    <p style="font-size:0.8rem;color:#6B7280;">
       <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a>
       <span style="margin:0 0.5rem;">—</span>
       commission-free venue discovery for NZ. Built in Tauranga.
@@ -221,57 +347,55 @@ const schema = {
   </footer>
 
   <script>
-    // Reading progress bar
-    const bar = document.getElementById('progress-bar');
+    // ── Reading progress ──────────────────────────────────────────────────────
+    const bar = document.getElementById('rp-bar');
     if (bar) {
-      const update = () => {
+      window.addEventListener('scroll', () => {
         const el = document.documentElement;
-        const pct = el.scrollTop / (el.scrollHeight - el.clientHeight);
-        bar.style.transform = `scaleX(${Math.min(1, pct || 0)})`;
-      };
-      document.addEventListener('scroll', update, { passive: true });
+        const pct = el.scrollTop / (el.scrollHeight - el.clientHeight) || 0;
+        bar.style.transform = `scaleX(${Math.min(1, pct)})`;
+      }, { passive: true });
     }
 
-    // Transform special callout elements
-    const prose = document.querySelector('.prose-blog');
+    // ── Transform STAT / NOTE / FACT paragraphs ───────────────────────────────
+    const prose = document.getElementById('prose-body');
     if (prose) {
-      // Drop cap on first paragraph
+
+      // Drop cap on first real paragraph
       const firstP = prose.querySelector('p');
-      if (firstP) firstP.classList.add('lead-para');
+      if (firstP) firstP.classList.add('lp');
 
-      // Transform STAT:, NOTE:, FACT: paragraphs
-      prose.querySelectorAll('p').forEach(p => {
-        const strong = p.firstElementChild;
+      // Callout transformation — uses INLINE STYLES, zero CSS dependency
+      prose.querySelectorAll('p').forEach((p) => {
+        const strong = p.firstElementChild as HTMLElement | null;
         if (!strong || strong.tagName !== 'STRONG') return;
-
-        const label = strong.textContent?.trim();
-        if (!label || !['STAT:', 'NOTE:', 'FACT:'].includes(label)) return;
+        const label = (strong.textContent || '').trim();
+        if (!['STAT:', 'NOTE:', 'FACT:'].includes(label)) return;
 
         strong.remove();
-        const content = p.innerHTML.trim();
-        const wrapper = document.createElement('div');
+        const raw = p.innerHTML.trim();
+        const wrap = document.createElement('div');
 
         if (label === 'STAT:') {
-          // Split on · for big stat + supporting text
-          const parts = content.split('·');
-          if (parts.length >= 2) {
-            const num = parts[0].trim();
-            const support = parts.slice(1).join('·').trim();
-            wrapper.className = 'callout-stat';
-            wrapper.innerHTML = `<span class="stat-number">${num}</span><span class="stat-support">${support}</span>`;
-          } else {
-            wrapper.className = 'callout-stat';
-            wrapper.innerHTML = `<span class="stat-full">${content}</span>`;
-          }
+          const mid = raw.indexOf('·');
+          const hasBreak = mid !== -1;
+          const bigPart = hasBreak ? raw.slice(0, mid).trim() : raw;
+          const sub = hasBreak ? raw.slice(mid + 1).trim() : '';
+          wrap.style.cssText = 'background:#E57B3C;color:white;border-radius:16px;padding:1.75rem 2rem;margin:2.5rem 0;clear:both;';
+          wrap.innerHTML = hasBreak
+            ? `<span style="font-family:'JetBrains Mono','Fira Code',monospace;font-size:1.875rem;font-weight:700;display:block;margin-bottom:0.5rem;line-height:1.1;">${bigPart}</span><span style="font-family:'Inter',sans-serif;font-size:0.95rem;opacity:0.9;display:block;line-height:1.55;">${sub}</span>`
+            : `<span style="font-family:'JetBrains Mono','Fira Code',monospace;font-size:1.1rem;font-weight:600;line-height:1.6;">${bigPart}</span>`;
+
         } else if (label === 'NOTE:') {
-          wrapper.className = 'callout-note';
-          wrapper.innerHTML = content;
+          wrap.style.cssText = 'background:#FFF8F0;border-left:4px solid #E57B3C;border-radius:0 12px 12px 0;padding:1.25rem 1.5rem 1.25rem 1.75rem;margin:2.5rem 0;clear:both;font-size:1rem;line-height:1.75;color:#374151;';
+          wrap.innerHTML = `<span style="margin-right:0.5rem;font-size:1.05rem;">💡</span>${raw}`;
+
         } else if (label === 'FACT:') {
-          wrapper.className = 'callout-fact';
-          wrapper.innerHTML = `<span class="callout-fact-label">LOCALFEED</span><span class="callout-fact-body">${content}</span>`;
+          wrap.style.cssText = 'background:#1a1a1a;color:white;border-radius:16px;padding:1.75rem 2rem;margin:2.5rem 0;clear:both;border-top:3px solid #E57B3C;';
+          wrap.innerHTML = `<span style="font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.62rem;letter-spacing:0.2em;font-weight:700;color:#E57B3C;text-transform:uppercase;display:block;margin-bottom:0.75rem;">LOCALFEED</span><span style="font-family:'Inter',sans-serif;font-size:1rem;line-height:1.65;color:#e5e7eb;">${raw}</span>`;
         }
 
-        p.replaceWith(wrapper);
+        p.replaceWith(wrap);
       });
     }
   </script>
