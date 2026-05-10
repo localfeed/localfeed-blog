@@ -7,7 +7,11 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "publish:now": "bash scripts/auto-publish.sh",
+    "publish:check": "tail -20 scripts/publish-log.txt",
+    "publish:queue": "grep -v '^#' scripts/topic-queue.txt | grep -c '.' && echo 'topics remaining'",
+    "publish:refill": "bash scripts/refill-queue.sh"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.0",
