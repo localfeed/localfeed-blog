@@ -24,7 +24,7 @@ log "Queue low ($REMAINING remaining). Generating 50 new topics..."
 EXISTING="$(sed 's/^# *//' "$QUEUE_FILE" | tr '[:upper:]' '[:lower:]')"
 
 # ── Generate 50 new keywords via Claude Code ─────────────────────────────────
-NEW_TOPICS="$(claude --print --no-update-notification "Generate exactly 50 NZ hospitality SEO keywords. Output ONLY the keywords — one per line, no numbering, no bullets, no explanation, no blank lines.
+NEW_TOPICS="$(claude -p "Generate exactly 50 NZ hospitality SEO keywords. Output ONLY the keywords — one per line, no numbering, no bullets, no explanation, no blank lines.
 
 Rules:
 - Each keyword must be something a NZ venue owner or local diner would actually Google

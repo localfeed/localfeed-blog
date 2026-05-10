@@ -1,0 +1,16 @@
+[2026-05-11 10:36:46] TOPIC: first table alternative nz
+[2026-05-11 10:36:46] SLUG: first-table-alternative-nz
+[2026-05-11 10:36:46] FILE: /Users/benoitrebecca/localfeed-blog/src/content/blog/first-table-alternative-nz.md
+[2026-05-11 10:36:46] Calling Claude to write post...
+[2026-05-11 10:41:55] TOPIC: first table alternative nz
+[2026-05-11 10:41:55] SLUG: first-table-alternative-nz
+[2026-05-11 10:41:55] FILE: /Users/benoitrebecca/localfeed-blog/src/content/blog/first-table-alternative-nz.md
+[2026-05-11 10:41:55] Calling Claude to write post...
+[2026-05-11 10:44:59] TOPIC: commission free restaurant platform nz
+[2026-05-11 10:49:54] TOPIC: first table alternative nz
+[2026-05-11 10:49:54] SLUG: first-table-alternative-nz
+[2026-05-11 10:49:54] FILE: /Users/benoitrebecca/localfeed-blog/src/content/blog/first-table-alternative-nz.md
+[2026-05-11 10:49:54] Calling Claude to write post...
+[2026-05-11 10:49:54] GENERATED: "First Table Alternative NZ: Keep Your Revenue, Fill Your Tables" (1245 words)
+[2026-05-11 10:49:54] PUSHED: first-table-alternative-nz.md → main
+[2026-05-11 10:49:54] DONE. Queue: 104 topics remaining.

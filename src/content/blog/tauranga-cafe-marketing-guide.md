@@ -29,6 +29,8 @@ The third segment is visitors and summer traffic: January, school holidays, and 
 
 Marketing strategy for a Tauranga cafe should be built around the first two segments. The third will follow if you are discoverable.
 
+> Build for the regular. The tourist finds a venue with a strong local reputation. The regular is what that reputation is built on.
+
 ## Google visibility for Bay of Plenty searches
 
 When someone in Tauranga opens Google and types "cafe near me" or "best coffee Mount Maunganui," your Google Business listing is the first line of defence.
@@ -41,6 +43,8 @@ Keep your listing updated with:
 - A response to every new review within 48 hours
 
 The cafes in Tauranga that consistently appear at the top of local searches have one thing in common: they treat their Google listing as a live channel, not a set-and-forget directory entry.
+
+**STAT:** 20 minutes/week · The time investment to keep a Google Business Profile active. The cafes that do it consistently outrank the ones that set it once and left.
 
 ## Local discovery and the LocalFeed advantage
 
@@ -84,6 +88,12 @@ The cafes in Tauranga with consistent occupancy share a few common habits:
 They are visible on Google and they respond to everything. They have a small but engaged local Instagram following that includes a lot of their actual regular customers. They collect and use email. They have at least one corporate or community relationship that generates predictable weekly traffic.
 
 None of this requires a marketing budget. It requires a system and the discipline to maintain it.
+
+> Consistency is the marketing budget that most Tauranga cafes have but do not use. Showing up every week, even quietly, compounds.
+
+**NOTE:** Pick one channel and be genuinely present on it for 90 days before adding another. Google Business first. It has the highest return per minute for any Bay of Plenty venue.
+
+**FACT:** Zero commission. $10/week after 20 bookings. LocalFeed shows Tauranga locals what is available nearby, at the price you set, with no forced discount.
 
 ---
 

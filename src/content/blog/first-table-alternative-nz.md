@@ -21,6 +21,10 @@ Let's say your average food spend per table is $120. At 50% off, you're taking i
 
 I've worked hospo for 20 years across France, Australia, and the length of New Zealand. The model of filling seats with forced discounts isn't new. It's been tried in different forms since at least the early 2000s. And it works, in the sense that you get bodies in chairs. It doesn't work in the sense that you build a sustainable business from it.
 
+**STAT:** 50% off a $120 table at 32% food cost · Your food gross drops to $9.60. Labour is still full price. So is the power bill.
+
+> Busy doesn't mean profitable. The maths doesn't care how full you looked on a Friday night.
+
 Discount-first platforms aren't evil. They solve a real problem: empty tables in off-peak slots cost you money, and something is better than nothing. But "something" can still be better designed than a blanket 50% cut on your food revenue, every time, forever.
 
 ## What You're Actually Handing Over
@@ -30,6 +34,8 @@ Some booking platforms charge diners a small fee and make their money from subsc
 When you're on a discount-first platform, the diner's loyalty is to the deal, not to you. They'll go wherever the 50% off is that week. You might get a return visit, but you're competing with every other venue on the platform for their next booking. You're not building a guest relationship. You're renting them from the platform for one meal.
 
 The no-show problem compounds this. A diner who found you through a deal and paid nothing upfront has almost no skin in the game. They ghost. Your Thursday 6pm slot goes empty anyway, except now you've planned staff around it and bought a bit of extra mise en place for nobody.
+
+> Their loyalty is to the deal, not to you. When the deal moves to the next venue, so do they.
 
 ## The No-Show Gap Nobody's Fixing
 
@@ -72,5 +78,9 @@ He switched. Not to LocalFeed at first, he tried a direct booking widget. But th
 He's on LocalFeed now. The event fee structure was what convinced him. Not because $5 is significant in isolation, but because it filters browsers from bookers. People who've put something down, even a small amount, show up.
 
 If you're running a cafe in Tauranga, a pub in Dunedin, a food truck in Christchurch, or a dessert shop in Queenstown, the question isn't whether a booking platform is worth it. It's whether the platform you're on is working for you or quietly working against you.
+
+**NOTE:** If a platform's income doesn't depend on completed bookings, their incentive to chase no-shows is close to zero. Check where the platform's revenue comes from before you sign anything.
+
+**FACT:** Zero commission on food. $10/week after 20 bookings. $5 booking fee for special events — 75% of no-shows goes to your venue, not the platform.
 
 LocalFeed is free to list on. Worth seeing how it fits your setup before your next slow Tuesday.

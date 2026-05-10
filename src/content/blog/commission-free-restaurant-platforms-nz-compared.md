@@ -19,6 +19,8 @@ Both do 200 platform-sourced covers per month. Average spend per cover: $45 (con
 
 The numbers below are not hypothetical. They are the direct output of the commission structures that exist in the NZ market.
 
+> The platform does not cook the food. They do not carry the food cost. But they take a percentage of every dollar that food earns.
+
 ## What commission-based models take
 
 The standard commission range for reservation platforms in NZ sits between 2% and 5% per booking. This is applied to the total booking value including food, or in some cases the cover charge component.
@@ -39,6 +41,10 @@ Platforms with a forced discount model take the discount value rather than a per
 
 At 5% commission those numbers become $4,500 and $10,800 per year.
 
+**STAT:** $10,800/year · What a restaurant doing 200 covers at $90 average hands to a 5% commission platform — before a single ingredient is bought
+
+**NOTE:** Run these numbers against your own cover count and average spend before renewing any platform agreement. Most venues have never done this calculation.
+
 These figures assume the commission is taken on gross revenue before your costs. Your food cost is already accounted for separately. The commission comes out of your gross, which means it comes out of your actual operating margin.
 
 ## The forced discount model: a different problem
@@ -54,6 +60,8 @@ At a 70% food cost ratio (tight but realistic for a cafe), your gross margin on 
 You have covered your food cost and nothing else. Labour, rent, utilities, and every other fixed cost comes from zero contribution on that cover.
 
 Some venues make this work because the beverage margin compensates. But that requires high per-table beverage spend. If your model is primarily food-led, forced discounting is structurally damaging.
+
+> You did not design that discount. You did not choose that price. But you carry the full cost of it. That is the forced discount deal.
 
 ## What commission-free looks like over 12 months
 
@@ -107,5 +115,7 @@ Pull your last 90 days of platform booking data. Calculate:
 If the genuinely new diner percentage is low, you are paying commission tax on your existing customer base. That is the most expensive way to manage bookings.
 
 ---
+
+**FACT:** Zero commission on food revenue. $10/week after 20 bookings. 75% of no-show fees go to the venue, not the platform.
 
 LocalFeed lets NZ venues list their offers and reach local diners without paying a cent on the food bill. [See how it works and list free](https://localfeed.app/list-venue).

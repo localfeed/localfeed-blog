@@ -3,20 +3,343 @@
 @tailwind utilities;
 
 @layer base {
-  html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   body { @apply bg-white text-gray-900; }
 }
 
 @layer components {
-  .prose-blog h2 { @apply text-2xl font-bold mt-10 mb-4 text-gray-900; }
-  .prose-blog h3 { @apply text-xl font-bold mt-8 mb-3 text-gray-800; }
-  .prose-blog p { @apply text-gray-700 leading-relaxed mb-5 text-base; }
-  .prose-blog ul { @apply list-disc pl-6 mb-5 space-y-2; }
-  .prose-blog ol { @apply list-decimal pl-6 mb-5 space-y-2; }
-  .prose-blog li { @apply text-gray-700 leading-relaxed; }
-  .prose-blog strong { @apply font-bold text-gray-900; }
-  .prose-blog a { @apply text-brand underline hover:text-brand-dark; }
-  .prose-blog blockquote { @apply border-l-4 border-brand pl-5 italic text-gray-600 my-6; }
-  .prose-blog hr { @apply border-gray-200 my-8; }
-  .prose-blog code { @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono; }
+
+  /* ── Prose: editorial article body ─────────────────────── */
+  .prose-blog {
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.85;
+  }
+
+  .prose-blog p {
+    max-width: 68ch;
+    margin-bottom: 1.75rem;
+    color: #1a1a1a;
+  }
+
+  .prose-blog .lead-para {
+    font-size: 1.2rem;
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+
+  .prose-blog .lead-para::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 0.8;
+    float: left;
+    margin-right: 0.2rem;
+    margin-top: 0.15rem;
+    color: #E57B3C;
+  }
+
+  .prose-blog h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #111;
+    border-left: 4px solid #E57B3C;
+    padding-left: 1rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+    clear: both;
+  }
+
+  .prose-blog h2 + * { margin-top: 0; }
+
+  /* Decorative divider line before H2 (except first) */
+  .prose-blog h2:not(:first-child) {
+    padding-top: 3rem;
+    position: relative;
+  }
+  .prose-blog h2:not(:first-child)::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e5e7eb 20%, #e5e7eb 80%, transparent);
+    position: absolute;
+    top: 1rem;
+    left: -1rem;
+    right: 0;
+  }
+
+  .prose-blog h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #E57B3C;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    clear: both;
+  }
+
+  .prose-blog ul,
+  .prose-blog ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.75rem;
+    max-width: 68ch;
+  }
+
+  .prose-blog li {
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    line-height: 1.7;
+  }
+  .prose-blog ul > li { list-style-type: disc; }
+  .prose-blog ol > li { list-style-type: decimal; }
+
+  .prose-blog strong { font-weight: 700; color: #111; }
+
+  .prose-blog a {
+    color: #E57B3C;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .prose-blog a:hover { color: #D4632C; }
+
+  .prose-blog code {
+    font-family: 'JetBrains Mono', monospace;
+    background: #f3f4f6;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+
+  .prose-blog hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 2.5rem 0;
+    clear: both;
+  }
+
+  /* ── Pull quotes (blockquotes) ──────────────────────────── */
+  .prose-blog blockquote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: #1a1a1a;
+    border-left: 3px solid #E57B3C;
+    background: white;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 1.5rem 1.5rem 2.25rem;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .prose-blog blockquote::before {
+    content: '\201C';
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 5rem;
+    line-height: 0;
+    position: absolute;
+    top: 2rem;
+    left: 0.5rem;
+    color: #E57B3C;
+    opacity: 0.3;
+    font-style: normal;
+    pointer-events: none;
+  }
+
+  .prose-blog blockquote p {
+    margin: 0;
+    max-width: none;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  @media (min-width: 860px) {
+    .prose-blog blockquote {
+      float: right;
+      width: 255px;
+      margin: 0.25rem 0 1.5rem 2rem;
+      clear: right;
+    }
+  }
+
+  /* ── STAT callout box ───────────────────────────────────── */
+  .callout-stat {
+    background: #E57B3C;
+    color: white;
+    border-radius: 14px;
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    clear: both;
+  }
+  .callout-stat .stat-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.4rem;
+    line-height: 1.15;
+  }
+  .callout-stat .stat-support {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    opacity: 0.92;
+    line-height: 1.5;
+    display: block;
+  }
+  .callout-stat .stat-full {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  /* ── NOTE callout box ───────────────────────────────────── */
+  .callout-note {
+    background: #FFF8F0;
+    border-left: 4px solid #E57B3C;
+    border-radius: 0 10px 10px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2.5rem 0;
+    clear: both;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+  .callout-note::before { content: '💡 '; }
+
+  /* ── FACT callout box ───────────────────────────────────── */
+  .callout-fact {
+    background: #1a1a1a;
+    color: white;
+    border-radius: 14px;
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    clear: both;
+  }
+  .callout-fact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    color: #E57B3C;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  .callout-fact-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #e5e7eb;
+  }
+
+  /* ── Post card (homepage grid) ──────────────────────────── */
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.07);
+    background: #fff;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  }
+  .post-card .card-accent { height: 3px; width: 100%; }
+  .post-card .card-inner { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
+  .post-card .cat-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.65rem;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+  }
+  .post-card .card-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0D0D0D;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    transition: color 0.15s;
+  }
+  .post-card:hover .card-title { color: #E57B3C; }
+  .post-card .card-desc {
+    font-size: 0.82rem;
+    color: #6B7280;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  .post-card .card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: auto;
+  }
+
+  /* ── Related post card ──────────────────────────────────── */
+  .related-card {
+    display: block;
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-top-width: 3px;
+    border-top-style: solid;
+  }
+  .related-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.09);
+  }
+  .related-card .related-cat {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .related-card .related-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.975rem;
+    font-weight: 700;
+    color: #0D0D0D;
+    line-height: 1.35;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.15s;
+  }
+  .related-card:hover .related-title { color: #E57B3C; }
+  .related-card .related-meta { font-size: 0.72rem; color: #9CA3AF; }
 }

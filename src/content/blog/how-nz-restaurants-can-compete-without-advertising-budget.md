@@ -19,6 +19,8 @@ For the independent NZ venue, these conversations are largely irrelevant. You do
 
 The good news is that budget is a multiplier for bad marketing, not a substitute for good marketing. The venues in NZ with the highest local profile have got there through consistency and strategy, not spend.
 
+> Budget amplifies whatever you already have. If what you have is weak, more spend makes it louder and still weak.
+
 ## The no-budget playbook that actually works
 
 **Start with what you already have: your building**
@@ -51,6 +53,10 @@ A two-paragraph email to the local paper or local food blog with one good photo 
 
 One feature in a local paper reaches more of your actual target customer than $500 in Facebook ads targeted at a broad demographic.
 
+**STAT:** $500 in Facebook ads · Reaches a broad demographic who may or may not be near you. One local media mention · Reaches your actual neighbourhood, at zero cost.
+
+> Local media is under-resourced and always looking for content. You are not competing for coverage. You are offering it to them.
+
 **Use free tools to reach locals who are ready to eat**
 
 [LocalFeed](https://localfeed.app) lists your venue and your current specials for NZ diners who are actively searching for somewhere to eat nearby. No booking commission. No forced discounts. You set your offer, you set your price.
@@ -64,6 +70,12 @@ When someone in your suburb opens LocalFeed and searches for dinner, your venue 
 If you can collect 20 email addresses per month from your existing diners, you have a 240-person list by the end of the year. A monthly email with what is new and what is worth coming in for will generate bookings from people who have already eaten with you and want to come back.
 
 The conversion rate on a real email to a real customer who has chosen your venue before is significantly higher than any cold advertising. And the cost is $0 using Mailchimp's free tier.
+
+> An opted-in email list of 300 is worth more than 3,000 social followers who might not even be in the same city.
+
+**NOTE:** Start collecting email addresses this week. A paper sign at the counter and a QR code is enough. Every contact you build directly is one less you need to rent from a platform.
+
+**FACT:** Zero commission. $10/week after 20 bookings. LocalFeed discovery puts you in front of NZ locals actively searching for somewhere to eat.
 
 ## The compound effect of consistent free marketing
 

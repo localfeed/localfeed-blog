@@ -1,6 +1,5 @@
 ---
 import Base from './Base.astro';
-import RelatedPosts from '../components/RelatedPosts.astro';
 
 export interface Props {
   title: string;
@@ -31,13 +30,20 @@ const canonicalUrl = `https://blog.localfeed.app/blog/${slug}`;
 const dateStr = date.toISOString();
 const dateDisplay = date.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
 
-const CATEGORY_LABELS: Record<string, string> = {
-  'venue-marketing': 'Venue Marketing',
-  'platform-comparison': 'Platform Comparison',
-  'operator-insights': 'Operator Insights',
-  'off-peak': 'Off-Peak Strategy',
-  'local-seo': 'Local Discovery',
+const CATEGORY_META: Record<string, { label: string; color: string; bg: string }> = {
+  'venue-marketing':    { label: 'Venue Marketing',     color: '#E57B3C', bg: 'rgba(229,123,60,0.1)' },
+  'platform-comparison':{ label: 'Platform Comparison', color: '#C0392B', bg: 'rgba(192,57,43,0.1)'  },
+  'off-peak-revenue':   { label: 'Off-Peak Revenue',    color: '#27AE60', bg: 'rgba(39,174,96,0.1)'  },
+  'off-peak':           { label: 'Off-Peak Strategy',   color: '#27AE60', bg: 'rgba(39,174,96,0.1)'  },
+  'hospo-operations':   { label: 'Hospo Operations',    color: '#2980B9', bg: 'rgba(41,128,185,0.1)' },
+  'operator-insights':  { label: 'Operator Insights',   color: '#2980B9', bg: 'rgba(41,128,185,0.1)' },
+  'local-seo':          { label: 'Local Discovery',     color: '#8E44AD', bg: 'rgba(142,68,173,0.1)' },
+  'diner-deals':        { label: 'Diner Deals',         color: '#16A085', bg: 'rgba(22,160,133,0.1)' },
+  'industry-news':      { label: 'Industry News',       color: '#2C3E50', bg: 'rgba(44,62,80,0.1)'   },
+  'localfeed-story':    { label: 'LocalFeed Story',     color: '#E57B3C', bg: 'rgba(229,123,60,0.1)' },
 };
+
+const cat = CATEGORY_META[category] ?? CATEGORY_META['venue-marketing'];
 
 const schema = {
   "@context": "https://schema.org",
@@ -46,11 +52,7 @@ const schema = {
   "description": description,
   "datePublished": dateStr,
   "dateModified": dateStr,
-  "author": {
-    "@type": "Person",
-    "name": author,
-    "url": "https://localfeed.app"
-  },
+  "author": { "@type": "Person", "name": author, "url": "https://localfeed.app" },
   "publisher": {
     "@type": "Organization",
     "name": "LocalFeed",
@@ -59,9 +61,10 @@ const schema = {
   },
   "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
   "keywords": tags.join(', '),
-  "articleSection": CATEGORY_LABELS[category] || category,
+  "articleSection": cat.label,
 };
 ---
+
 <Base
   title={title}
   description={description}
@@ -70,106 +73,206 @@ const schema = {
   article={{ publishedTime: dateStr, author, tags }}
   schema={schema}
 >
+  <!-- Reading progress bar -->
+  <div id="progress-bar" style="position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E57B3C,#F57C6E);transform-origin:left;transform:scaleX(0);z-index:200;transition:transform 0.1s linear;"></div>
+
   <!-- Nav -->
-  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;">
-    <div style="max-width:720px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
-      <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;">
-        <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:28px;height:28px;object-fit:contain;" onerror="this.style.display='none'" />
-        <span style="font-size:0.9rem;font-weight:800;color:#0D0D0D;">LocalFeed Blog</span>
+  <nav id="site-nav" style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;transition:box-shadow 0.3s;">
+    <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <a href="/" style="display:flex;align-items:center;gap:0.6rem;text-decoration:none;">
+        <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:26px;height:26px;object-fit:contain;" onerror="this.style.display='none'" />
+        <span style="font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:800;color:#0D0D0D;letter-spacing:-0.01em;">LocalFeed Blog</span>
       </a>
-      <a href="https://localfeed.app/list-venue" style="font-size:0.8rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.4rem 1rem;border-radius:10px;text-decoration:none;">
-        List your venue
-      </a>
+      <div style="display:flex;align-items:center;gap:1.25rem;">
+        <a href="/" style="font-size:0.82rem;font-weight:500;color:#6B7280;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#0D0D0D'" onmouseout="this.style.color='#6B7280'">All articles</a>
+        <a href="https://localfeed.app/list-venue" style="font-size:0.8rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.4rem 1rem;border-radius:10px;text-decoration:none;">
+          List your venue
+        </a>
+      </div>
     </div>
   </nav>
 
-  <!-- Reading progress bar -->
-  <div id="progress-bar" style="position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E57B3C,#F57C6E);transform-origin:left;transform:scaleX(0);z-index:100;transition:transform 0.1s;"></div>
+  <!-- Hero -->
+  <header style="background:#F9F7F4;border-bottom:1px solid rgba(0,0,0,0.06);padding:3.5rem 1.5rem 3rem;">
+    <div style="max-width:720px;margin:0 auto;">
 
-  <article style="max-width:720px;margin:0 auto;padding:2.5rem 1.5rem 4rem;">
-    <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb" style="margin-bottom:1.5rem;font-size:0.8rem;color:#9CA3AF;">
-      <a href="/" style="color:#E57B3C;text-decoration:none;">Blog</a>
-      <span style="margin:0 0.4rem;">/</span>
-      <span>{CATEGORY_LABELS[category] || category}</span>
-    </nav>
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" style="font-size:0.78rem;color:#9CA3AF;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.4rem;">
+        <a href="/" style="color:#E57B3C;text-decoration:none;font-weight:500;">Blog</a>
+        <span>›</span>
+        <span>{cat.label}</span>
+      </nav>
 
-    <!-- Category badge -->
-    <div style="margin-bottom:1rem;">
-      <span style="display:inline-block;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#E57B3C;background:rgba(229,123,60,0.1);border:1px solid rgba(229,123,60,0.3);padding:0.25rem 0.75rem;border-radius:100px;">
-        {CATEGORY_LABELS[category] || category}
-      </span>
+      <!-- Category + meta row -->
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.5rem;">
+        <span style={`display:inline-flex;align-items:center;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${cat.color};background:${cat.bg};border:1px solid ${cat.color}30;padding:0.3rem 0.875rem;border-radius:100px;`}>
+          {cat.label}
+        </span>
+        <span style="font-size:0.8rem;color:#9CA3AF;display:flex;align-items:center;gap:0.75rem;">
+          {readTime && <span>{readTime} min read</span>}
+          {readTime && <span>·</span>}
+          <time datetime={dateStr}>{dateDisplay}</time>
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,2.875rem);font-weight:900;line-height:1.15;color:#111;margin-bottom:1.25rem;letter-spacing:-0.02em;">
+        {title}
+      </h1>
+
+      <!-- Description / deck -->
+      {description && (
+        <p style="font-family:'Inter',sans-serif;font-size:1.1rem;color:#6B7280;line-height:1.65;margin-bottom:1.75rem;max-width:60ch;">
+          {description}
+        </p>
+      )}
+
+      <!-- Author line + divider -->
+      <div style="display:flex;align-items:center;gap:0.75rem;padding-top:1.25rem;border-top:1px solid rgba(0,0,0,0.08);">
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#E57B3C,#D4632C);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span style="font-family:'Playfair Display',serif;font-size:0.9rem;font-weight:900;color:white;">B</span>
+        </div>
+        <span style="font-size:0.85rem;font-weight:600;color:#374151;">{author}</span>
+        <span style="color:#d1d5db;">·</span>
+        <span style="font-size:0.85rem;color:#9CA3AF;">LocalFeed</span>
+      </div>
     </div>
+  </header>
 
-    <!-- Title -->
-    <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;line-height:1.15;color:#0D0D0D;margin-bottom:1rem;letter-spacing:-0.02em;">
-      {title}
-    </h1>
-
-    <!-- Description -->
-    <p style="font-size:1.1rem;color:#6B7280;line-height:1.6;margin-bottom:1.5rem;">{description}</p>
-
-    <!-- Meta row -->
-    <div style="display:flex;align-items:center;gap:1rem;padding:1rem 0;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);margin-bottom:2.5rem;font-size:0.8rem;color:#9CA3AF;flex-wrap:wrap;">
-      <span style="display:flex;align-items:center;gap:0.4rem;">
-        <span style="font-weight:600;color:#374151;">{author}</span>
-      </span>
-      <span>·</span>
-      <time datetime={dateStr}>{dateDisplay}</time>
-      {readTime && <><span>·</span><span>{readTime} min read</span></>}
-    </div>
-
-    <!-- Content -->
+  <!-- Article body -->
+  <article style="max-width:720px;margin:0 auto;padding:3rem 1.5rem 2rem;">
     <div class="prose-blog">
       <slot />
     </div>
 
     <!-- Tags -->
     {tags.length > 0 && (
-      <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,0.06);">
+      <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,0.06);clear:both;">
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
           {tags.map(tag => (
-            <span style="font-size:0.75rem;font-weight:600;color:#6B7280;background:#F3F4F6;padding:0.25rem 0.75rem;border-radius:100px;">
+            <span style="font-size:0.75rem;font-weight:600;color:#6B7280;background:#F3F4F6;border:1px solid rgba(0,0,0,0.07);padding:0.25rem 0.75rem;border-radius:100px;transition:all 0.15s;cursor:default;"
+              onmouseover="this.style.background='#E57B3C';this.style.color='white';this.style.borderColor='#E57B3C'"
+              onmouseout="this.style.background='#F3F4F6';this.style.color='#6B7280';this.style.borderColor='rgba(0,0,0,0.07)'">
               {tag}
             </span>
           ))}
         </div>
       </div>
     )}
+  </article>
 
-    <!-- CTA -->
-    <div style="margin-top:3rem;padding:2rem;background:linear-gradient(135deg,#080808,#1a0f00);border-radius:20px;text-align:center;">
-      <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#E57B3C;margin-bottom:0.75rem;">Commission-free venue discovery</p>
-      <h3 style="font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:0.75rem;line-height:1.2;">List your venue free.</h3>
-      <p style="font-size:0.9rem;color:#9CA3AF;margin-bottom:1.5rem;line-height:1.5;">No booking commissions. No forced discounts. Set your own deals, keep your margin.</p>
-      <a href="https://localfeed.app/list-venue" style="display:inline-block;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.9rem;padding:0.75rem 2rem;border-radius:14px;text-decoration:none;">
-        Get started — it's free
+  <!-- CTA block -->
+  <div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;background:#1a1a1a;border-radius:18px;padding:2rem 2.25rem;border-left:4px solid #E57B3C;">
+      <div>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#E57B3C;margin-bottom:0.5rem;">Commission-free venue discovery</p>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:0.4rem;line-height:1.25;">List your venue on LocalFeed</h3>
+        <p style="font-size:0.88rem;color:#9CA3AF;line-height:1.5;">No commissions. No forced deals. Designed for NZ venues.</p>
+      </div>
+      <a href="https://localfeed.app/list-venue" style="flex-shrink:0;display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:12px;text-decoration:none;white-space:nowrap;">
+        Get started →
       </a>
     </div>
-  </article>
+  </div>
+
+  <!-- Author block -->
+  <div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3.5rem;">
+    <div style="display:flex;align-items:flex-start;gap:1.25rem;border:1px solid rgba(0,0,0,0.07);border-radius:18px;padding:1.75rem;background:#FAFAFA;">
+      <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#E57B3C,#D4632C);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <span style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:white;">B</span>
+      </div>
+      <div>
+        <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#111;margin-bottom:0.15rem;">{author}</p>
+        <p style="font-size:0.78rem;color:#9CA3AF;margin-bottom:0.75rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.02em;">Founder, LocalFeed · 20 years hospo · France · Australia · New Zealand</p>
+        <p style="font-size:0.88rem;color:#374151;line-height:1.6;">Building the platform NZ venues actually needed. Commission-free. No forced deals. Set your own terms, keep your customers.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Related posts -->
   {relatedPosts.length > 0 && (
-    <div style="background:#F9FAFB;border-top:1px solid rgba(0,0,0,0.06);padding:3rem 1.5rem;">
-      <RelatedPosts posts={relatedPosts} />
+    <div style="background:#F9F7F4;border-top:1px solid rgba(0,0,0,0.06);padding:3rem 1.5rem 4rem;">
+      <div style="max-width:720px;margin:0 auto;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:#111;margin-bottom:1.5rem;">Keep reading</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
+          {relatedPosts.map((p: any) => {
+            const relCat = CATEGORY_META[p.data.category] ?? CATEGORY_META['venue-marketing'];
+            const relDate = p.data.date.toLocaleDateString('en-NZ', { month: 'short', year: 'numeric' });
+            return (
+              <a href={`/blog/${p.slug}`} class="related-card" style={`border-top-color:${relCat.color};`}>
+                <span class="related-cat" style={`color:${relCat.color};`}>{relCat.label}</span>
+                <span class="related-title">{p.data.title}</span>
+                <span class="related-meta">{p.data.readTime && `${p.data.readTime} min · `}{relDate}</span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
     </div>
   )}
 
   <!-- Footer -->
-  <footer style="background:#0D0D0D;padding:2rem 1.5rem;text-align:center;">
-    <p style="font-size:0.8rem;color:#6B7280;">
-      <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a> — commission-free venue discovery for NZ. Built in Tauranga.
+  <footer style="background:#0D0D0D;padding:1.75rem 1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.05);">
+    <p style="font-size:0.8rem;color:#6B7280;font-family:'Inter',sans-serif;">
+      <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a>
+      <span style="margin:0 0.5rem;">—</span>
+      commission-free venue discovery for NZ. Built in Tauranga.
     </p>
   </footer>
 
   <script>
+    // Reading progress bar
     const bar = document.getElementById('progress-bar');
     if (bar) {
-      document.addEventListener('scroll', () => {
+      const update = () => {
         const el = document.documentElement;
         const pct = el.scrollTop / (el.scrollHeight - el.clientHeight);
-        bar.style.transform = `scaleX(${Math.min(1, pct)})`;
-      }, { passive: true });
+        bar.style.transform = `scaleX(${Math.min(1, pct || 0)})`;
+      };
+      document.addEventListener('scroll', update, { passive: true });
+    }
+
+    // Transform special callout elements
+    const prose = document.querySelector('.prose-blog');
+    if (prose) {
+      // Drop cap on first paragraph
+      const firstP = prose.querySelector('p');
+      if (firstP) firstP.classList.add('lead-para');
+
+      // Transform STAT:, NOTE:, FACT: paragraphs
+      prose.querySelectorAll('p').forEach(p => {
+        const strong = p.firstElementChild;
+        if (!strong || strong.tagName !== 'STRONG') return;
+
+        const label = strong.textContent?.trim();
+        if (!label || !['STAT:', 'NOTE:', 'FACT:'].includes(label)) return;
+
+        strong.remove();
+        const content = p.innerHTML.trim();
+        const wrapper = document.createElement('div');
+
+        if (label === 'STAT:') {
+          // Split on · for big stat + supporting text
+          const parts = content.split('·');
+          if (parts.length >= 2) {
+            const num = parts[0].trim();
+            const support = parts.slice(1).join('·').trim();
+            wrapper.className = 'callout-stat';
+            wrapper.innerHTML = `<span class="stat-number">${num}</span><span class="stat-support">${support}</span>`;
+          } else {
+            wrapper.className = 'callout-stat';
+            wrapper.innerHTML = `<span class="stat-full">${content}</span>`;
+          }
+        } else if (label === 'NOTE:') {
+          wrapper.className = 'callout-note';
+          wrapper.innerHTML = content;
+        } else if (label === 'FACT:') {
+          wrapper.className = 'callout-fact';
+          wrapper.innerHTML = `<span class="callout-fact-label">LOCALFEED</span><span class="callout-fact-body">${content}</span>`;
+        }
+
+        p.replaceWith(wrapper);
+      });
     }
   </script>
 </Base>

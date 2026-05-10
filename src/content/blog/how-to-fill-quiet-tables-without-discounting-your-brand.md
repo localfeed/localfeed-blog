@@ -19,6 +19,8 @@ Three months later, your Friday night regulars are asking why they cannot get th
 
 This is the discount trap. It solves an immediate problem by creating a structural one.
 
+> You filled the seat. You covered the food cost. You paid the staff. You kept nothing. And you trained them to never pay full price again.
+
 ## Why off-peak sessions need a different strategy, not a cheaper price
 
 Empty seats are a timing problem, not a value problem. The venue is good. The food is good. The experience is good. What is missing is the right people knowing about the right availability at the right time.
@@ -64,6 +66,14 @@ Before you run any promotion for a quiet session, ask: if this works and brings 
 If the answer is no because the margin does not work at scale, you are discounting. Find a different angle.
 
 If the answer is yes, it belongs in your regular marketing.
+
+**STAT:** 70% food cost on a $45 cover at 50% off · Your gross on food drops to zero. Drinks save you, if they order them.
+
+> Empty seats are expensive. Discounted seats that train your customers to expect less can be more expensive over time.
+
+**NOTE:** Before running any off-peak promotion, ask: if this works, could I run it permanently at a margin that makes sense? If the answer is no, find a different angle.
+
+**FACT:** Zero commission. $10/week after 20 bookings. Post your actual off-peak offer at your own price. No forced discounts required.
 
 ## What to do with the saved margin
 

@@ -7,15 +7,20 @@ const allPosts = await getCollection('blog', ({ data }) => data.status === 'publ
 const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const CATEGORY_META: Record<string, { label: string; color: string; bg: string }> = {
-  'venue-marketing':    { label: 'Venue Marketing',     color: '#3B82F6', bg: 'rgba(59,130,246,0.08)' },
-  'platform-comparison':{ label: 'Platform Comparison', color: '#EF4444', bg: 'rgba(239,68,68,0.08)' },
-  'operator-insights':  { label: 'Operator Insights',   color: '#10B981', bg: 'rgba(16,185,129,0.08)' },
-  'off-peak':           { label: 'Off-Peak Strategy',   color: '#8B5CF6', bg: 'rgba(139,92,246,0.08)' },
-  'local-seo':          { label: 'Local Discovery',     color: '#E57B3C', bg: 'rgba(229,123,60,0.08)' },
+  'venue-marketing':    { label: 'Venue Marketing',     color: '#E57B3C', bg: 'rgba(229,123,60,0.1)' },
+  'platform-comparison':{ label: 'Platform Comparison', color: '#C0392B', bg: 'rgba(192,57,43,0.1)'  },
+  'off-peak-revenue':   { label: 'Off-Peak Revenue',    color: '#27AE60', bg: 'rgba(39,174,96,0.1)'  },
+  'off-peak':           { label: 'Off-Peak Strategy',   color: '#27AE60', bg: 'rgba(39,174,96,0.1)'  },
+  'hospo-operations':   { label: 'Hospo Operations',    color: '#2980B9', bg: 'rgba(41,128,185,0.1)' },
+  'operator-insights':  { label: 'Operator Insights',   color: '#2980B9', bg: 'rgba(41,128,185,0.1)' },
+  'local-seo':          { label: 'Local Discovery',     color: '#8E44AD', bg: 'rgba(142,68,173,0.1)' },
+  'diner-deals':        { label: 'Diner Deals',         color: '#16A085', bg: 'rgba(22,160,133,0.1)' },
+  'industry-news':      { label: 'Industry News',       color: '#2C3E50', bg: 'rgba(44,62,80,0.1)'   },
+  'localfeed-story':    { label: 'LocalFeed Story',     color: '#E57B3C', bg: 'rgba(229,123,60,0.1)' },
 };
 
-const categories = [...new Set(posts.map(p => p.data.category))];
-const [featured, ...rest] = posts;
+const uniqueCategories = [...new Set(posts.map(p => p.data.category))];
+const [featured, second, third, ...rest] = posts;
 
 const schema = {
   "@context": "https://schema.org",
@@ -32,104 +37,203 @@ const schema = {
   schema={schema}
 >
   <!-- Sticky nav -->
-  <nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;">
+  <nav style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;">
     <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
-      <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;">
-        <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:30px;height:30px;object-fit:contain;" onerror="this.style.display='none'" />
-        <span style="font-size:0.95rem;font-weight:800;color:#0D0D0D;">LocalFeed Blog</span>
-      </a>
-      <a href="https://localfeed.app/list-venue" style="font-size:0.82rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.45rem 1.1rem;border-radius:10px;text-decoration:none;">
+      <div style="display:flex;align-items:center;gap:0.6rem;">
+        <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:28px;height:28px;object-fit:contain;" onerror="this.style.display='none'" />
+        <div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:800;color:#0D0D0D;line-height:1;">LocalFeed Blog</div>
+          <div style="font-size:0.65rem;color:#9CA3AF;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;">The NZ hospitality insider</div>
+        </div>
+      </div>
+      <a href="https://localfeed.app/list-venue" style="font-size:0.8rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.45rem 1.1rem;border-radius:10px;text-decoration:none;">
         List your venue free
       </a>
     </div>
   </nav>
 
-  <!-- Dark hero -->
-  <section style="background:#080808;padding:5rem 1.5rem 3.5rem;overflow:hidden;position:relative;">
-    <div style="position:absolute;top:-80px;left:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(229,123,60,0.18) 0%,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
-    <div style="position:absolute;bottom:-60px;right:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,124,110,0.12) 0%,transparent 70%);filter:blur(80px);pointer-events:none;"></div>
+  <!-- Masthead -->
+  <section style="background:#F9F7F4;border-bottom:1px solid rgba(0,0,0,0.06);padding:4rem 1.5rem 3rem;overflow:hidden;position:relative;">
+    <div style="position:absolute;top:-100px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(229,123,60,0.12) 0%,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
     <div style="max-width:1200px;margin:0 auto;position:relative;">
-      <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 0.875rem;border-radius:100px;border:1px solid rgba(229,123,60,0.4);background:rgba(229,123,60,0.08);margin-bottom:1.75rem;">
-        <span style="width:6px;height:6px;border-radius:50%;background:#E57B3C;display:inline-block;"></span>
-        <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#E57B3C;">NZ Hospitality Intelligence</span>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:2.5rem;">
+        <div>
+          <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:900;color:#111;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.875rem;">
+            The NZ hospo<br />inside view.
+          </h1>
+          <p style="font-family:'Inter',sans-serif;font-size:1rem;color:#6B7280;max-width:440px;line-height:1.65;">
+            Marketing tactics, platform economics, real operator thinking. Written for NZ venues — not a marketing brief.
+          </p>
+        </div>
+        <div style="display:flex;gap:2.5rem;flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#111;line-height:1;">{posts.length}</div>
+            <div style="font-size:0.75rem;color:#9CA3AF;font-family:'JetBrains Mono',monospace;margin-top:0.2rem;">articles</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#111;line-height:1;">300+</div>
+            <div style="font-size:0.75rem;color:#9CA3AF;font-family:'JetBrains Mono',monospace;margin-top:0.2rem;">local pages</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#111;line-height:1;">$0</div>
+            <div style="font-size:0.75rem;color:#9CA3AF;font-family:'JetBrains Mono',monospace;margin-top:0.2rem;">paid traffic</div>
+          </div>
+        </div>
       </div>
-      <h1 style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;color:#fff;line-height:1;letter-spacing:-0.03em;margin-bottom:1.25rem;">
-        The blog<br />
-        <span style="background:linear-gradient(90deg,#E57B3C,#F57C6E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">venues trust.</span>
-      </h1>
-      <p style="font-size:1.05rem;color:#9CA3AF;max-width:500px;line-height:1.6;margin-bottom:2rem;">
-        Marketing tactics, platform economics, and real operator thinking. Written for NZ hospo, not a marketing brief.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:2rem;">
-        <div><span style="font-size:2rem;font-weight:900;color:#fff;">{posts.length}</span><span style="font-size:0.85rem;color:#6B7280;margin-left:0.4rem;">articles</span></div>
-        <div><span style="font-size:2rem;font-weight:900;color:#fff;">300+</span><span style="font-size:0.85rem;color:#6B7280;margin-left:0.4rem;">local pages</span></div>
-        <div><span style="font-size:2rem;font-weight:900;color:#fff;">$0</span><span style="font-size:0.85rem;color:#6B7280;margin-left:0.4rem;">paid traffic</span></div>
+
+      <!-- Category filter pills -->
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
+        <button
+          onclick="filterPosts('all')"
+          data-filter="all"
+          style="padding:0.3rem 0.875rem;border-radius:100px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border:1px solid #E57B3C;background:#E57B3C;color:white;cursor:pointer;transition:all 0.15s;"
+          class="filter-btn active-filter">
+          All
+        </button>
+        {uniqueCategories.map(cat => {
+          const meta = CATEGORY_META[cat];
+          if (!meta) return null;
+          return (
+            <button
+              onclick={`filterPosts('${cat}')`}
+              data-filter={cat}
+              style={`padding:0.3rem 0.875rem;border-radius:100px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border:1px solid ${meta.color}50;color:${meta.color};background:${meta.bg};cursor:pointer;transition:all 0.15s;`}
+              class="filter-btn">
+              {meta.label}
+            </button>
+          );
+        })}
       </div>
     </div>
   </section>
 
-  <!-- Category pills -->
-  <div style="background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:0.75rem 1.5rem;overflow-x:auto;">
-    <div style="max-width:1200px;margin:0 auto;display:flex;gap:0.5rem;flex-wrap:nowrap;">
-      {categories.map(cat => {
-        const meta = CATEGORY_META[cat];
-        return meta ? (
-          <span style={`flex-shrink:0;padding:0.3rem 0.875rem;border-radius:100px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:${meta.color};background:${meta.bg};`}>
-            {meta.label}
-          </span>
-        ) : null;
-      })}
-    </div>
-  </div>
+  <!-- Posts grid -->
+  <main style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem 5rem;" id="posts-container">
 
-  <!-- Posts -->
-  <main style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem 5rem;">
-    {featured && (
-      <a href={`/blog/${featured.slug}`} style="display:block;margin-bottom:1.5rem;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#0f0f0f,#1a1208);min-height:320px;padding:2.5rem;text-decoration:none;position:relative;">
-        <div style="position:absolute;top:0;right:0;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(229,123,60,0.2) 0%,transparent 70%);filter:blur(40px);"></div>
-        {(() => {
-          const cat = CATEGORY_META[featured.data.category];
-          return cat ? (
-            <span style={`display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${cat.color};border:1px solid ${cat.color}40;background:${cat.color}12;padding:0.2rem 0.7rem;border-radius:100px;margin-bottom:1rem;`}>
-              {cat.label}
+    <!-- Featured post -->
+    {featured && (() => {
+      const featCat = CATEGORY_META[featured.data.category] ?? CATEGORY_META['venue-marketing'];
+      const featDate = featured.data.date.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
+      return (
+        <a
+          href={`/blog/${featured.slug}`}
+          class="featured-card"
+          data-category={featured.data.category}
+          style={`display:block;margin-bottom:1.5rem;border-radius:20px;overflow:hidden;background:#1a1a1a;padding:2.5rem;text-decoration:none;position:relative;border-top:4px solid ${featCat.color};`}
+        >
+          <div style={`position:absolute;top:0;right:0;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,${featCat.color}22 0%,transparent 70%);filter:blur(60px);pointer-events:none;`}></div>
+          <div style="position:relative;">
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">
+              <span style={`display:inline-flex;align-items:center;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${featCat.color};border:1px solid ${featCat.color}40;background:${featCat.color}15;padding:0.25rem 0.75rem;border-radius:100px;`}>
+                {featCat.label}
+              </span>
+              <span style="font-size:0.78rem;color:#6B7280;">{featDate}</span>
+              {featured.data.readTime && <span style="font-size:0.78rem;color:#6B7280;">{featured.data.readTime} min read</span>}
+            </div>
+            <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.6rem,3.5vw,2.25rem);font-weight:900;color:#fff;line-height:1.2;max-width:640px;margin-bottom:0.875rem;letter-spacing:-0.02em;">
+              {featured.data.title}
+            </h2>
+            {featured.data.description && (
+              <p style="font-size:0.95rem;color:#9CA3AF;max-width:540px;line-height:1.65;margin-bottom:1.25rem;">{featured.data.description}</p>
+            )}
+            <span style={`font-size:0.82rem;font-weight:700;color:${featCat.color};display:inline-flex;align-items:center;gap:0.35rem;`}>
+              Read article →
             </span>
-          ) : null;
-        })()}
-        <h2 style="font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:900;color:#fff;line-height:1.2;max-width:600px;margin-bottom:0.75rem;">
-          {featured.data.title}
-        </h2>
-        {featured.data.description && (
-          <p style="font-size:0.95rem;color:#9CA3AF;max-width:520px;line-height:1.6;margin-bottom:1.25rem;">{featured.data.description}</p>
-        )}
-        <span style="font-size:0.82rem;font-weight:700;color:#E57B3C;">Read article →</span>
-      </a>
+          </div>
+        </a>
+      );
+    })()}
+
+    <!-- Second + Third: side by side -->
+    {(second || third) && (
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:1rem;">
+        {[second, third].filter(Boolean).map(post => post && <PostCard post={post} />)}
+      </div>
     )}
 
+    <!-- Rest: 3-column grid -->
     {rest.length > 0 && (
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1rem;">
         {rest.map(post => <PostCard post={post} />)}
       </div>
     )}
+
+    <!-- Empty state -->
+    <div id="no-results" style="display:none;text-align:center;padding:4rem;color:#9CA3AF;">
+      <p style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;">No articles in this category yet.</p>
+      <p style="font-size:0.875rem;">More coming every weekday.</p>
+    </div>
   </main>
 
   <!-- Footer CTA -->
-  <section style="background:#080808;padding:4rem 1.5rem;text-align:center;position:relative;overflow:hidden;">
+  <section style="background:#1a1a1a;padding:4rem 1.5rem;text-align:center;position:relative;overflow:hidden;border-top:4px solid #E57B3C;">
     <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(229,123,60,0.15) 0%,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
     <div style="position:relative;max-width:540px;margin:0 auto;">
-      <p style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#E57B3C;margin-bottom:1rem;">Commission-free venue discovery</p>
-      <h2 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;">Keep 100% of<br/>your food bill.</h2>
-      <p style="font-size:0.95rem;color:#9CA3AF;margin-bottom:2rem;line-height:1.6;">Set your own deals. Own your customers. No commissions, no forced discounts.</p>
-      <a href="https://localfeed.app/list-venue" style="display:inline-block;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.95rem;padding:0.875rem 2.25rem;border-radius:16px;text-decoration:none;box-shadow:0 16px 40px -12px rgba(229,123,60,0.5);">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#E57B3C;margin-bottom:1rem;">Commission-free venue discovery</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:1rem;letter-spacing:-0.02em;">
+        Keep 100% of your food bill.
+      </h2>
+      <p style="font-size:0.95rem;color:#9CA3AF;margin-bottom:2rem;line-height:1.65;">Set your own deals. Own your customers. No commissions, no forced discounts.</p>
+      <a href="https://localfeed.app/list-venue" style="display:inline-block;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.9rem;padding:0.875rem 2.25rem;border-radius:14px;text-decoration:none;">
         List your venue free
       </a>
     </div>
   </section>
 
   <footer style="background:#0D0D0D;padding:1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.05);">
-    <p style="font-size:0.8rem;color:#6B7280;">
-      <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a> — commission-free venue discovery for NZ. Built in Tauranga.
-      <span style="margin:0 0.5rem;">·</span>
-      <a href="https://localfeed.app/blog" style="color:#6B7280;text-decoration:none;">Main site</a>
+    <p style="font-size:0.8rem;color:#6B7280;font-family:'Inter',sans-serif;">
+      <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a>
+      <span style="margin:0 0.5rem;">—</span>
+      commission-free venue discovery for NZ. Built in Tauranga.
     </p>
   </footer>
+
+  <script>
+    function filterPosts(category: string) {
+      const cards = document.querySelectorAll('[data-category]');
+      const featured = document.querySelector('.featured-card') as HTMLElement | null;
+      const noResults = document.getElementById('no-results');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      // Update button states
+      buttons.forEach(btn => {
+        const filter = (btn as HTMLElement).dataset.filter;
+        if (filter === category) {
+          (btn as HTMLElement).style.background = '#E57B3C';
+          (btn as HTMLElement).style.color = 'white';
+          (btn as HTMLElement).style.borderColor = '#E57B3C';
+        } else {
+          const originalBg = (btn as HTMLElement).style.background;
+          (btn as HTMLElement).style.background = '';
+          (btn as HTMLElement).style.color = '';
+        }
+      });
+
+      let visible = 0;
+      cards.forEach(card => {
+        const el = card as HTMLElement;
+        if (category === 'all' || el.dataset.category === category) {
+          el.style.display = '';
+          visible++;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      if (featured) {
+        if (category === 'all' || featured.dataset.category === category) {
+          featured.style.display = '';
+        } else {
+          featured.style.display = 'none';
+        }
+      }
+
+      if (noResults) {
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+      }
+    }
+
+    // Make function global
+    (window as any).filterPosts = filterPosts;
+  </script>
 </Base>

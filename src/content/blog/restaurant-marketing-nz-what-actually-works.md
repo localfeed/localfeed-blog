@@ -29,6 +29,8 @@ A complete, updated listing with real photos, accurate hours, and current specia
 
 Update your photos monthly. Respond to every review, positive and negative, within 48 hours. Post your specials and events directly in the Google Business posts section. This costs nothing and pays consistently.
 
+> Your Google Business listing is not a directory entry. It is your highest-converting marketing channel. Most NZ venues treat it like a set-and-forget form.
+
 **Instagram with a local audience focus**
 
 Instagram works for NZ venues when the content is honest and local. The venues that build a following in NZ are not the ones with professional food photography. They are the ones that feel like they are actually there, showing the team, the market, the regulars, the bad weather day when there was still good coffee.
@@ -50,6 +52,10 @@ Email marketing platforms like Mailchimp have a free tier that handles up to 500
 [LocalFeed](https://localfeed.app) lists NZ venues and their current specials without taking a cut of the food bill. Locals searching for somewhere to eat find you based on proximity, venue type, and what you are running. No forced discounts. Your price, your terms.
 
 The difference between this and a commission platform is significant at the margin level. A venue doing 200 covers a month through a platform charging 3% commission is giving away roughly $720 per month assuming a $120 average spend. Over a year, that is $8,640.
+
+**STAT:** $8,640/year · What a venue doing 200 covers at $120 average spends on a 3% commission platform. Every year. Without negotiating.
+
+**NOTE:** The marketing stack that works for NZ independents costs nothing but time. Google, Instagram, email, local discovery. Pick two and do them properly before trying all five.
 
 **Local media and community**
 
@@ -87,7 +93,11 @@ That is it. That stack, executed consistently, builds more sustainable local rev
 
 The venues in NZ that consistently have a full dining room are not the ones that do one big marketing push. They are the ones whose name comes up constantly in local conversations, whose Google reviews keep accumulating, whose Instagram feels alive, and who show up in local searches because they are always present.
 
+> Marketing a venue is not a campaign. It is a long game played with consistent small actions. Most operators know this and still want the shortcut.
+
 Marketing a venue is not a campaign. It is a long game played with consistent small actions. The venues that understand this, and that own their customer relationships rather than renting them from a platform, are the ones still here in ten years.
+
+**FACT:** Zero commission on food revenue. $10/week after 20 bookings. LocalFeed puts your venue in front of NZ locals who are actively searching — not scrolling ads.
 
 ---
 

@@ -3,19 +3,35 @@ export interface Props {
   posts: any[];
 }
 const { posts } = Astro.props;
+
+const CATEGORY_META: Record<string, { label: string; color: string }> = {
+  'venue-marketing':    { label: 'Venue Marketing',     color: '#E57B3C' },
+  'platform-comparison':{ label: 'Platform Comparison', color: '#C0392B' },
+  'off-peak-revenue':   { label: 'Off-Peak Revenue',    color: '#27AE60' },
+  'off-peak':           { label: 'Off-Peak Strategy',   color: '#27AE60' },
+  'hospo-operations':   { label: 'Hospo Operations',    color: '#2980B9' },
+  'operator-insights':  { label: 'Operator Insights',   color: '#2980B9' },
+  'local-seo':          { label: 'Local Discovery',     color: '#8E44AD' },
+  'diner-deals':        { label: 'Diner Deals',         color: '#16A085' },
+  'industry-news':      { label: 'Industry News',       color: '#2C3E50' },
+  'localfeed-story':    { label: 'LocalFeed Story',     color: '#E57B3C' },
+};
 ---
 {posts.length > 0 && (
   <div style="max-width:720px;margin:0 auto;">
-    <h2 style="font-size:1.1rem;font-weight:800;color:#0D0D0D;margin-bottom:1.25rem;">Related reading</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;">
-      {posts.map(post => (
-        <a href={`/blog/${post.slug}`} style="display:block;padding:1rem;background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:12px;text-decoration:none;transition:box-shadow 0.2s;">
-          <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#E57B3C;display:block;margin-bottom:0.4rem;">
-            {post.data.category}
-          </span>
-          <span style="font-size:0.85rem;font-weight:700;color:#0D0D0D;line-height:1.4;display:block;">{post.data.title}</span>
-        </a>
-      ))}
+    <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;font-weight:800;color:#111;margin-bottom:1.5rem;">Keep reading</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
+      {posts.map(p => {
+        const cat = CATEGORY_META[p.data.category] ?? CATEGORY_META['venue-marketing'];
+        const relDate = p.data.date.toLocaleDateString('en-NZ', { month: 'short', year: 'numeric' });
+        return (
+          <a href={`/blog/${p.slug}`} class="related-card" style={`border-top-color:${cat.color};`}>
+            <span class="related-cat" style={`color:${cat.color};`}>{cat.label}</span>
+            <span class="related-title">{p.data.title}</span>
+            <span class="related-meta">{p.data.readTime && `${p.data.readTime} min · `}{relDate}</span>
+          </a>
+        );
+      })}
     </div>
   </div>
 )}

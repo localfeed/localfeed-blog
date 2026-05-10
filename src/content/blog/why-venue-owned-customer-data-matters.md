@@ -19,6 +19,8 @@ Their name. Their email address. Their booking history. Their preferences. What 
 
 The platform does not take your customer relationship as payment for the booking service. They take it as the product. You are not their customer. Your diner is.
 
+> You are not the customer. Your diner is. The platform is selling your diner's attention back to you, every booking, at a cut of what they spend.
+
 ## What customer data actually enables
 
 When you own your customer relationship, you can:
@@ -36,6 +38,12 @@ When you own your customer relationship, you can:
 A venue that relies on booking platforms for traffic has built their occupancy on rented land. When the platform changes its algorithm, increases its fees, or decides to promote another venue in your category, your traffic drops and you have no recourse and no alternative.
 
 This happens in NZ. Venues that built their booking volume through a single platform and then faced a fee increase or policy change found themselves unable to transition because the customer relationship did not belong to them. The diners did not know how to find the venue directly. They only knew how to find the platform.
+
+**STAT:** 30 email contacts/month · By year end you have 360 direct contacts. At 20% open-to-visit rate, that is 72 additional covers per month from a channel you own outright.
+
+> You built the relationship across six visits. The platform owns the record of it. That is the dependency most NZ venue owners do not see until they try to leave.
+
+**NOTE:** Collect email addresses at every touchpoint this week. At the table, at payment, through your booking flow. You do not need a loyalty programme. You need a simple reason and a place to put the address.
 
 ## How to start owning your customer relationships today
 
@@ -62,5 +70,7 @@ Pull the last 30 days of your booking data. Look at how many of those diners hav
 If most of it is in the platform, you have identified the most important structural risk in your business. And the fix starts with the next booking.
 
 ---
+
+**FACT:** Zero commission. $10/week after 20 bookings. LocalFeed connects you to diners searching nearby — the booking data and the customer relationship stay yours.
 
 LocalFeed gives NZ venues a discovery presence without giving away customer ownership. Your diners, your data. [List your venue free](https://localfeed.app/list-venue).

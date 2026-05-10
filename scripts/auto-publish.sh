@@ -21,38 +21,22 @@ fi
 
 log "TOPIC: $KEYWORD"
 
-# ── 2. Mark as used ─────────────────────────────────────────────────────────
-# Escape for sed on macOS (BSD sed requires -i '')
+# ── 2. Mark as used (restore on failure) ────────────────────────────────────
 sed -i '' "s|^${KEYWORD}$|# ${KEYWORD}|" "$QUEUE_FILE"
+restore_topic() { sed -i '' "s|^# ${KEYWORD}$|${KEYWORD}|" "$QUEUE_FILE"; }
 
 # ── 3. Generate slug ─────────────────────────────────────────────────────────
 SLUG="$(echo "$KEYWORD" | tr '[:upper:]' '[:lower:]' | sed "s/[^a-z0-9 ]//g" | tr ' ' '-' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')"
 POST_FILE="$BLOG_DIR/${SLUG}.md"
+TMP_FILE="$(mktemp /tmp/localfeed-post-XXXXXX.md)"
 
 log "SLUG: $SLUG"
 log "FILE: $POST_FILE"
 
-# ── 4. Write the markdown file with a placeholder the Claude prompt will fill ─
-cat > "$POST_FILE" <<FRONTMATTER
----
-title: ""
-slug: "${SLUG}"
-description: ""
-date: "${TODAY}"
-author: "Benoit Boussuge"
-category: "venue-marketing"
-tags: []
-status: "published"
-readTime: ""
-targetKeyword: "${KEYWORD}"
----
-
-FRONTMATTER
-
-# ── 5. Generate full post with Claude Code ───────────────────────────────────
+# ── 4. Generate full post with Claude Code ───────────────────────────────────
 log "Calling Claude to write post..."
 
-claude --print --no-update-notification "Write a complete blog post for the LocalFeed blog. Output ONLY valid Markdown — no preamble, no explanation, no code fences. The output will be saved directly to a .md file.
+claude -p "Write a complete blog post for the LocalFeed blog. Output ONLY valid Markdown — no preamble, no explanation, no code fences. The output will be saved directly to a .md file.
 
 KEYWORD: ${KEYWORD}
 SLUG: ${SLUG}
@@ -76,17 +60,53 @@ VOICE — Benoit Boussuge. French-Kiwi. 20 years hospo experience across France,
 
 WORD COUNT: 1000-1400 words
 
-STRUCTURE:
-- Start with a hook that earns the read — not a definition, not a question, not a statistic dump. Something specific that makes the reader feel seen.
-- H2 subheadings every 250-300 words
-- Short direct sentences. Active voice. Contractions always (you're, don't, it's, they're).
-- Mix sentence lengths aggressively — fragments and long sentences, never three the same length in a row.
-- NZ-specific throughout — use real NZ cities (Auckland, Wellington, Tauranga, Hamilton, Christchurch, Dunedin, Queenstown, Napier, Nelson, Rotorua, Whangarei), real NZ venue types (pubs, cafes, bakeries, pie shops, wine bars, breweries, food trucks, takeaways, delis, dessert shops — never default to \"restaurant\" only).
-- Real numbers and specifics, not vague generalisations.
-- End with a subtle CTA to LocalFeed — not salesy, operator-peer tone. One sentence max.
-- Naturally include one internal link to a related topic: use placeholder [related topic](/blog/related-slug) if needed.
+MANDATORY STRUCTURE — every post must contain exactly these elements:
 
-LOCALFEED FACTS — get these exactly right, never guess:
+1. LEAD PARAGRAPH (first paragraph, no heading above it):
+   - 3-4 sentences max. Sets the scene immediately. Specific, not broad.
+   - This gets the drop-cap treatment in the layout so it must earn it.
+
+2. 3-5 H2 SECTIONS — each H2 must be a statement or question, not a label:
+   Good: \"The maths most venue owners never run\"
+   Bad: \"Financial considerations\"
+   Never fewer than 3 H2s.
+
+3. AT LEAST 2 PULL QUOTES using > blockquote syntax.
+   These are the sharpest, most shareable lines in the piece.
+   Place them mid-section, not at the end. Examples of the right register:
+   > Busy doesn't mean profitable. The maths doesn't care how full you looked.
+   > You did the work. They set the terms. That's the deal you signed.
+   > Who owns the customer relationship — you or the platform?
+
+4. AT LEAST 1 STAT: callout. Format exactly:
+   **STAT:** [number or percentage] · [supporting context in one sentence]
+   Example: **STAT:** 25% commission on a \$60 table · That's \$15 gone before staff costs
+   Must be NZ-relevant and specific.
+
+5. AT LEAST 1 NOTE: callout. Format exactly:
+   **NOTE:** [practical takeaway from the section — the thing they should do or know]
+   Example: **NOTE:** Run the maths on your actual margin before signing any platform agreement.
+
+6. AT LEAST 1 FACT: callout. Format exactly (always use locked facts only):
+   **FACT:** [one or two LocalFeed facts, concisely stated]
+   Example: **FACT:** Zero commission. \$10/week after 20 bookings. 75% of the no-show fee goes to you.
+
+7. STRONG FINAL PARAGRAPH (no heading):
+   Lands the point hard. No \"in conclusion\", no summary, no call to reflect.
+   Ends abruptly. The point, stated once, cleanly.
+
+VISUAL RHYTHM RULE:
+No more than 4 consecutive paragraphs without a visual break (pull quote, stat box, note box, or H2).
+
+NZ-SPECIFIC THROUGHOUT:
+Use real NZ cities: Auckland, Wellington, Tauranga, Hamilton, Christchurch, Dunedin, Queenstown, Napier, Nelson, Rotorua, Whangarei, New Plymouth.
+Use real venue types: pubs, cafes, bakeries, pie shops, wine bars, breweries, food trucks, takeaways, delis, dessert shops, bistros. Never default to \"restaurant\" only.
+Real numbers and specifics. Not vague generalisations.
+
+End with one sentence CTA to LocalFeed — operator-peer tone, not salesy.
+Include one natural internal link: [related topic](/blog/related-slug).
+
+LOCALFEED FACTS — locked, never guess or invent:
 - \$10/week after 20 bookings (not per booking, not \$50)
 - \$5 booking fee for special events up to 4 people
 - 75% of no-show fee goes to the venue
@@ -98,20 +118,22 @@ BANNED WORDS — never use:
 literally, actually, basically, maybe, probably, very, really, just, delve, navigate, landscape, tapestry, realm, foster, robust, seamless, leverage, paradigm, holistic, nuanced, pivotal, comprehensive, thrilled, passionate, incredibly, remarkable, game-changer, exciting
 
 BANNED PATTERNS:
-- Em dashes (— or –)
+- Em dashes (-- or longer)
 - Rhetorical questions at end of sections
 - Fragment stacking (three short sentences in a row)
 - AI transitions: \"It's worth noting\", \"In today's world\", \"When it comes to\", \"It's important to\", \"At the end of the day\"
 - Balanced pros/cons structure
-- Starting broad then narrowing — start specific, stay specific
-- Saying LocalFeed is \"the answer\" or \"the solution\"" > "$POST_FILE"
+- Starting broad then narrowing -- start specific, stay specific
+- Saying LocalFeed is \"the answer\" or \"the solution\"" > "$TMP_FILE"
 
-# ── 6. Validate frontmatter was written ──────────────────────────────────────
-if ! grep -q '^---' "$POST_FILE"; then
-  log "ERROR: Claude output missing frontmatter. Post not committed."
-  rm -f "$POST_FILE"
+# ── 5. Validate and move output ──────────────────────────────────────────────
+if ! grep -q '^---' "$TMP_FILE" || [[ ! -s "$TMP_FILE" ]]; then
+  log "ERROR: Claude output missing frontmatter or empty. Post not committed."
+  rm -f "$TMP_FILE"
+  restore_topic
   exit 1
 fi
+mv "$TMP_FILE" "$POST_FILE"
 
 WORD_COUNT="$(wc -w < "$POST_FILE" | tr -d ' ')"
 POST_TITLE="$(grep '^title:' "$POST_FILE" | head -1 | sed 's/title: *//' | tr -d '"')"

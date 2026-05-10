@@ -27,6 +27,10 @@ On a table of four spending $120 on food: that is $1.80 to $6.00 gone before you
 
 Multiply that by 52. That is $1,872 to $6,240 per year, from a single table average. Scale that to a venue doing 80 platform covers a week and you are looking at $7,488 to $24,960 annually going to a platform that never cooked a single dish.
 
+**STAT:** $24,960/year · What a venue doing 80 covers a week hands to a 5% commission platform. That is a commercial refrigeration upgrade, a full kitchen hire, or six months of marketing spend.
+
+> The platform never cooked a dish. They never turned a table. They took a percentage of everything you produced and called it a service fee.
+
 **Model 2: Forced discount**
 
 No upfront commission, but you must discount. A platform sends you diners at 50% off at specific times. You carry the full discount. You keep your margin on beverages, but food margin takes a direct hit.
@@ -47,6 +51,10 @@ When you hand margin to a booking platform, you are paying for:
 The diner books through them. The data sits in their system. If you leave the platform, that customer history is gone. You cannot market to them. You cannot build a loyalty programme. You cannot even send them a reminder about a new menu.
 
 You pay commission or carry the discount, and you own nothing on the other side.
+
+> You built the reputation. You trained the team. You developed the menu. The platform gets a cut of all of it because they processed the reservation.
+
+**NOTE:** Before signing with any booking platform, ask who owns the customer data after the meal. If the answer is the platform, you are building their business, not yours.
 
 ## What commission-free looks like in practice
 
@@ -77,5 +85,7 @@ Now ask whether that traffic was worth that cost, or whether you could have brou
 In most cases, the honest answer is yes, you could. The barrier is not the economics. It is the habit of relying on someone else to fill your tables.
 
 ---
+
+**FACT:** Zero commission on food revenue. $10/week after 20 bookings. 75% of any no-show fee goes directly to your venue.
 
 LocalFeed was built to break that habit. Commission-free discovery for NZ venues, owned by the venues that use it. [List your venue free here](https://localfeed.app/list-venue).
