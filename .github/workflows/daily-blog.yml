@@ -35,17 +35,20 @@ jobs:
         run: |
           KEYWORD="${{ github.event.inputs.keyword }}"
           if [ -z "$KEYWORD" ]; then
-            QUEUE="${{ secrets.BLOG_TOPIC_QUEUE }}"
-            KEYWORD=$(echo "$QUEUE" | head -n1 | tr -d '\r')
+            KEYWORD=$(grep -m1 '^[^#]' scripts/topic-queue.txt | tr -d '\r')
           fi
           if [ -z "$KEYWORD" ]; then
             echo "No keyword found in queue or input. Skipping."
+            echo "keyword=" >> $GITHUB_OUTPUT
             exit 0
           fi
           echo "keyword=$KEYWORD" >> $GITHUB_OUTPUT
           echo "Using keyword: $KEYWORD"
+          # Mark keyword as used in the queue file
+          sed -i "s|^${KEYWORD}$|# ${KEYWORD}|" scripts/topic-queue.txt
 
       - name: Generate blog post via Claude
+        if: steps.keyword.outputs.keyword != ''
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -69,6 +72,19 @@ jobs:
               }]
             }")
 
+          # Check for API error before parsing
+          ERROR=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          if data.get('type') == 'error':
+              print(data.get('error', {}).get('message', 'Unknown API error'))
+          " 2>/dev/null)
+
+          if [ -n "$ERROR" ]; then
+            echo "API error: $ERROR"
+            exit 1
+          fi
+
           CONTENT=$(echo "$RESPONSE" | python3 -c "
           import sys, json
           data = json.load(sys.stdin)
@@ -80,9 +96,10 @@ jobs:
           echo "Generated: src/content/blog/${SLUG}.md"
 
       - name: Commit and push
+        if: steps.keyword.outputs.keyword != ''
         run: |
           git config user.name "LocalFeed Blog Bot"
           git config user.email "blog-bot@localfeed.app"
-          git add src/content/blog/
+          git add src/content/blog/ scripts/topic-queue.txt
           git diff --staged --quiet || git commit -m "content: auto-publish $(date +%Y-%m-%d) — ${{ steps.keyword.outputs.keyword }}"
           git push origin main
