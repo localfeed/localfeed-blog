@@ -548,7 +548,7 @@ const VENUE_TYPES = [
       'Pastry that is properly flaky, buttery, and baked fresh that morning is the minimum, not an achievement',
       'Fillings made from real cuts of slow-cooked meat rather than reformed protein are worth the premium',
       'Gluten-free and vegetarian pies that are genuinely good — not afterthoughts — show a kitchen that respects all its customers',
-      'Local pie shops using regional produce in their fillings create something genuinely distinctive to ${city.name}',
+      'Local pie shops using regional produce in their fillings create something genuinely distinctive to their city',
       'A mince and cheese with depth of flavour and the right sauce-to-pastry ratio is harder to find than it should be',
       'Pie shops that win local baking awards and enter national competitions tend to back it up with quality every day',
     ],
