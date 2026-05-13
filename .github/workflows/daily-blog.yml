@@ -1,8 +1,6 @@
-name: Daily Blog Post
+name: Generate Blog Post
 
 on:
-  schedule:
-    - cron: '0 19 * * 1-5'  # 7am NZT weekdays (19:00 UTC Sunday-Thursday)
   workflow_dispatch:
     inputs:
       keyword:
