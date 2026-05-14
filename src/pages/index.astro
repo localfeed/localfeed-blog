@@ -1,34 +1,46 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import PostCard from '../components/PostCard.astro';
 
 const allPosts = await getCollection('blog', ({ data }) => data.status === 'published');
-const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const sorted = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const CATEGORY_META: Record<string, { label: string; color: string; bg: string }> = {
-  'venue-marketing':    { label: 'Venue Marketing',     color: '#E57B3C', bg: 'rgba(229,123,60,0.1)' },
-  'platform-comparison':{ label: 'Platform Comparison', color: '#C0392B', bg: 'rgba(192,57,43,0.1)'  },
-  'off-peak-revenue':   { label: 'Off-Peak Revenue',    color: '#27AE60', bg: 'rgba(39,174,96,0.1)'  },
-  'off-peak':           { label: 'Off-Peak Strategy',   color: '#27AE60', bg: 'rgba(39,174,96,0.1)'  },
-  'hospo-operations':   { label: 'Hospo Operations',    color: '#2980B9', bg: 'rgba(41,128,185,0.1)' },
-  'operator-insights':  { label: 'Operator Insights',   color: '#2980B9', bg: 'rgba(41,128,185,0.1)' },
-  'local-seo':          { label: 'Local Discovery',     color: '#8E44AD', bg: 'rgba(142,68,173,0.1)' },
-  'diner-deals':        { label: 'Diner Deals',         color: '#16A085', bg: 'rgba(22,160,133,0.1)' },
-  'industry-news':      { label: 'Industry News',       color: '#2C3E50', bg: 'rgba(44,62,80,0.1)'   },
-  'localfeed-story':    { label: 'LocalFeed Story',     color: '#E57B3C', bg: 'rgba(229,123,60,0.1)' },
+const VENUE_CATS    = ['venue-marketing', 'hospo-operations', 'off-peak-revenue', 'local-seo'];
+const DINER_CATS    = ['diner-deals'];
+const INDUSTRY_CATS = ['industry-news', 'platform-comparison'];
+const STORY_CATS    = ['localfeed-story'];
+
+const [featured] = sorted;
+const venuePosts    = sorted.filter(p => VENUE_CATS.includes(p.data.category)).slice(0, 7);
+const dinerPosts    = sorted.filter(p => DINER_CATS.includes(p.data.category)).slice(0, 7);
+const industryPosts = sorted.filter(p => INDUSTRY_CATS.includes(p.data.category)).slice(0, 6);
+const storyPosts    = sorted.filter(p => STORY_CATS.includes(p.data.category)).slice(0, 4);
+
+const venueTotal    = sorted.filter(p => VENUE_CATS.includes(p.data.category)).length;
+const dinerTotal    = sorted.filter(p => DINER_CATS.includes(p.data.category)).length;
+const industryTotal = sorted.filter(p => INDUSTRY_CATS.includes(p.data.category)).length;
+const storyTotal    = sorted.filter(p => STORY_CATS.includes(p.data.category)).length;
+
+const CAT: Record<string, { label: string; color: string }> = {
+  'venue-marketing':    { label: 'Venue Marketing',     color: '#E57B3C' },
+  'platform-comparison':{ label: 'Platform Comparison', color: '#C0392B' },
+  'off-peak-revenue':   { label: 'Off-Peak Revenue',    color: '#27AE60' },
+  'hospo-operations':   { label: 'Hospo Operations',    color: '#2980B9' },
+  'local-seo':          { label: 'Local SEO',           color: '#8E44AD' },
+  'diner-deals':        { label: 'Diner Deals',         color: '#16A085' },
+  'industry-news':      { label: 'Industry News',       color: '#555F6D' },
+  'localfeed-story':    { label: 'LocalFeed Story',     color: '#E57B3C' },
 };
 
-const uniqueCategories = [...new Set(posts.map(p => p.data.category))];
-const [featured, second, third, ...rest] = posts;
+function cat(c: string) { return CAT[c] ?? { label: c, color: '#E57B3C' }; }
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "LocalFeed Blog",
   "url": "https://blog.localfeed.app",
-  "description": "NZ hospitality insights, venue marketing, and platform analysis.",
-  "publisher": { "@type": "Organization", "name": "LocalFeed", "url": "https://localfeed.app" }
+  "description": "NZ hospitality insights for venue owners and diners.",
+  "publisher": { "@type": "Organization", "name": "LocalFeed", "url": "https://localfeed.co.nz" }
 };
 ---
 <Base
@@ -36,204 +48,940 @@ const schema = {
   description="Real insights for NZ restaurant, cafe, and bar owners. Venue marketing, platform comparisons, off-peak strategy, and honest operator thinking."
   schema={schema}
 >
-  <!-- Sticky nav -->
-  <nav style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.07);padding:0.875rem 0;">
-    <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;">
-      <div style="display:flex;align-items:center;gap:0.6rem;">
-        <img src="https://localfeed.app/logo.png" alt="LocalFeed" style="width:28px;height:28px;object-fit:contain;" onerror="this.style.display='none'" />
-        <div>
-          <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:800;color:#0D0D0D;line-height:1;">LocalFeed Blog</div>
-          <div style="font-size:0.65rem;color:#9CA3AF;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;">The NZ hospitality insider</div>
-        </div>
-      </div>
-      <a href="https://localfeed.app/list-venue" style="font-size:0.8rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#E57B3C,#D4632C);padding:0.45rem 1.1rem;border-radius:10px;text-decoration:none;">
-        List your venue free
-      </a>
-    </div>
-  </nav>
 
-  <!-- Masthead -->
-  <section style="background:#F9F7F4;border-bottom:1px solid rgba(0,0,0,0.06);padding:4rem 1.5rem 3rem;overflow:hidden;position:relative;">
-    <div style="position:absolute;top:-100px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(229,123,60,0.12) 0%,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
-    <div style="max-width:1200px;margin:0 auto;position:relative;">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:2.5rem;">
-        <div>
-          <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:900;color:#111;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.875rem;">
-            The NZ hospo<br />inside view.
-          </h1>
-          <p style="font-family:'Inter',sans-serif;font-size:1rem;color:#6B7280;max-width:440px;line-height:1.65;">
-            Marketing tactics, platform economics, real operator thinking. Written for NZ venues — not a marketing brief.
-          </p>
-        </div>
-        <div style="display:flex;gap:2.5rem;flex-wrap:wrap;">
-          <div style="text-align:center;">
-            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#111;line-height:1;">{posts.length}</div>
-            <div style="font-size:0.75rem;color:#9CA3AF;font-family:'JetBrains Mono',monospace;margin-top:0.2rem;">articles</div>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#111;line-height:1;">300+</div>
-            <div style="font-size:0.75rem;color:#9CA3AF;font-family:'JetBrains Mono',monospace;margin-top:0.2rem;">local pages</div>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#111;line-height:1;">$0</div>
-            <div style="font-size:0.75rem;color:#9CA3AF;font-family:'JetBrains Mono',monospace;margin-top:0.2rem;">paid traffic</div>
-          </div>
-        </div>
-      </div>
+<style>
+  :root {
+    --cream:   #FAF8F5;
+    --white:   #FFFFFF;
+    --ink:     #111111;
+    --muted:   #6B7280;
+    --border:  #E4DFD8;
+    --accent:  #E57B3C;
+    --radius:  14px;
+  }
 
-      <!-- Category filter pills -->
-      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
-        <button
-          onclick="filterPosts('all')"
-          data-filter="all"
-          style="padding:0.3rem 0.875rem;border-radius:100px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border:1px solid #E57B3C;background:#E57B3C;color:white;cursor:pointer;transition:all 0.15s;"
-          class="filter-btn active-filter">
-          All
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-serif; }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: rgba(250,248,245,0.96);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo-sub {
+    display: block;
+    font-size: 0.58rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1;
+  }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1;
+  }
+  .nav-item {
+    position: relative;
+  }
+  .nav-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .nav-trigger:hover { background: rgba(0,0,0,0.05); }
+  .nav-trigger svg { opacity: 0.5; transition: transform 0.2s; }
+  .nav-item:hover .nav-trigger svg { transform: rotate(180deg); }
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    padding: 0.5rem;
+    min-width: 230px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  .nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.875rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.12s;
+  }
+  .dropdown-item:hover { background: var(--cream); }
+  .dropdown-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dropdown-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .dropdown-desc {
+    font-size: 0.72rem;
+    color: var(--muted);
+    display: block;
+    margin-top: 0.1rem;
+  }
+  .nav-spacer { flex: 1; }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1rem;
+    background: var(--accent);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+  }
+  .nav-cta:hover { opacity: 0.88; }
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    background: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--cream);
+    z-index: 300;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-section { margin-bottom: 2rem; }
+  .mobile-section-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .mobile-link {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(229,123,60,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 700px;
+    margin: 0 auto 1.25rem;
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 400px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+  }
+  .hero-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .scroll-section-link {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.15s;
+  }
+  .scroll-section-link:hover { color: var(--accent); }
+  .scroll-section-link::before {
+    content: '↓';
+    font-size: 0.7rem;
+  }
+
+  /* ── FEATURED ── */
+  .featured-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem;
+  }
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .featured-card {
+    display: block;
+    text-decoration: none;
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .featured-card:hover { transform: translateY(-2px); }
+  .featured-glow {
+    position: absolute;
+    top: -80px;
+    right: -60px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(229,123,60,0.2) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    border: 1px solid rgba(229,123,60,0.3);
+    background: rgba(229,123,60,0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+  .featured-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.2;
+    max-width: 580px;
+    margin-bottom: 0.875rem;
+    letter-spacing: -0.02em;
+  }
+  .featured-desc {
+    font-size: 0.92rem;
+    color: #9CA3AF;
+    max-width: 480px;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+  .featured-read {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* ── MENU SECTION ── */
+  .menu-section {
+    border-top: 1px solid var(--border);
+    padding: 4rem 1.5rem;
+  }
+  .menu-section:nth-child(even) { background: var(--white); }
+  .menu-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .menu-header { position: sticky; top: 80px; }
+  .menu-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .menu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+  .menu-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+  .menu-seeall {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid rgba(229,123,60,0.3);
+    padding: 0.4rem 0.875rem;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .menu-seeall:hover { background: rgba(229,123,60,0.07); }
+  .article-list { width: 100%; }
+  .article-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .article-item:last-child { border-bottom: none; }
+  .article-item:hover .article-title { color: var(--accent); }
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .article-cat-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .article-cat-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.35;
+    transition: color 0.15s;
+  }
+  .article-time {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    align-self: center;
+  }
+  .article-arrow {
+    font-size: 0.75rem;
+    color: var(--muted);
+    align-self: center;
+    transition: transform 0.15s, color 0.15s;
+  }
+  .article-item:hover .article-arrow { transform: translateX(3px); color: var(--accent); }
+
+  /* ── FOOTER CTA ── */
+  .footer-cta {
+    background: var(--ink);
+    padding: 5rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(229,123,60,0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .footer-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .footer-sub {
+    font-size: 0.92rem;
+    color: #9CA3AF;
+    max-width: 380px;
+    margin: 0 auto 2rem;
+    line-height: 1.65;
+  }
+  .footer-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.875rem 2.25rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .footer-btn:hover { opacity: 0.88; }
+  .site-footer {
+    background: #0D0D0D;
+    padding: 1.25rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.78rem;
+    color: #6B7280;
+  }
+  .site-footer a { color: var(--accent); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .menu-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    .menu-header { position: static; }
+    .nav-menu { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+  @media (max-width: 560px) {
+    .hero { padding: 3.5rem 1.25rem 3rem; }
+    .featured-card { padding: 1.75rem; }
+    .menu-section { padding: 3rem 1.25rem; }
+    .article-title { font-size: 0.95rem; }
+  }
+</style>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div>
+        <span class="nav-logo-text">LocalFeed</span>
+        <span class="nav-logo-sub">The NZ hospo inside view</span>
+      </div>
+    </a>
+
+    <div class="nav-menu">
+      <!-- For Venues -->
+      <div class="nav-item">
+        <button class="nav-trigger">
+          For Venues
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
-        {uniqueCategories.map(cat => {
-          const meta = CATEGORY_META[cat];
-          if (!meta) return null;
-          return (
-            <button
-              onclick={`filterPosts('${cat}')`}
-              data-filter={cat}
-              style={`padding:0.3rem 0.875rem;border-radius:100px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border:1px solid ${meta.color}50;color:${meta.color};background:${meta.bg};cursor:pointer;transition:all 0.15s;`}
-              class="filter-btn">
-              {meta.label}
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  </section>
-
-  <!-- Posts grid -->
-  <main style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem 5rem;" id="posts-container">
-
-    <!-- Featured post -->
-    {featured && (() => {
-      const featCat = CATEGORY_META[featured.data.category] ?? CATEGORY_META['venue-marketing'];
-      const featDate = featured.data.date.toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' });
-      return (
-        <a
-          href={`/blog/${featured.slug}`}
-          class="featured-card"
-          data-category={featured.data.category}
-          style={`display:block;margin-bottom:1.5rem;border-radius:20px;overflow:hidden;background:#1a1a1a;padding:2.5rem;text-decoration:none;position:relative;border-top:4px solid ${featCat.color};`}
-        >
-          <div style={`position:absolute;top:0;right:0;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,${featCat.color}22 0%,transparent 70%);filter:blur(60px);pointer-events:none;`}></div>
-          <div style="position:relative;">
-            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;">
-              <span style={`display:inline-flex;align-items:center;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${featCat.color};border:1px solid ${featCat.color}40;background:${featCat.color}15;padding:0.25rem 0.75rem;border-radius:100px;`}>
-                {featCat.label}
-              </span>
-              <span style="font-size:0.78rem;color:#6B7280;">{featDate}</span>
-              {featured.data.readTime && <span style="font-size:0.78rem;color:#6B7280;">{featured.data.readTime} min read</span>}
+        <div class="dropdown">
+          <a href="/blog/nz-venue-marketing-no-budget" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#E57B3C"></span>
+            <div>
+              <div class="dropdown-label">Venue Marketing</div>
+              <span class="dropdown-desc">Get seen without a big budget</span>
             </div>
-            <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.6rem,3.5vw,2.25rem);font-weight:900;color:#fff;line-height:1.2;max-width:640px;margin-bottom:0.875rem;letter-spacing:-0.02em;">
-              {featured.data.title}
-            </h2>
-            {featured.data.description && (
-              <p style="font-size:0.95rem;color:#9CA3AF;max-width:540px;line-height:1.65;margin-bottom:1.25rem;">{featured.data.description}</p>
-            )}
-            <span style={`font-size:0.82rem;font-weight:700;color:${featCat.color};display:inline-flex;align-items:center;gap:0.35rem;`}>
-              Read article →
-            </span>
-          </div>
-        </a>
-      );
-    })()}
-
-    <!-- Second + Third: side by side -->
-    {(second || third) && (
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:1rem;">
-        {[second, third].filter(Boolean).map(post => post && <PostCard post={post} />)}
+          </a>
+          <a href="/blog/how-to-run-a-successful-cafe-nz" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#2980B9"></span>
+            <div>
+              <div class="dropdown-label">Hospo Operations</div>
+              <span class="dropdown-desc">Run a tighter, smarter venue</span>
+            </div>
+          </a>
+          <a href="/blog/off-peak-dining-strategy-nz-restaurants" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#27AE60"></span>
+            <div>
+              <div class="dropdown-label">Off-Peak Revenue</div>
+              <span class="dropdown-desc">Fill quiet tables profitably</span>
+            </div>
+          </a>
+          <a href="/blog/local-seo-restaurant-nz" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#8E44AD"></span>
+            <div>
+              <div class="dropdown-label">Local SEO</div>
+              <span class="dropdown-desc">Rank higher on Google Maps</span>
+            </div>
+          </a>
+        </div>
       </div>
-    )}
 
-    <!-- Rest: 3-column grid -->
-    {rest.length > 0 && (
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1rem;">
-        {rest.map(post => <PostCard post={post} />)}
+      <!-- For Diners -->
+      <div class="nav-item">
+        <button class="nav-trigger">
+          For Diners
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/blog/best-cafes-auckland-deals" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#16A085"></span>
+            <div>
+              <div class="dropdown-label">Auckland</div>
+              <span class="dropdown-desc">Best cafes, pubs & wine bars</span>
+            </div>
+          </a>
+          <a href="/blog/best-cafes-wellington-deals" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#16A085"></span>
+            <div>
+              <div class="dropdown-label">Wellington</div>
+              <span class="dropdown-desc">Delis, breweries & brunch</span>
+            </div>
+          </a>
+          <a href="/blog/best-cafes-christchurch-deals" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#16A085"></span>
+            <div>
+              <div class="dropdown-label">Christchurch</div>
+              <span class="dropdown-desc">Bakeries & Canterbury pies</span>
+            </div>
+          </a>
+          <a href="/blog/best-cafes-tauranga-deals" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#16A085"></span>
+            <div>
+              <div class="dropdown-label">Tauranga & Bay of Plenty</div>
+              <span class="dropdown-desc">Food trucks & cafe deals</span>
+            </div>
+          </a>
+          <a href="/blog/best-brunch-spots-hamilton-nz" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#16A085"></span>
+            <div>
+              <div class="dropdown-label">Hamilton & Waikato</div>
+              <span class="dropdown-desc">Brunch, pies & local finds</span>
+            </div>
+          </a>
+        </div>
       </div>
-    )}
 
-    <!-- Empty state -->
-    <div id="no-results" style="display:none;text-align:center;padding:4rem;color:#9CA3AF;">
-      <p style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;">No articles in this category yet.</p>
-      <p style="font-size:0.875rem;">More coming every weekday.</p>
+      <!-- Industry -->
+      <div class="nav-item">
+        <button class="nav-trigger">
+          Industry
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/blog/nz-hospitality-trends-2026" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#555F6D"></span>
+            <div>
+              <div class="dropdown-label">Industry News</div>
+              <span class="dropdown-desc">Trends, data & NZ hospo outlook</span>
+            </div>
+          </a>
+          <a href="/blog/localfeed-vs-first-table-nz" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#C0392B"></span>
+            <div>
+              <div class="dropdown-label">Platform Comparisons</div>
+              <span class="dropdown-desc">What booking platforms actually cost</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Our Story -->
+      <div class="nav-item">
+        <button class="nav-trigger">
+          Our Story
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="dropdown">
+          <a href="/blog/build-in-public-localfeed-story" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#E57B3C"></span>
+            <div>
+              <div class="dropdown-label">Build in Public</div>
+              <span class="dropdown-desc">How LocalFeed came to be</span>
+            </div>
+          </a>
+          <a href="/blog/why-localfeed-nz" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#E57B3C"></span>
+            <div>
+              <div class="dropdown-label">Why LocalFeed</div>
+              <span class="dropdown-desc">The case for commission-free</span>
+            </div>
+          </a>
+          <a href="/blog/how-localfeed-works-for-nz-venues" class="dropdown-item">
+            <span class="dropdown-dot" style="background:#E57B3C"></span>
+            <div>
+              <div class="dropdown-label">How It Works</div>
+              <span class="dropdown-desc">For venue owners, explained simply</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
-  </main>
 
-  <!-- Footer CTA -->
-  <section style="background:#1a1a1a;padding:4rem 1.5rem;text-align:center;position:relative;overflow:hidden;border-top:4px solid #E57B3C;">
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(229,123,60,0.15) 0%,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
-    <div style="position:relative;max-width:540px;margin:0 auto;">
-      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#E57B3C;margin-bottom:1rem;">Commission-free venue discovery</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:1rem;letter-spacing:-0.02em;">
-        Keep 100% of your food bill.
-      </h2>
-      <p style="font-size:0.95rem;color:#9CA3AF;margin-bottom:2rem;line-height:1.65;">Set your own deals. Own your customers. No commissions, no forced discounts.</p>
-      <a href="https://localfeed.app/list-venue" style="display:inline-block;background:linear-gradient(135deg,#E57B3C,#D4632C);color:#fff;font-weight:700;font-size:0.9rem;padding:0.875rem 2.25rem;border-radius:14px;text-decoration:none;">
-        List your venue free
+    <div class="nav-spacer"></div>
+    <a href="https://localfeed.co.nz/list-venue" class="nav-cta">List your venue free</a>
+    <button class="nav-hamburger" onclick="document.getElementById('mobile-menu').classList.add('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <div style="padding-top:2.5rem;">
+    <div class="mobile-section">
+      <div class="mobile-section-label">For Venues</div>
+      <a href="/blog/nz-venue-marketing-no-budget" class="mobile-link">Venue Marketing</a>
+      <a href="/blog/how-to-run-a-successful-cafe-nz" class="mobile-link">Hospo Operations</a>
+      <a href="/blog/off-peak-dining-strategy-nz-restaurants" class="mobile-link">Off-Peak Revenue</a>
+      <a href="/blog/local-seo-restaurant-nz" class="mobile-link">Local SEO</a>
+    </div>
+    <div class="mobile-section">
+      <div class="mobile-section-label">For Diners</div>
+      <a href="/blog/best-cafes-auckland-deals" class="mobile-link">Auckland</a>
+      <a href="/blog/best-cafes-wellington-deals" class="mobile-link">Wellington</a>
+      <a href="/blog/best-cafes-christchurch-deals" class="mobile-link">Christchurch</a>
+      <a href="/blog/best-cafes-tauranga-deals" class="mobile-link">Tauranga</a>
+      <a href="/blog/best-brunch-spots-hamilton-nz" class="mobile-link">Hamilton</a>
+    </div>
+    <div class="mobile-section">
+      <div class="mobile-section-label">Industry</div>
+      <a href="/blog/nz-hospitality-trends-2026" class="mobile-link">Industry News</a>
+      <a href="/blog/localfeed-vs-first-table-nz" class="mobile-link">Platform Comparisons</a>
+    </div>
+    <div class="mobile-section">
+      <div class="mobile-section-label">Our Story</div>
+      <a href="/blog/build-in-public-localfeed-story" class="mobile-link">Build in Public</a>
+      <a href="/blog/why-localfeed-nz" class="mobile-link">Why LocalFeed</a>
+    </div>
+    <div style="margin-top:1.5rem;">
+      <a href="https://localfeed.co.nz/list-venue" class="nav-cta" style="width:100%;justify-content:center;">List your venue free</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="hero-eyebrow">The NZ Hospitality Inside View</p>
+  <h1 class="hero-title">
+    Written for people<br/>who <em>run</em> the room.
+  </h1>
+  <p class="hero-sub">Marketing, operations, and honest platform thinking — for NZ venues and the diners who love them.</p>
+  <div class="hero-scroll">
+    <a href="#for-venues" class="scroll-section-link">For Venues</a>
+    <a href="#for-diners" class="scroll-section-link">For Diners</a>
+    <a href="#industry" class="scroll-section-link">Industry</a>
+    <a href="#our-story" class="scroll-section-link">Our Story</a>
+  </div>
+</section>
+
+<!-- ── FEATURED ── -->
+{featured && (() => {
+  const fc = cat(featured.data.category);
+  return (
+    <div class="featured-wrap">
+      <p class="section-eyebrow">Today's Selection</p>
+      <a href={`/blog/${featured.slug}`} class="featured-card">
+        <div class="featured-glow"></div>
+        <div style="position:relative;">
+          <div class="featured-badge" style={`color:${fc.color};border-color:${fc.color}40;background:${fc.color}15;`}>
+            {fc.label}
+          </div>
+          <h2 class="featured-title">{featured.data.title}</h2>
+          {featured.data.description && (
+            <p class="featured-desc">{featured.data.description}</p>
+          )}
+          <span class="featured-read">Read article — {featured.data.readTime ?? '5 min'} →</span>
+        </div>
       </a>
     </div>
-  </section>
+  );
+})()}
 
-  <footer style="background:#0D0D0D;padding:1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.05);">
-    <p style="font-size:0.8rem;color:#6B7280;font-family:'Inter',sans-serif;">
-      <a href="https://localfeed.app" style="color:#E57B3C;text-decoration:none;">LocalFeed</a>
-      <span style="margin:0 0.5rem;">—</span>
-      commission-free venue discovery for NZ. Built in Tauranga.
-    </p>
-  </footer>
+<!-- ── FOR VENUES ── -->
+<section class="menu-section" id="for-venues">
+  <div class="menu-inner">
+    <div class="menu-header">
+      <p class="menu-tag">For Venue Owners</p>
+      <h2 class="menu-title">Marketing, Operations & Strategy</h2>
+      <p class="menu-desc">Practical hospo thinking for NZ operators who want to grow without giving their margin to a platform.</p>
+      <a href="/blog/how-to-run-a-successful-cafe-nz" class="menu-seeall">Browse all {venueTotal} articles →</a>
+    </div>
+    <div class="article-list">
+      {venuePosts.map(p => {
+        const c = cat(p.data.category);
+        return (
+          <a href={`/blog/${p.slug}`} class="article-item">
+            <div>
+              <div class="article-meta">
+                <span class="article-cat-dot" style={`background:${c.color};`}></span>
+                <span class="article-cat-label">{c.label}</span>
+              </div>
+              <div class="article-title">{p.data.title}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <span class="article-time">{p.data.readTime ?? '5 min'}</span>
+              <span class="article-arrow">→</span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
-  <script>
-    function filterPosts(category: string) {
-      const cards = document.querySelectorAll('[data-category]');
-      const featured = document.querySelector('.featured-card') as HTMLElement | null;
-      const noResults = document.getElementById('no-results');
-      const buttons = document.querySelectorAll('.filter-btn');
+<!-- ── FOR DINERS ── -->
+<section class="menu-section" id="for-diners">
+  <div class="menu-inner">
+    <div class="menu-header">
+      <p class="menu-tag">For Diners</p>
+      <h2 class="menu-title">Guides, Deals & Local Finds</h2>
+      <p class="menu-desc">Where to eat well across NZ — the best cafes, bakeries, pubs, and hidden gems by city.</p>
+      <a href="/blog/best-cafes-auckland-deals" class="menu-seeall">Browse all {dinerTotal} guides →</a>
+    </div>
+    <div class="article-list">
+      {dinerPosts.map(p => {
+        const c = cat(p.data.category);
+        return (
+          <a href={`/blog/${p.slug}`} class="article-item">
+            <div>
+              <div class="article-meta">
+                <span class="article-cat-dot" style={`background:${c.color};`}></span>
+                <span class="article-cat-label">{c.label}</span>
+              </div>
+              <div class="article-title">{p.data.title}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <span class="article-time">{p.data.readTime ?? '5 min'}</span>
+              <span class="article-arrow">→</span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
-      // Update button states
-      buttons.forEach(btn => {
-        const filter = (btn as HTMLElement).dataset.filter;
-        if (filter === category) {
-          (btn as HTMLElement).style.background = '#E57B3C';
-          (btn as HTMLElement).style.color = 'white';
-          (btn as HTMLElement).style.borderColor = '#E57B3C';
-        } else {
-          const originalBg = (btn as HTMLElement).style.background;
-          (btn as HTMLElement).style.background = '';
-          (btn as HTMLElement).style.color = '';
-        }
-      });
+<!-- ── INDUSTRY ── -->
+<section class="menu-section" id="industry">
+  <div class="menu-inner">
+    <div class="menu-header">
+      <p class="menu-tag">Industry Intelligence</p>
+      <h2 class="menu-title">News, Data & Platform Analysis</h2>
+      <p class="menu-desc">What's happening in NZ hospo — and what booking platforms are actually costing your business.</p>
+      <a href="/blog/nz-hospitality-trends-2026" class="menu-seeall">Browse all {industryTotal} articles →</a>
+    </div>
+    <div class="article-list">
+      {industryPosts.map(p => {
+        const c = cat(p.data.category);
+        return (
+          <a href={`/blog/${p.slug}`} class="article-item">
+            <div>
+              <div class="article-meta">
+                <span class="article-cat-dot" style={`background:${c.color};`}></span>
+                <span class="article-cat-label">{c.label}</span>
+              </div>
+              <div class="article-title">{p.data.title}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <span class="article-time">{p.data.readTime ?? '5 min'}</span>
+              <span class="article-arrow">→</span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
-      let visible = 0;
-      cards.forEach(card => {
-        const el = card as HTMLElement;
-        if (category === 'all' || el.dataset.category === category) {
-          el.style.display = '';
-          visible++;
-        } else {
-          el.style.display = 'none';
-        }
-      });
+<!-- ── OUR STORY ── -->
+<section class="menu-section" id="our-story">
+  <div class="menu-inner">
+    <div class="menu-header">
+      <p class="menu-tag">The LocalFeed Story</p>
+      <h2 class="menu-title">Building Commission-Free</h2>
+      <p class="menu-desc">Why we built LocalFeed, how it works, and what commission-free actually means for NZ hospo.</p>
+      <a href="/blog/build-in-public-localfeed-story" class="menu-seeall">Read all {storyTotal} chapters →</a>
+    </div>
+    <div class="article-list">
+      {storyPosts.map(p => {
+        const c = cat(p.data.category);
+        return (
+          <a href={`/blog/${p.slug}`} class="article-item">
+            <div>
+              <div class="article-meta">
+                <span class="article-cat-dot" style={`background:${c.color};`}></span>
+                <span class="article-cat-label">{c.label}</span>
+              </div>
+              <div class="article-title">{p.data.title}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <span class="article-time">{p.data.readTime ?? '5 min'}</span>
+              <span class="article-arrow">→</span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
-      if (featured) {
-        if (category === 'all' || featured.dataset.category === category) {
-          featured.style.display = '';
-        } else {
-          featured.style.display = 'none';
-        }
-      }
+<!-- ── FOOTER CTA ── -->
+<section class="footer-cta">
+  <div class="footer-glow"></div>
+  <div style="position:relative;max-width:500px;margin:0 auto;">
+    <p class="footer-eyebrow">Commission-free venue discovery</p>
+    <h2 class="footer-title">Keep 100% of your food bill.</h2>
+    <p class="footer-sub">Set your own deals. Own your customer data. No commissions, no forced discounts.</p>
+    <a href="https://localfeed.co.nz/list-venue" class="footer-btn">List your venue free</a>
+  </div>
+</section>
 
-      if (noResults) {
-        noResults.style.display = visible === 0 ? 'block' : 'none';
-      }
-    }
+<footer class="site-footer">
+  <a href="https://localfeed.co.nz">LocalFeed</a> — commission-free venue discovery for NZ. Built in Tauranga.
+</footer>
 
-    // Make function global
-    (window as any).filterPosts = filterPosts;
-  </script>
+<script>
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-link, .mobile-menu .nav-cta').forEach(el => {
+    el.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.remove('open');
+    });
+  });
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = (el as HTMLAnchorElement).getAttribute('href')?.slice(1);
+      if (id) document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
 </Base>
