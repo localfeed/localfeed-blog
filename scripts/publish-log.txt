@@ -14,3 +14,25 @@
 [2026-05-11 10:49:54] GENERATED: "First Table Alternative NZ: Keep Your Revenue, Fill Your Tables" (1245 words)
 [2026-05-11 10:49:54] PUSHED: first-table-alternative-nz.md → main
 [2026-05-11 10:49:54] DONE. Queue: 104 topics remaining.
+[2026-05-11 18:00:00] Queue check: 104 topics remaining.
+[2026-05-11 18:00:00] Queue check: 104 topics remaining.
+[2026-05-11 18:00:00] Queue healthy. No refill needed.
+[2026-05-11 18:00:00] Queue healthy. No refill needed.
+[2026-05-11 19:00:00] TOPIC: commission free restaurant platform nz
+[2026-05-11 19:00:00] TOPIC: commission free restaurant platform nz
+[2026-05-11 19:00:00] SLUG: commission-free-restaurant-platform-nz
+[2026-05-11 19:00:00] SLUG: commission-free-restaurant-platform-nz
+[2026-05-11 19:00:00] FILE: /Users/benoitrebecca/localfeed-blog/src/content/blog/commission-free-restaurant-platform-nz.md
+[2026-05-11 19:00:00] FILE: /Users/benoitrebecca/localfeed-blog/src/content/blog/commission-free-restaurant-platform-nz.md
+[2026-05-11 19:00:00] Calling Claude to write post...
+[2026-05-11 19:00:00] Calling Claude to write post...
+scripts/auto-publish.sh: line 39: claude: command not found
+[2026-05-12 19:00:00] TOPIC: restaurant platform comparison nz 2026
+[2026-05-12 19:00:00] TOPIC: restaurant platform comparison nz 2026
+mktemp: mkstemp failed on /tmp/localfeed-post-XXXXXX.md: File exists
+[2026-05-13 19:00:00] TOPIC: why nz venues are leaving booking platforms
+[2026-05-13 19:00:00] TOPIC: why nz venues are leaving booking platforms
+mktemp: mkstemp failed on /tmp/localfeed-post-XXXXXX.md: File exists
+[2026-05-14 19:00:00] TOPIC: nz venue marketing no budget
+[2026-05-14 19:00:00] TOPIC: nz venue marketing no budget
+mktemp: mkstemp failed on /tmp/localfeed-post-XXXXXX.md: File exists
