@@ -2,7 +2,7 @@
 title: "Google Business Profile for NZ Restaurants: The Complete Setup and Optimisation Guide"
 slug: "google-business-profile-nz-restaurant"
 description: "Your Google Business Profile is the highest-return marketing asset your NZ restaurant has. Most are half-built and never touched. Here is how to set it up properly and keep it working."
-date: "2026-05-14"
+date: "2026-01-27"
 author: "Benoit Boussuge"
 category: "local-seo"
 tags: ["google business profile nz restaurant", "google my business nz restaurant", "restaurant google listing nz", "google maps nz hospo"]

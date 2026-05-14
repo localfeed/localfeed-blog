@@ -2,7 +2,7 @@
 title: "How to Find the Best Restaurant Deals in NZ Without Always Going to the Same Place"
 slug: "diner-guide-nz-restaurant-deals"
 description: "NZ has more good restaurant offers than most diners realise. Here is how to find genuine value dining without just defaulting to the same discount apps in 2026."
-date: "2026-05-13"
+date: "2026-01-28"
 author: "Benoit Boussuge"
 category: "diner-guides"
 tags: ["restaurant deals nz", "best dining deals nz", "nz restaurant value", "where to eat nz deals"]

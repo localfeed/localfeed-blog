@@ -2,7 +2,7 @@
 title: "Palmerston North Restaurant Marketing Guide 2026: How Manawatū Venues Fill Tables"
 slug: "palmerston-north-restaurant-marketing"
 description: "Palmerston North's hospo scene is growing. Here is how café and restaurant owners in the Manawatū region market effectively and build a loyal customer base in 2026."
-date: "2026-05-13"
+date: "2026-05-06"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["palmerston north restaurant marketing", "manawatu hospo 2026", "palmerston north cafe", "fill tables palmerston north"]

@@ -2,7 +2,7 @@
 title: "How to Retain Hospo Staff in NZ: What Actually Keeps Good People"
 slug: "how-to-retain-hospo-staff-nz"
 description: "NZ hospitality turnover costs more than most venue owners calculate. Here is a practical guide to what keeps good hospo staff in your venue longer and why it is not just about wages."
-date: "2026-05-14"
+date: "2026-01-19"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["how to retain hospo staff nz", "nz hospitality staff retention", "keep hospo workers nz", "restaurant staff retention nz"]

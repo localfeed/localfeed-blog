@@ -2,7 +2,7 @@
 title: "Surplus Food Deals at NZ Cafes: How to Find Them and Why They Work"
 slug: "surplus-food-deals-nz-cafes"
 description: "Surplus food deals at NZ cafes are good for diners, good for venues, and good for waste reduction. Here's how they work and where to find them."
-date: "2026-05-14"
+date: "2026-04-30"
 author: "Benoit Boussuge"
 category: "off-peak-revenue"
 tags: ["surplus food deals nz cafes", "nz cafe deals", "food surplus nz", "cafe off peak revenue"]

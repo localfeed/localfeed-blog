@@ -2,7 +2,7 @@
 title: "NZ Venue Marketing With No Budget: What Works When You Have Time but Not Money"
 slug: "nz-venue-marketing-no-budget"
 description: "Most NZ hospo marketing budgets are close to zero. Here is what actually works when you have more time than money and why the free channels are often more effective than paid ones."
-date: "2026-05-14"
+date: "2026-02-04"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["nz venue marketing no budget", "free marketing restaurant nz", "hospo marketing nz small budget", "market cafe nz free"]

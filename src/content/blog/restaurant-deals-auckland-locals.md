@@ -2,7 +2,7 @@
 title: "Restaurant Deals Auckland Locals Know About (and Tourists Miss)"
 slug: "restaurant-deals-auckland-locals"
 description: "The best restaurant deals in Auckland aren't on the billboards. Locals know where to find genuine value — here's what they actually book and why."
-date: "2026-05-14"
+date: "2026-03-24"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["restaurant deals auckland locals", "auckland dining deals", "auckland restaurants", "auckland food"]

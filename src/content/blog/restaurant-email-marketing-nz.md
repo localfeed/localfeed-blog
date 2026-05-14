@@ -2,7 +2,7 @@
 title: "Restaurant Email Marketing in NZ: Build the List That Fills Your Tables"
 slug: "restaurant-email-marketing-nz"
 description: "Email marketing is the highest-ROI channel for NZ restaurants, and almost nobody does it well. Here is how to build a list, what to send, and how to turn it into bookings."
-date: "2026-05-13"
+date: "2025-12-18"
 author: "Benoit Boussuge"
 category: "digital-marketing"
 tags: ["restaurant email marketing nz", "hospo email list nz", "restaurant customer list nz", "nz restaurant direct marketing"]

@@ -2,7 +2,7 @@
 title: "How to Build a Loyal Local Customer Base for Your NZ Venue"
 slug: "how-to-build-a-loyal-local-customer-base-nz"
 description: "Building a loyal local customer base is the most valuable thing a NZ hospitality venue can do. Here's how to do it — specifically, without the generic advice."
-date: "2026-05-14"
+date: "2026-03-31"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["how to build a loyal local customer base nz", "customer loyalty nz restaurant", "nz venue marketing", "hospo operations nz"]

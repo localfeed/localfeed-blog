@@ -2,7 +2,7 @@
 title: "Father's Day Restaurant Marketing NZ: How to Fill Every Table"
 slug: "fathers-day-restaurant-marketing-nz"
 description: "Father's Day is one of the most reliable dining occasions in the NZ calendar. Here's how to market your restaurant for Father's Day and maximise the opportunity."
-date: "2026-05-14"
+date: "2026-03-25"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["fathers day restaurant marketing nz", "nz fathers day dining", "restaurant fathers day nz", "fathers day venue marketing"]

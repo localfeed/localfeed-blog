@@ -2,7 +2,7 @@
 title: "Christmas Dining NZ Restaurant Strategy: How to Win the Most Competitive Month of the Year"
 slug: "christmas-dining-nz-restaurant-strategy"
 description: "December is the most competitive dining month in New Zealand. A clear Christmas strategy — function menus, deposit systems, early booking incentives — separates the venues that win from the ones that muddle through."
-date: "2026-05-14"
+date: "2026-04-03"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["christmas dining nz restaurant strategy", "nz restaurant christmas", "december dining nz", "christmas venue marketing nz"]

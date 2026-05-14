@@ -2,7 +2,7 @@
 title: "NZ Venue Events Marketing Guide: How to Fill Every Event You Run"
 slug: "nz-venue-events-marketing-guide"
 description: "Running a great event at your NZ venue means nothing if nobody comes. Here's the complete marketing guide for filling your events — from announcement to sold out."
-date: "2026-05-14"
+date: "2026-04-07"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["nz venue events marketing guide", "restaurant event marketing nz", "venue promotion nz", "hospo marketing nz"]

@@ -2,7 +2,7 @@
 title: "NZ Restaurant Supplier Relationships: How to Get Better Produce, Better Pricing, and Better Service"
 slug: "nz-restaurant-supplier-relationships"
 description: "Supplier relationships determine your food quality and your food cost. Here is how NZ restaurant operators build supplier partnerships that create genuine competitive advantage."
-date: "2026-05-13"
+date: "2026-05-04"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant suppliers nz", "nz restaurant food suppliers", "hospo supplier nz", "restaurant produce nz"]

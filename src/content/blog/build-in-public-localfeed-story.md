@@ -2,7 +2,7 @@
 title: "Building LocalFeed in Public: What I've Learned Building a NZ Hospo Platform"
 slug: "build-in-public-localfeed-story"
 description: "I'm building LocalFeed in public — sharing what's working, what's not, and what 20 years of NZ hospitality experience taught me about what the industry actually needs."
-date: "2026-05-14"
+date: "2025-12-17"
 author: "Benoit Boussuge"
 category: "localfeed-story"
 tags: ["build in public localfeed story", "localfeed nz", "building localfeed", "nz hospo startup"]

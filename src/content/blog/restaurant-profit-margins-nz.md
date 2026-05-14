@@ -2,7 +2,7 @@
 title: "Restaurant Profit Margins in NZ: What the Numbers Actually Look Like in 2026"
 slug: "restaurant-profit-margins-nz"
 description: "NZ restaurant profit margins are under more pressure than ever. Here is what the actual numbers look like across venue types in 2026 and where the levers are."
-date: "2026-05-13"
+date: "2026-02-26"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["restaurant profit margins nz", "hospo margins nz", "restaurant finance nz", "nz restaurant profitability"]

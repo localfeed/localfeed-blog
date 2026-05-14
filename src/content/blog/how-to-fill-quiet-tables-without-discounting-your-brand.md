@@ -2,7 +2,7 @@
 title: "How to Fill Quiet Tables Without Training Customers to Wait for a Discount"
 slug: "how-to-fill-quiet-tables-without-discounting-your-brand"
 description: "Every time you discount to fill a slow session, you teach your customers to wait. Here is how NZ venues fill off-peak seats without conditioning diners to expect a lower price."
-date: "2026-05-03"
+date: "2026-02-18"
 author: "Benoit Boussuge"
 category: "off-peak"
 tags: [off peak dining NZ, restaurant marketing NZ, fill quiet tables, hospitality off peak strategy, venue marketing NZ]

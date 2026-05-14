@@ -2,7 +2,7 @@
 title: "How to Fill Quiet Weekday Tables in NZ Without Discounting Your Brand"
 slug: "how-to-fill-quiet-weekday-tables-nz"
 description: "Dead Tuesdays and slow Wednesdays cost NZ restaurants real money. Here are the strategies that actually work to fill midweek tables without killing your margin."
-date: "2026-05-13"
+date: "2026-01-22"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["fill quiet tables nz", "midweek restaurant nz", "restaurant promotions nz", "hospo revenue nz"]

@@ -2,7 +2,7 @@
 title: "Winter Strategy for NZ Hospitality: How to Survive and Profit in the Slow Season"
 slug: "winter-strategy-nz-hospitality"
 description: "Winter is the make-or-break period for many NZ hospitality venues. A clear winter strategy — not just survival, but genuine profitability — is what separates the venues that last."
-date: "2026-05-14"
+date: "2026-02-20"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["winter strategy nz hospitality", "nz restaurant winter", "off peak revenue nz", "winter hospo nz"]

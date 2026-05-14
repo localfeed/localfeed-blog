@@ -2,7 +2,7 @@
 title: "Why NZ Venue Owners Are Losing Their Most Valuable Asset and Do Not Know It"
 slug: "why-venue-owned-customer-data-matters"
 description: "Every time a NZ restaurant or cafe lets a booking platform own the reservation, they give away the most valuable asset in hospitality: the customer relationship. Here is why this matters more than most owners realise."
-date: "2026-05-07"
+date: "2026-04-27"
 author: "Benoit Boussuge"
 category: "operator-insights"
 tags: [venue customer data NZ, restaurant CRM NZ, hospitality customer relationships, commission free NZ, venue loyalty NZ]

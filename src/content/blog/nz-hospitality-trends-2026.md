@@ -2,7 +2,7 @@
 title: "NZ Hospitality Trends 2026: What's Actually Changing and What's Just Noise"
 slug: "nz-hospitality-trends-2026"
 description: "The NZ hospitality trends for 2026 separate into two categories: things that genuinely change how venues operate, and things that sound important but don't. Here's which is which."
-date: "2026-05-14"
+date: "2026-02-06"
 author: "Benoit Boussuge"
 category: "industry-news"
 tags: ["nz hospitality trends 2026", "new zealand hospitality", "nz restaurant industry", "hospo trends"]

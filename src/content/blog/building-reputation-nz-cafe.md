@@ -2,7 +2,7 @@
 title: "Building Your Reputation as a NZ Cafe: What Actually Works"
 slug: "building-reputation-nz-cafe"
 description: "A NZ cafe's reputation is its most valuable asset. Here's how to build it deliberately — not through marketing spend, but through consistent choices that customers remember."
-date: "2026-05-14"
+date: "2026-01-21"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["building reputation nz cafe", "nz cafe reputation", "cafe marketing nz", "nz cafe brand building"]

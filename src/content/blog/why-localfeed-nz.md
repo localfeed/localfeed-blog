@@ -2,7 +2,7 @@
 title: "Why LocalFeed NZ: The Argument for Commission-Free Hospitality Booking"
 slug: "why-localfeed-nz"
 description: "LocalFeed NZ exists because the dominant booking platforms extract value from NZ venues without returning proportionate benefit. Here's the argument for a different model."
-date: "2026-05-14"
+date: "2026-02-12"
 author: "Benoit Boussuge"
 category: "localfeed-story"
 tags: ["why localfeed nz", "localfeed nz", "commission free booking nz", "nz hospitality platform"]

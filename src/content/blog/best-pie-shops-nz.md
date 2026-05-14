@@ -2,7 +2,7 @@
 title: "Best Pie Shops in NZ: The Kiwi Pie and Where to Find the Real Ones"
 slug: "best-pie-shops-nz"
 description: "The NZ pie is a cultural institution and the gap between a great one and a mediocre one is enormous. Here is what makes a great NZ pie shop, which regions have the strongest culture, and how to find the versions worth seeking out."
-date: "2026-05-14"
+date: "2026-04-15"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best pie shops nz", "nz pie shops", "kiwi pie nz", "best pies new zealand"]

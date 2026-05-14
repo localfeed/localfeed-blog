@@ -2,7 +2,7 @@
 title: "Reservation Systems for NZ Small Venues: What You Actually Need"
 slug: "reservation-system-nz-small-venue"
 description: "A NZ small venue does not need a $200/month reservation system. Here is what different venue sizes actually need, what the options cost, and when a simple free tool outperforms an enterprise booking platform."
-date: "2026-05-14"
+date: "2026-03-16"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["reservation system nz small venue", "booking system nz cafe", "restaurant reservation nz", "nz hospo booking tool"]

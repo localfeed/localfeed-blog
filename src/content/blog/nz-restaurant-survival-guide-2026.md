@@ -2,7 +2,7 @@
 title: "NZ Restaurant Survival Guide 2026: What It Takes to Stay Open"
 slug: "nz-restaurant-survival-guide-2026"
 description: "NZ hospitality closures are at a ten-year high. Here is the honest guide to what it takes to keep a venue open and profitable in 2026's conditions."
-date: "2026-05-13"
+date: "2026-03-26"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["nz restaurant survival 2026", "hospo business nz", "restaurant closing nz", "restaurant profitability nz"]

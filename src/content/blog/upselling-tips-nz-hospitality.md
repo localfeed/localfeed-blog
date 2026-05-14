@@ -2,7 +2,7 @@
 title: "Upselling in NZ Hospitality: What Works and What Makes Customers Not Come Back"
 slug: "upselling-tips-nz-hospitality"
 description: "Upselling in NZ hospo improves average spend and margin when it is done well. Done poorly, it annoys customers and damages the service experience. Here is the difference."
-date: "2026-05-14"
+date: "2026-02-11"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["upselling tips nz hospitality", "nz restaurant upselling", "increase average spend nz hospo", "upselling techniques nz cafe"]

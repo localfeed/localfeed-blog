@@ -2,7 +2,7 @@
 title: "Hidden Fees Restaurant Platforms Charge NZ Venues"
 slug: "hidden-fees-restaurant-platforms-nz"
 description: "The invoice from your booking platform shows a subscription and maybe a per-booking charge. Here is everything that does not appear on that invoice and how to calculate the real cost."
-date: "2026-05-14"
+date: "2025-12-05"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["hidden fees restaurant platforms nz", "booking platform costs nz", "hospo platform fees nz", "restaurant margin nz"]

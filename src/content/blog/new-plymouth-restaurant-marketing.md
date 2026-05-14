@@ -2,7 +2,7 @@
 title: "New Plymouth Restaurant Marketing Guide 2026: How Taranaki Venue Owners Fill Tables"
 slug: "new-plymouth-restaurant-marketing"
 description: "New Plymouth's hospo scene has evolved significantly. Here is how Taranaki restaurant and café owners build a customer base and fill tables in 2026."
-date: "2026-05-13"
+date: "2026-05-12"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["new plymouth restaurant marketing", "taranaki hospo 2026", "new plymouth cafe", "fill tables new plymouth"]

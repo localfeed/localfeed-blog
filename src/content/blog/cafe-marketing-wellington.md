@@ -2,7 +2,7 @@
 title: "Cafe Marketing Wellington: Standing Out in NZ's Most Coffee-Obsessed City"
 slug: "cafe-marketing-wellington"
 description: "Wellington has the highest cafe density of any NZ city and the most coffee-literate diners in the country. Here is how Wellington cafes can market effectively without racing to the bottom on price."
-date: "2026-05-14"
+date: "2026-03-10"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["cafe marketing wellington", "wellington cafe promotion", "marketing wellington hospo", "wellington cafe business"]

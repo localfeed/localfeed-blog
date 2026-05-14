@@ -2,7 +2,7 @@
 title: "Seasonal Menu Strategy for NZ Restaurants: How to Change with the Seasons and Win"
 slug: "seasonal-menu-strategy-nz-restaurant"
 description: "Seasonal menus are not just an ethical choice — they're a competitive strategy. Here's how NZ restaurants should approach seasonal menu changes to improve quality and margins."
-date: "2026-05-14"
+date: "2026-04-09"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["seasonal menu strategy nz restaurant", "nz restaurant seasonal menu", "menu strategy nz", "hospo operations nz"]

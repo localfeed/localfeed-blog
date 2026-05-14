@@ -2,7 +2,7 @@
 title: "NZ Food Scene Rotorua: Beyond the Hangi, What's Actually Good"
 slug: "nz-food-scene-rotorua"
 description: "Rotorua's food scene is more than thermal steam and tourist traps. The NZ food scene in Rotorua has genuine independent venues worth knowing — here's the honest guide."
-date: "2026-05-14"
+date: "2026-04-17"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["nz food scene rotorua", "rotorua restaurants", "rotorua dining", "bay of plenty food"]

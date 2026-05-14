@@ -2,7 +2,7 @@
 title: "Nelson Restaurant Marketing Guide 2026: Filling Tables in the Sunshine Capital"
 slug: "nelson-restaurant-marketing-guide"
 description: "Nelson's food and arts scene punches above its weight. Here is how restaurant and café owners in the Top of the South market effectively in 2026."
-date: "2026-05-13"
+date: "2026-05-06"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["nelson restaurant marketing", "nelson hospo 2026", "nelson cafe nz", "fill tables nelson"]

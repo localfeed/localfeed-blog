@@ -2,7 +2,7 @@
 title: "Best Early Dining Auckland: How to Eat Well Before 7pm"
 slug: "best-early-dining-auckland"
 description: "Early dining in Auckland isn't a consolation prize. The best early dining Auckland has to offer puts you in a good restaurant at its best — before the rush, before the noise, at smarter prices."
-date: "2026-05-14"
+date: "2026-03-09"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best early dining auckland", "auckland early bird dining", "auckland restaurants", "auckland dining"]

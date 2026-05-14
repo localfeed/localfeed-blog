@@ -2,7 +2,7 @@
 title: "Hospitality Recovery NZ Post-COVID: What Actually Happened and Where We Are Now"
 slug: "hospitality-recovery-nz-post-covid"
 description: "The hospitality recovery NZ experienced post-COVID was uneven, incomplete, and in some ways permanent in its changes. Here's an honest account of what shifted and what didn't."
-date: "2026-05-14"
+date: "2026-05-01"
 author: "Benoit Boussuge"
 category: "industry-news"
 tags: ["hospitality recovery nz", "nz hospitality post covid", "nz restaurant industry", "hospo recovery"]

@@ -2,7 +2,7 @@
 title: "Brewery Tasting Events NZ: The Format That Keeps Selling Out"
 slug: "brewery-tasting-events-nz"
 description: "Brewery tasting events are one of the fastest-growing dining formats in NZ. Here's why they work, how to find them, and what makes a great one."
-date: "2026-05-14"
+date: "2026-01-14"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["brewery tasting events nz", "nz craft beer events", "brewery dining nz", "nz beer food pairing"]

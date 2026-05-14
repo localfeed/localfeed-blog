@@ -2,7 +2,7 @@
 title: "NZ Food Scene Napier: Art Deco Architecture and Genuinely Good Wine Country Dining"
 slug: "nz-food-scene-napier"
 description: "Napier sits at the centre of New Zealand's most important wine region. The NZ food scene in Napier reflects that — better than most visitors expect, grounded in Hawke's Bay produce."
-date: "2026-05-14"
+date: "2026-01-15"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["nz food scene napier", "napier restaurants", "hawkes bay dining", "napier food"]

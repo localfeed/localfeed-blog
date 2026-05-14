@@ -2,7 +2,7 @@
 title: "Restaurant Technology in NZ 2026: What Tools Are Worth Using and What Is Noise"
 slug: "nz-restaurant-technology-2026"
 description: "NZ restaurants are being sold technology constantly. Here is an honest assessment of what hospo tech actually improves operations and what creates complexity without return."
-date: "2026-05-13"
+date: "2025-12-25"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant technology nz", "hospo tech nz 2026", "restaurant software nz", "pos system nz restaurant"]

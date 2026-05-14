@@ -2,7 +2,7 @@
 title: "Tauranga Cafe Marketing: How Local Cafes Fill Seats in the Bay of Plenty"
 slug: "tauranga-cafe-marketing-guide"
 description: "A practical guide for Tauranga and Bay of Plenty cafe owners on local marketing, off-peak demand, and building a regular local customer base without relying on discount platforms."
-date: "2026-05-09"
+date: "2026-02-02"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: [Tauranga cafe marketing, Bay of Plenty hospitality, cafe marketing NZ, Tauranga restaurants, Mount Maunganui cafe]

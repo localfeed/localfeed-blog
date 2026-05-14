@@ -2,7 +2,7 @@
 title: "Restaurant Groups Bookings in NZ: How to Build the Revenue Stream Most Venues Ignore"
 slug: "restaurant-groups-bookings-nz"
 description: "Groups bookings fill tables any day of the week at full margin. Here is how NZ restaurants build a consistent groups business that does not depend on the weekend."
-date: "2026-05-13"
+date: "2026-05-11"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant groups bookings nz", "private dining nz", "restaurant corporate bookings nz", "hospo groups nz"]

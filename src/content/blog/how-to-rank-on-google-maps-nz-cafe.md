@@ -2,7 +2,7 @@
 title: "How to Rank on Google Maps for Your NZ Cafe"
 slug: "how-to-rank-on-google-maps-nz-cafe"
 description: "Ranking on Google Maps for cafe searches in your NZ city is a discipline, not a mystery. Here is the practical breakdown of what moves your ranking and how to execute it without paying for ads."
-date: "2026-05-14"
+date: "2026-01-23"
 author: "Benoit Boussuge"
 category: "local-seo"
 tags: ["how to rank on google maps nz cafe", "google maps cafe nz", "cafe local search nz", "rank google nz cafe"]

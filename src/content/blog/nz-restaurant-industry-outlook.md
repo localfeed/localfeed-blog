@@ -2,7 +2,7 @@
 title: "NZ Restaurant Industry Outlook: The Honest Picture for 2026"
 slug: "nz-restaurant-industry-outlook"
 description: "The NZ restaurant industry outlook for 2026 is complicated. Some venues are thriving, many are under real pressure. Here's an honest read of what's actually happening."
-date: "2026-05-14"
+date: "2026-04-01"
 author: "Benoit Boussuge"
 category: "industry-news"
 tags: ["nz restaurant industry outlook", "new zealand hospitality", "nz restaurant trends", "hospo business"]

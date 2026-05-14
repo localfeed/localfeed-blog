@@ -2,7 +2,7 @@
 title: "Corporate Lunch Business for NZ Restaurants: How to Build the Weekday Revenue Most Venues Ignore"
 slug: "restaurant-corporate-lunch-nz"
 description: "Corporate lunches fill weekday tables at full margin. Here is how NZ restaurants build a deliberate corporate lunch business in 2026 rather than waiting for bookings to arrive."
-date: "2026-05-13"
+date: "2026-01-26"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["corporate lunch nz restaurant", "business lunch nz", "restaurant weekday trade nz", "hospo corporate nz"]

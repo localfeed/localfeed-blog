@@ -2,7 +2,7 @@
 title: "GST and Tax for NZ Restaurants: What Hospitality Operators Need to Know in 2026"
 slug: "nz-restaurant-gst-tax-guide"
 description: "GST compliance and tax for NZ restaurants is not complicated but it is unforgiving. Here is what hospo operators need to know to stay compliant and manage their tax position correctly."
-date: "2026-05-13"
+date: "2025-12-15"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["nz restaurant gst", "restaurant tax nz", "hospo compliance nz", "restaurant accounting nz"]

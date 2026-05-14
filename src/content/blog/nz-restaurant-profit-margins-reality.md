@@ -2,7 +2,7 @@
 title: "NZ Restaurant Profit Margins: The Reality Behind the Numbers"
 slug: "nz-restaurant-profit-margins-reality"
 description: "NZ restaurant profit margins are thinner than most people outside the industry realise. Here is an honest breakdown of what different venue types actually make and the levers that change it."
-date: "2026-05-14"
+date: "2026-03-13"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["nz restaurant profit margins", "restaurant profit margin nz", "hospo profit nz", "cafe profit margin nz"]

@@ -2,7 +2,7 @@
 title: "NZ Food Scene Hamilton: The Waikato Food Culture Deserves More Credit"
 slug: "nz-food-scene-hamilton"
 description: "Hamilton gets dismissed as a food city more than it should be. The NZ food scene in Hamilton has real depth — here's what it actually looks like."
-date: "2026-05-14"
+date: "2026-03-27"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["nz food scene hamilton", "hamilton restaurants", "waikato dining", "hamilton food"]

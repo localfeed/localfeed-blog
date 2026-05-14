@@ -2,7 +2,7 @@
 title: "Food Offers Wellington NZ: Where to Find Value Without the Catch"
 slug: "food-offers-wellington-nz"
 description: "Wellington has the most sophisticated dining scene in New Zealand. The food offers in Wellington NZ worth taking are the ones venues chose to run — here's where to find them."
-date: "2026-05-14"
+date: "2026-04-24"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["food offers wellington nz", "wellington dining deals", "wellington restaurants", "wellington food"]

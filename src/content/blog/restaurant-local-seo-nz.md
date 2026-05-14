@@ -2,7 +2,7 @@
 title: "Restaurant Local SEO in NZ: How to Rank on Google and Fill More Tables in 2026"
 slug: "restaurant-local-seo-nz"
 description: "Most NZ restaurants are invisible in local Google search. Here is the exact approach to local SEO that drives new bookings without paid advertising."
-date: "2026-05-13"
+date: "2026-02-17"
 author: "Benoit Boussuge"
 category: "digital-marketing"
 tags: ["restaurant local seo nz", "restaurant google ranking nz", "local search nz restaurant", "restaurant marketing nz 2026"]

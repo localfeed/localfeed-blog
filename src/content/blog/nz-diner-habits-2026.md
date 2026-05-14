@@ -2,7 +2,7 @@
 title: "NZ Diner Habits 2026: What Has Actually Changed and What Hasn't"
 slug: "nz-diner-habits-2026"
 description: "NZ diner habits in 2026 have shifted in measurable ways. Understanding what's actually changed — and what the food media says has changed but hasn't — matters for venues and diners."
-date: "2026-05-14"
+date: "2025-12-12"
 author: "Benoit Boussuge"
 category: "industry-news"
 tags: ["nz diner habits 2026", "nz dining trends", "new zealand restaurant habits", "nz food culture 2026"]

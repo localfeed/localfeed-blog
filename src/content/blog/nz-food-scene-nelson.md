@@ -2,7 +2,7 @@
 title: "NZ Food Scene Nelson: Why This Is New Zealand's Best-Kept Dining Secret"
 slug: "nz-food-scene-nelson"
 description: "Nelson has sunshine, hops, seafood, and a food culture that punches well above its weight. The NZ food scene in Nelson is one of the country's best and least talked-about."
-date: "2026-05-14"
+date: "2026-05-12"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["nz food scene nelson", "nelson restaurants", "nelson dining", "top of south island food"]

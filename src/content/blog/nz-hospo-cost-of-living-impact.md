@@ -2,7 +2,7 @@
 title: "How Cost of Living Is Reshaping NZ Restaurant Dining in 2026"
 slug: "nz-hospo-cost-of-living-impact"
 description: "NZ's cost of living crisis has changed how and when people eat out. Here is what the shift looks like for restaurant operators and how to adapt your offering."
-date: "2026-05-13"
+date: "2026-04-28"
 author: "Benoit Boussuge"
 category: "industry"
 tags: ["nz cost of living restaurant", "hospo consumer spending nz", "nz dining trends 2026", "restaurant consumer behaviour nz"]

@@ -2,7 +2,7 @@
 title: "Restaurant Cash Flow in NZ: Why Good Venues Fail and How to Fix It"
 slug: "restaurant-cash-flow-nz"
 description: "Cash flow kills more good NZ restaurants than bad food. Here is how to understand, model, and manage cash flow in a hospitality business in 2026."
-date: "2026-05-13"
+date: "2026-01-29"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["restaurant cash flow nz", "hospo finance nz", "restaurant business nz", "nz restaurant management"]

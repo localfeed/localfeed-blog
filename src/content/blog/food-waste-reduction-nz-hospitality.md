@@ -2,7 +2,7 @@
 title: "Food Waste Reduction in NZ Hospitality: The Practical Guide"
 slug: "food-waste-reduction-nz-hospitality"
 description: "Food waste in NZ hospitality is a financial and environmental problem with practical solutions. Here's what actually works and why most venues haven't done it yet."
-date: "2026-05-14"
+date: "2026-04-17"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["food waste reduction nz hospitality", "nz restaurant food waste", "hospo sustainability nz", "nz cafe waste"]

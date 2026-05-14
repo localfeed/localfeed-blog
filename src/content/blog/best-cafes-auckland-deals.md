@@ -2,7 +2,7 @@
 title: "Best Cafe Deals in Auckland: Where to Find Offers Worth Your Time"
 slug: "best-cafes-auckland-deals"
 description: "Auckland has hundreds of cafes. The ones worth going to on a deal are the ones where the deal is designed by the venue, not imposed by a platform. Here is how to find them."
-date: "2026-05-14"
+date: "2026-01-15"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best cafes auckland deals", "cafe deals auckland", "auckland cafe offers", "where to eat auckland deal"]

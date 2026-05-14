@@ -2,7 +2,7 @@
 title: "Best Restaurant Booking Apps in NZ for 2026: What Venue Owners Actually Need"
 slug: "best-restaurant-booking-app-nz-2026"
 description: "Looking for the best restaurant booking app in NZ? Here is how the main options compare on cost, data ownership, and what they actually build for your venue."
-date: "2026-05-13"
+date: "2026-02-27"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["best restaurant booking app nz", "restaurant booking nz 2026", "hospo platforms nz", "booking software nz"]

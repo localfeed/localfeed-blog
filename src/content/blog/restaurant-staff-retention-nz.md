@@ -2,7 +2,7 @@
 title: "Restaurant Staff Retention in NZ: How to Keep Good Hospitality Staff in 2026"
 slug: "restaurant-staff-retention-nz"
 description: "NZ hospitality has a staff retention crisis. Replacing a good team member costs $3,000–$8,000 when everything is accounted for. Here is how the best venues keep people."
-date: "2026-05-13"
+date: "2026-01-05"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["restaurant staff retention nz", "hospo staff nz", "restaurant recruitment nz", "nz hospitality staff 2026"]

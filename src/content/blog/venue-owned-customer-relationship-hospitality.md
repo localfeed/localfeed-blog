@@ -2,7 +2,7 @@
 title: "Venue-Owned Customer Relationships in Hospitality: Why It Matters More Than Ever"
 slug: "venue-owned-customer-relationship-hospitality"
 description: "The shift toward venue-owned customer relationships in NZ hospitality is one of the most important changes happening in the industry. Here's why it matters and how to build it."
-date: "2026-05-14"
+date: "2026-04-21"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["venue owned customer relationship hospitality", "customer loyalty hospitality", "nz restaurant marketing", "hospo operations"]

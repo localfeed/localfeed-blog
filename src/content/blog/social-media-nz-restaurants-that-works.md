@@ -2,7 +2,7 @@
 title: "Social Media for NZ Restaurants That Actually Works"
 slug: "social-media-nz-restaurants-that-works"
 description: "Most NZ restaurant social media is a time sink that produces no covers. Here is what actually works in 2026 and what you should stop doing immediately."
-date: "2026-05-14"
+date: "2026-02-24"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["social media nz restaurants", "restaurant social media nz", "nz hospo social media", "social media marketing nz cafe"]

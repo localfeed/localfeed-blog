@@ -2,7 +2,7 @@
 title: "How to Price a Menu for Your NZ Restaurant or Cafe"
 slug: "how-to-price-a-menu-nz"
 description: "Menu pricing in NZ hospitality is not about marking up ingredients. It is about understanding your cost structure, your market position, and which dishes are carrying the business. Here is the framework."
-date: "2026-05-14"
+date: "2026-04-22"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["how to price a menu nz", "menu pricing nz restaurant", "nz cafe menu prices", "restaurant pricing nz"]

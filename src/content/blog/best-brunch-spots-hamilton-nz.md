@@ -2,7 +2,7 @@
 title: "Best Brunch Spots in Hamilton NZ: Where to Eat Well on a Weekend Morning"
 slug: "best-brunch-spots-hamilton-nz"
 description: "Hamilton's brunch scene has developed genuine quality over the last five years. Here is what makes a great Hamilton brunch spot, which areas to look in, and how to find the ones worth the trip."
-date: "2026-05-14"
+date: "2026-03-19"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best brunch spots hamilton nz", "hamilton brunch", "brunch hamilton nz", "waikato brunch guide"]

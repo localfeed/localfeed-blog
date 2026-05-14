@@ -2,7 +2,7 @@
 title: "Restaurant Food Waste in NZ: How Reducing Waste Improves Your Margins"
 slug: "restaurant-food-waste-nz"
 description: "NZ restaurant food waste is both an environmental problem and a margin problem. Here is how hospo operators reduce waste and improve food cost percentage simultaneously."
-date: "2026-05-13"
+date: "2025-12-31"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant food waste nz", "hospo sustainability nz", "restaurant food cost nz", "reduce food waste restaurant"]

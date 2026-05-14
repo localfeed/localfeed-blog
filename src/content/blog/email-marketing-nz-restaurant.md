@@ -2,7 +2,7 @@
 title: "Email Marketing for NZ Restaurants: The Channel That Converts Better Than Social Media"
 slug: "email-marketing-nz-restaurant"
 description: "Email marketing for NZ restaurants consistently outperforms social media for repeat bookings and direct revenue. Here is how to build the list and what to send once you have it."
-date: "2026-05-14"
+date: "2026-02-06"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["email marketing nz restaurant", "restaurant email list nz", "email marketing nz hospo", "nz cafe email marketing"]

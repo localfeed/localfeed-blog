@@ -2,7 +2,7 @@
 title: "Restaurant Instagram Marketing in NZ: What Actually Works in 2026"
 slug: "restaurant-instagram-marketing-nz"
 description: "NZ restaurants waste thousands of hours on Instagram with no return. Here is what actually drives bookings versus what looks good but changes nothing."
-date: "2026-05-13"
+date: "2026-01-26"
 author: "Benoit Boussuge"
 category: "digital-marketing"
 tags: ["restaurant instagram marketing nz", "hospo social media nz", "restaurant instagram nz 2026", "social media restaurant nz"]

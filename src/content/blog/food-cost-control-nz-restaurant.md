@@ -2,7 +2,7 @@
 title: "Food Cost Control for NZ Restaurants: The Numbers You Need to Track and How to Hit Them"
 slug: "food-cost-control-nz-restaurant"
 description: "Food cost is the most controllable major expense in a NZ restaurant or cafe. Here is a clear framework for tracking it, improving it, and sustaining the gains without constant attention."
-date: "2026-05-14"
+date: "2026-03-02"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["food cost control nz restaurant", "food cost nz cafe", "restaurant food cost nz", "cost of goods nz hospo"]

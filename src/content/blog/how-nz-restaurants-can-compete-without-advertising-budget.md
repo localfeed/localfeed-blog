@@ -2,7 +2,7 @@
 title: "How NZ Restaurants Can Compete Without an Advertising Budget"
 slug: "how-nz-restaurants-can-compete-without-advertising-budget"
 description: "Independent NZ restaurants with no marketing budget can still build strong local awareness and consistent occupancy. Here is the practical playbook based on what actually works in the NZ hospo market."
-date: "2026-05-10"
+date: "2026-04-16"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: [NZ restaurant marketing, hospitality marketing NZ, restaurant no budget marketing, independent restaurant NZ, local venue marketing]

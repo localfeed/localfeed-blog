@@ -2,7 +2,7 @@
 title: "Managing Dietary Requirements in NZ Restaurants: How to Handle Them Without Killing Your Kitchen"
 slug: "restaurant-dietary-requirements-nz"
 description: "Dietary requirements are the reality of running a NZ restaurant in 2026. Here is how to handle them efficiently without destroying your kitchen's rhythm or your margins."
-date: "2026-05-13"
+date: "2026-02-23"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant dietary requirements nz", "gluten free restaurant nz", "vegan restaurant nz", "hospo dietary nz 2026"]

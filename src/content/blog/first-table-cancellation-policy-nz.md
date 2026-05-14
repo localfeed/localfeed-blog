@@ -2,7 +2,7 @@
 title: "First Table Cancellation Policy in NZ: What Happens When Diners Cancel and What Venues Can Do"
 slug: "first-table-cancellation-policy-nz"
 description: "First Table's cancellation and no-show policy protects the platform, not the venue. Here is how the policy works and what NZ restaurants can do to protect their own interests."
-date: "2026-05-13"
+date: "2026-03-17"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["first table cancellation nz", "first table no show nz", "restaurant booking policy nz", "first table policy nz"]

@@ -2,7 +2,7 @@
 title: "What Booking Platforms Actually Cost Your NZ Venue"
 slug: "what-booking-platforms-actually-cost-nz-venues"
 description: "A straightforward breakdown of the real margin impact when NZ restaurants and cafes use commission-based booking platforms. The numbers most platforms would rather you not run."
-date: "2026-05-01"
+date: "2025-12-30"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: [commission-free booking NZ, restaurant platform fees NZ, First Table cost venues, booking platform comparison NZ, hospo margin NZ]

@@ -2,7 +2,7 @@
 title: "Restaurant Customer Data in NZ: Why It Matters and How to Start Building It"
 slug: "restaurant-customer-data-nz"
 description: "Most NZ restaurants serve hundreds of customers per month and know none of them. Here is what customer data actually means for hospo operators and why building it is urgent."
-date: "2026-05-13"
+date: "2026-01-30"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["restaurant customer data nz", "hospo crm nz", "restaurant customer list nz", "restaurant data ownership nz"]

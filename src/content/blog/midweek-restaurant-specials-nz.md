@@ -2,7 +2,7 @@
 title: "Midweek Restaurant Specials in NZ: How to Design Them Without Destroying Your Brand"
 slug: "midweek-restaurant-specials-nz"
 description: "The difference between a midweek special that builds your venue and one that trains customers to expect discounts is in how it is designed. Here is the NZ approach that works."
-date: "2026-05-13"
+date: "2026-03-30"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["midweek restaurant specials nz", "restaurant deals nz", "hospo promotions nz", "midweek dining nz"]

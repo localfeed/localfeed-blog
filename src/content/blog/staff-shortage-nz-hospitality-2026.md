@@ -2,7 +2,7 @@
 title: "Staff Shortage in NZ Hospitality 2026: What Is Actually Happening and What Venue Owners Can Do"
 slug: "staff-shortage-nz-hospitality-2026"
 description: "The NZ hospitality staff shortage is structural, not temporary. Here is a clear-eyed assessment of what is driving it in 2026 and the practical options venue owners actually have."
-date: "2026-05-14"
+date: "2026-04-24"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["staff shortage nz hospitality", "nz hospo staffing 2026", "hospitality workers nz shortage", "nz restaurant staff recruitment"]

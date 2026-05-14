@@ -2,7 +2,7 @@
 title: "Valentine's Day NZ Restaurant Guide: Where to Book and What to Expect"
 slug: "valentines-day-nz-restaurant-guide"
 description: "Valentine's Day dining in NZ doesn't have to mean a clichéd prix fixe and a shared rose. Here's how to find and book the right restaurant for February 14."
-date: "2026-05-14"
+date: "2026-04-21"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["valentines day nz restaurant guide", "valentines day dining nz", "nz restaurant valentines day", "february 14 dining nz"]

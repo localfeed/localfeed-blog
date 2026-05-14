@@ -2,7 +2,7 @@
 title: "First Table Alternative NZ: Keep Your Revenue, Fill Your Tables"
 slug: "first-table-alternative-nz"
 description: "Looking for a First Table alternative in NZ? Here's what operators in Auckland, Wellington and beyond are switching to, and why the maths matters."
-date: "2026-05-11"
+date: "2026-03-11"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["booking platforms", "off-peak revenue", "nz hospo", "venue management", "no-shows"]

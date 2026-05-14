@@ -2,7 +2,7 @@
 title: "Pickup Deals at NZ Venues: How to Run Them and Why They Work"
 slug: "pickup-deals-nz-venues"
 description: "Pickup deals at NZ venues are a legitimate off-peak revenue channel that most venues underdevelop. Here's how to run them properly and what makes them work."
-date: "2026-05-14"
+date: "2026-03-04"
 author: "Benoit Boussuge"
 category: "off-peak-revenue"
 tags: ["pickup deals nz venues", "nz restaurant pickup", "venue off peak revenue", "nz hospo pickup deals"]

@@ -2,7 +2,7 @@
 title: "POS System for NZ Cafes: What to Look For and Which Features Actually Matter"
 slug: "pos-system-nz-cafe-comparison"
 description: "Choosing a POS system for a NZ cafe is not about features lists. It is about what you will actually use, what integrates with your other tools, and what it costs when you factor in everything."
-date: "2026-05-14"
+date: "2026-02-17"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["pos system nz cafe", "cafe pos system nz", "best pos nz hospitality", "point of sale nz restaurant"]

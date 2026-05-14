@@ -2,7 +2,7 @@
 title: "Cafe Deals in Tauranga This Week: What's Actually Worth Booking"
 slug: "cafe-deals-tauranga-this-week"
 description: "Tauranga's cafe scene moves fast. Here's how to find real cafe deals in Tauranga this week — and why the best ones come direct from the venue, not a deal platform."
-date: "2026-05-14"
+date: "2026-04-08"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["cafe deals tauranga", "tauranga cafes", "tauranga food deals", "bay of plenty dining"]

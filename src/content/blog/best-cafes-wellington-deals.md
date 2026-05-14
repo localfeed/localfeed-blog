@@ -2,7 +2,7 @@
 title: "Best Cafe Deals in Wellington: Where to Eat Well Without Overpaying"
 slug: "best-cafes-wellington-deals"
 description: "Wellington's cafe scene is the most coffee-literate in NZ. The deals worth finding are from venues that designed their offers themselves. Here is how to find them and what to look for."
-date: "2026-05-14"
+date: "2026-03-20"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best cafes wellington deals", "wellington cafe deals", "cafe offers wellington", "where to eat wellington deal"]

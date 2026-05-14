@@ -2,7 +2,7 @@
 title: "Is First Table Worth It for NZ Restaurants? A Numbers-First Answer"
 slug: "is-first-table-worth-it-for-nz-restaurants"
 description: "We run the actual numbers on First Table NZ for restaurant owners. Food margin impact, customer data loss, and what the break-even looks like in 2026."
-date: "2026-05-13"
+date: "2026-04-23"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["first table nz", "restaurant booking nz", "hospo revenue nz", "restaurant margins nz"]

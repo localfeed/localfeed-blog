@@ -2,7 +2,7 @@
 title: "Responding to Bad Reviews in NZ Hospitality: The Approach That Builds Trust"
 slug: "responding-to-bad-reviews-nz-hospitality"
 description: "A bad review is not a crisis. It's a public conversation about your venue that hundreds of potential customers will read. Here's how to respond in a way that builds trust rather than destroying it."
-date: "2026-05-14"
+date: "2026-05-07"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["responding to bad reviews nz hospitality", "negative review response nz", "nz restaurant review management", "hospo review strategy"]

@@ -2,7 +2,7 @@
 title: "Facebook Marketing for NZ Hospitality: Where It Still Works and Where to Stop Wasting Time"
 slug: "facebook-marketing-nz-hospitality"
 description: "Facebook organic reach is near zero for NZ restaurant pages. But Facebook still works for hospo — just not the way most venue owners are using it. Here is where the value actually lives in 2026."
-date: "2026-05-14"
+date: "2025-12-22"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["facebook marketing nz hospitality", "facebook nz restaurant", "hospo social media nz", "nz cafe facebook marketing"]

@@ -2,7 +2,7 @@
 title: "First Table vs LocalFeed NZ: A Direct Comparison for Restaurant Owners"
 slug: "first-table-vs-localfeed-nz"
 description: "First Table requires 50% off food. LocalFeed lets you set your own offer. Here is the direct comparison NZ restaurant owners are asking for in 2026."
-date: "2026-05-13"
+date: "2026-01-02"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["first table vs localfeed", "restaurant booking platforms nz", "first table nz", "hospo nz 2026"]

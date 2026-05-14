@@ -2,7 +2,7 @@
 title: "Commission vs No-Commission: What the Model Difference Actually Costs NZ Venues"
 slug: "commission-vs-no-commission-hospitality-nz"
 description: "Commission-based and commission-free booking platforms are not different pricing tiers for the same service. They are different business relationships. Here is what that costs NZ venues in practice."
-date: "2026-05-14"
+date: "2026-02-19"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["commission vs no commission nz", "restaurant platform model nz", "commission free booking nz", "hospo platform nz"]

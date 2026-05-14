@@ -2,7 +2,7 @@
 title: "How to Run a Successful Cafe in NZ: What the Numbers Actually Require"
 slug: "how-to-run-a-successful-cafe-nz"
 description: "Running a successful cafe in New Zealand in 2026 means understanding your margin structure, your customer acquisition cost, and which platforms and tools are working for you and which are not."
-date: "2026-05-14"
+date: "2026-01-07"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["how to run a successful cafe nz", "cafe business nz", "cafe operations nz", "nz cafe tips 2026"]

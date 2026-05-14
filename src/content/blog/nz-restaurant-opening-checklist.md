@@ -2,7 +2,7 @@
 title: "NZ Restaurant Opening Checklist 2026: What First-Time Operators Get Wrong"
 slug: "nz-restaurant-opening-checklist"
 description: "Opening a restaurant in NZ is complex. Here is the honest checklist of what matters most in the planning phase — and the mistakes first-time operators consistently make."
-date: "2026-05-13"
+date: "2026-04-08"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["opening a restaurant nz", "nz restaurant opening checklist", "new restaurant nz 2026", "hospo startup nz"]

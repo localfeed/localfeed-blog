@@ -2,7 +2,7 @@
 title: "How NZ Restaurants Can Reduce Platform Dependency Without Losing Bookings"
 slug: "reducing-platform-dependency-nz-restaurants"
 description: "Platform dependency is a real business risk for NZ restaurants. Here is how to reduce it gradually without sacrificing the bookings you rely on right now."
-date: "2026-05-13"
+date: "2026-02-18"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["restaurant platform dependency nz", "reduce platform fees nz", "restaurant direct bookings nz", "hospo platforms nz 2026"]

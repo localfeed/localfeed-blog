@@ -2,7 +2,7 @@
 title: "How First Table Works for Restaurants in NZ (And What It Costs You)"
 slug: "first-table-nz-for-restaurants-how-it-works"
 description: "First Table NZ explained for venue owners: how the 50% food discount model works, what you actually earn, and what alternatives exist in 2026."
-date: "2026-05-13"
+date: "2026-04-09"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["first table nz", "booking platforms nz", "restaurant revenue nz", "hospo business nz"]

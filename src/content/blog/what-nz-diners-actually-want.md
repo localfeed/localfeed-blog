@@ -2,7 +2,7 @@
 title: "What NZ Diners Actually Want: Past the Food Media Clichés"
 slug: "what-nz-diners-actually-want"
 description: "Hospitality trend reports tell you what NZ diners want. Most of them are wrong or obvious. Here's what the data and 20 years of experience actually show."
-date: "2026-05-14"
+date: "2026-02-10"
 author: "Benoit Boussuge"
 category: "industry-news"
 tags: ["what nz diners actually want", "nz dining preferences", "nz restaurant customer behaviour", "nz food culture"]

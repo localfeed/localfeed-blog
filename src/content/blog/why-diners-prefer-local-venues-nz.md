@@ -2,7 +2,7 @@
 title: "Why NZ Diners Prefer Local Venues Over Chains"
 slug: "why-diners-prefer-local-venues-nz"
 description: "NZ diners are choosing local venues over chains at higher rates than ever. Here's what's driving it and what it means for independent hospitality operators."
-date: "2026-05-14"
+date: "2026-03-05"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["why diners prefer local venues nz", "local restaurants nz", "independent dining nz", "nz food culture"]

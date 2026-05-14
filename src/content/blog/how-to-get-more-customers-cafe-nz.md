@@ -2,7 +2,7 @@
 title: "How to Get More Customers for Your NZ Cafe: A Channel-by-Channel Breakdown"
 slug: "how-to-get-more-customers-cafe-nz"
 description: "Getting more customers into a NZ cafe is a channel problem before it is a marketing problem. Here is a breakdown of what actually works in 2026 and what is a waste of your limited time."
-date: "2026-05-14"
+date: "2026-04-03"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["how to get more customers cafe nz", "cafe customer acquisition nz", "grow cafe customers nz", "nz cafe marketing tips"]

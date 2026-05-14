@@ -2,7 +2,7 @@
 title: "Cafe Marketing Hamilton: How Waikato Venues Build a Loyal Local Following"
 slug: "cafe-marketing-hamilton"
 description: "Hamilton's cafe scene has grown significantly and the competition is real. Here is how Hamilton cafe owners can market effectively in a market where local loyalty is the most valuable asset."
-date: "2026-05-14"
+date: "2026-01-09"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["cafe marketing hamilton", "hamilton cafe promotion", "waikato hospo marketing", "hamilton cafe business nz"]

@@ -2,7 +2,7 @@
 title: "Dunedin Restaurant Marketing Guide 2026: Filling Tables in the Student City"
 slug: "dunedin-restaurant-marketing-guide"
 description: "Dunedin's restaurant scene is shaped by its student population, its tourism, and its strong local food culture. Here is how Otago venue owners market effectively in 2026."
-date: "2026-05-13"
+date: "2026-05-08"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["dunedin restaurant marketing", "otago hospo 2026", "dunedin cafe promotion", "fill tables dunedin"]

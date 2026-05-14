@@ -2,7 +2,7 @@
 title: "No Forced Discounts: Why NZ Venues Should Control Their Own Offers"
 slug: "no-forced-discounts-venue-marketing-nz"
 description: "Forced discounts from booking platforms damage NZ venues in ways that take years to repair. Here's why venue-controlled offers are the only sustainable model."
-date: "2026-05-14"
+date: "2026-01-13"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["no forced discounts venue marketing nz", "nz venue marketing", "restaurant offers nz", "hospo marketing nz"]

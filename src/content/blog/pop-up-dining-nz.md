@@ -2,7 +2,7 @@
 title: "Pop-Up Dining NZ: Why It's Growing and How to Do It Right"
 slug: "pop-up-dining-nz"
 description: "Pop-up dining in NZ has moved from novelty to established format. Here's what's driving the growth, what makes a good pop-up, and how to find or run one."
-date: "2026-05-14"
+date: "2026-04-22"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["pop up dining nz", "nz pop up restaurant", "nz dining events", "nz food events"]

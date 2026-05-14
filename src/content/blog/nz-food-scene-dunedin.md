@@ -2,7 +2,7 @@
 title: "NZ Food Scene Dunedin: The Southern Capital of Serious Eating"
 slug: "nz-food-scene-dunedin"
 description: "Dunedin's food scene has been building quietly and consistently for a decade. The NZ food scene in Dunedin is distinctive, grounded in Otago produce, and seriously underrated nationally."
-date: "2026-05-14"
+date: "2026-03-26"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["nz food scene dunedin", "dunedin restaurants", "otago dining", "dunedin food"]

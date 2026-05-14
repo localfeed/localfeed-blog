@@ -2,7 +2,7 @@
 title: "NZ Food Scene Whangarei: Northland's Food Culture Is Having a Moment"
 slug: "nz-food-scene-whangarei"
 description: "Whangarei is often overlooked as a food destination. The NZ food scene in Whangarei is building something real — Northland produce, genuine local venues, and a community that supports them."
-date: "2026-05-14"
+date: "2026-04-30"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["nz food scene whangarei", "whangarei restaurants", "northland dining", "whangarei food"]

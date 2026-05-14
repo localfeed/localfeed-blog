@@ -2,7 +2,7 @@
 title: "Word-of-Mouth Marketing for NZ Venues: How to Make It Happen Deliberately"
 slug: "word-of-mouth-marketing-nz-venue"
 description: "Word-of-mouth is the most powerful marketing channel for NZ venues. It's also the one you can most actively design for — here's how."
-date: "2026-05-14"
+date: "2026-05-08"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["word of mouth marketing nz venue", "nz venue word of mouth", "restaurant referral marketing nz", "hospo word of mouth"]

@@ -2,7 +2,7 @@
 title: "Best Delis in Wellington NZ: Where to Find Serious Food to Take Away"
 slug: "best-delis-wellington-nz"
 description: "Wellington's deli culture is small but seriously good. Here is what makes a great Wellington deli, where to find them, and what to look for in a city that takes its food provenance seriously."
-date: "2026-05-14"
+date: "2026-02-09"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best delis wellington nz", "wellington deli guide", "wellington food shops", "deli wellington new zealand"]

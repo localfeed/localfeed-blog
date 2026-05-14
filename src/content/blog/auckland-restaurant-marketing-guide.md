@@ -2,7 +2,7 @@
 title: "Auckland Restaurant Marketing Guide 2026: How to Fill Tables in NZ's Most Competitive Market"
 slug: "auckland-restaurant-marketing-guide"
 description: "Auckland has more restaurants per capita than almost anywhere in the country. Here is the marketing approach that actually works for venue owners in 2026."
-date: "2026-05-13"
+date: "2026-04-16"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["auckland restaurant marketing", "auckland hospo 2026", "auckland restaurant promotion", "fill tables auckland"]

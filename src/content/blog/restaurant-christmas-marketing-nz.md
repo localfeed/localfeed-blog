@@ -2,7 +2,7 @@
 title: "Restaurant Christmas Marketing in NZ: How to Maximise Your Most Important Trading Period"
 slug: "restaurant-christmas-marketing-nz"
 description: "December is the highest-revenue month for most NZ restaurants. Here is how to plan, market, and execute your Christmas trading period to maximise bookings and margin."
-date: "2026-05-13"
+date: "2026-03-20"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant christmas nz", "christmas dining nz", "restaurant december nz", "hospo christmas marketing"]

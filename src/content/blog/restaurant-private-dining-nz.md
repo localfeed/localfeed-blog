@@ -2,7 +2,7 @@
 title: "Restaurant Private Dining in NZ: How to Fill Your Private Space and Build a Events Revenue Stream"
 slug: "restaurant-private-dining-nz"
 description: "A private dining room sitting empty midweek is lost revenue. Here is how NZ restaurants build a consistent private dining and events business in 2026."
-date: "2026-05-13"
+date: "2025-12-09"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant private dining nz", "private dining room nz", "restaurant events space nz", "hospo events revenue nz"]

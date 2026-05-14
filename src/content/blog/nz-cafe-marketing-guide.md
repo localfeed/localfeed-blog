@@ -2,7 +2,7 @@
 title: "NZ Café Marketing Guide 2026: How to Build a Loyal Customer Base for Your Coffee Business"
 slug: "nz-cafe-marketing-guide"
 description: "NZ has one of the world's most sophisticated café cultures. Here is how café owners build and keep a loyal customer base in the most competitive market for coffee in the world."
-date: "2026-05-13"
+date: "2026-03-25"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["nz cafe marketing", "cafe marketing nz 2026", "coffee shop nz marketing", "how to market a cafe nz"]

@@ -2,7 +2,7 @@
 title: "Commission-Free Dining NZ Explained: What It Actually Means for Venues and Diners"
 slug: "commission-free-dining-nz-explained"
 description: "Commission-free dining in NZ is a specific model with real implications for restaurant economics and diner experience. Here's what it actually means and why it matters."
-date: "2026-05-14"
+date: "2025-12-11"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["commission free dining nz", "commission free booking nz", "restaurant booking nz", "nz hospo platform"]

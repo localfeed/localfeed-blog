@@ -2,7 +2,7 @@
 title: "How to Run Events at Your NZ Venue: The Practical Guide"
 slug: "how-to-run-events-at-your-nz-venue"
 description: "Events are one of the highest-margin activities a NZ venue can run. Here's how to plan, promote, and execute them without the common mistakes."
-date: "2026-05-14"
+date: "2026-01-08"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["how to run events at your nz venue", "nz restaurant events", "venue events nz", "hospo events management"]

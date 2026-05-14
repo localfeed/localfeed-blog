@@ -2,7 +2,7 @@
 title: "Best Breweries in Wellington NZ: The Craft Beer Scene Worth Exploring"
 slug: "best-breweries-wellington-nz"
 description: "Wellington has one of the most interesting craft brewery scenes in NZ. Here is what makes a Wellington brewery worth visiting, where to find them, and what to look for on a tap list."
-date: "2026-05-14"
+date: "2025-12-23"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best breweries wellington nz", "wellington craft beer", "wellington brewery guide", "nz craft beer wellington"]

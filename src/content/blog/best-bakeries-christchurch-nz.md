@@ -2,7 +2,7 @@
 title: "Best Bakeries in Christchurch NZ: Where to Find the Real Thing"
 slug: "best-bakeries-christchurch-nz"
 description: "Christchurch has developed a serious bakery culture since the rebuild. Here is what separates a great Canterbury bakery from a decent one, and where to find the versions worth seeking out."
-date: "2026-05-14"
+date: "2026-04-28"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best bakeries christchurch nz", "christchurch bakery guide", "canterbury bakeries", "bakery christchurch nz"]

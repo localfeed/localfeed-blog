@@ -2,7 +2,7 @@
 title: "Venue-Designed Offers vs Platform Deals: Why the Source of the Offer Matters"
 slug: "venue-designed-offers-vs-platform-deals"
 description: "Not all dining deals are equal. Venue-designed offers and platform-mandated deals are fundamentally different products with different implications for venues and diners."
-date: "2026-05-14"
+date: "2026-03-19"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["venue designed offers vs platform deals", "restaurant deals nz", "venue marketing nz", "hospo platform comparison"]

@@ -2,7 +2,7 @@
 title: "Local SEO for NZ Restaurants: How to Rank Where Your Customers Are Searching"
 slug: "local-seo-restaurant-nz"
 description: "Local SEO for NZ restaurants is not complicated. It is specific. Here is a practical guide to ranking in local search results in your area and converting that visibility into tables."
-date: "2026-05-14"
+date: "2026-03-30"
 author: "Benoit Boussuge"
 category: "local-seo"
 tags: ["local seo restaurant nz", "restaurant seo new zealand", "local search nz hospo", "rank google restaurant nz"]

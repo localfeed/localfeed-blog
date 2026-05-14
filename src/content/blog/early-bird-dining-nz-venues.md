@@ -2,7 +2,7 @@
 title: "Early Bird Dining for NZ Venues: How to Design the Offer So It Actually Works"
 slug: "early-bird-dining-nz-venues"
 description: "Early bird dining is the most profitable slot in your evening when you control the offer. Most NZ venues are running early bird deals designed for platform economics, not venue economics. Here is the difference."
-date: "2026-05-14"
+date: "2026-04-02"
 author: "Benoit Boussuge"
 category: "off-peak-revenue"
 tags: ["early bird dining nz", "early dinner deal nz venue", "off peak dining nz", "early seating nz restaurant"]

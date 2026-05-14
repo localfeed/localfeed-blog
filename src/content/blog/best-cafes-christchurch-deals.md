@@ -2,7 +2,7 @@
 title: "Best Cafe Deals in Christchurch: Where to Find Canterbury's Best Offers"
 slug: "best-cafes-christchurch-deals"
 description: "Christchurch's rebuilt food scene is producing some of the best cafe culture in NZ. Here is how to find the genuine deals from venues that designed their offers themselves."
-date: "2026-05-14"
+date: "2025-12-24"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best cafes christchurch deals", "christchurch cafe deals", "cafe offers christchurch", "canterbury cafe deals"]

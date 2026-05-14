@@ -2,7 +2,7 @@
 title: "Christchurch Restaurant Marketing Guide 2026: Filling Tables in the Rebuild City"
 slug: "christchurch-restaurant-marketing-guide"
 description: "Christchurch's hospitality scene has rebuilt into one of NZ's most exciting. Here is how venue owners market effectively in a city that is still finding its dining identity."
-date: "2026-05-13"
+date: "2026-04-13"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["christchurch restaurant marketing", "christchurch hospo 2026", "christchurch cafe promotion", "fill tables christchurch"]

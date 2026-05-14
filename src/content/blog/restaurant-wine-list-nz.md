@@ -2,7 +2,7 @@
 title: "Restaurant Wine Lists in NZ: How to Build One That Sells and Improves Your Margins"
 slug: "restaurant-wine-list-nz"
 description: "A well-designed NZ restaurant wine list can add 8–15% to your gross profit per cover. Here is how to build one, price it correctly, and train your team to sell it."
-date: "2026-05-13"
+date: "2026-05-11"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant wine list nz", "wine by the glass nz restaurant", "hospo beverage revenue nz", "nz restaurant drinks margin"]

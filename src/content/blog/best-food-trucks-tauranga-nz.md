@@ -2,7 +2,7 @@
 title: "Best Food Trucks in Tauranga NZ: Bay of Plenty Street Food Worth Finding"
 slug: "best-food-trucks-tauranga-nz"
 description: "Tauranga's food truck scene is one of the most active in regional NZ. Here is how to find the ones worth tracking, what makes a good Bay of Plenty food truck, and where they tend to operate."
-date: "2026-05-14"
+date: "2026-03-23"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best food trucks tauranga nz", "tauranga food trucks", "bay of plenty food trucks", "tauranga street food"]

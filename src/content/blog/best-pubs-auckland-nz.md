@@ -2,7 +2,7 @@
 title: "Best Pubs in Auckland NZ: What Makes a Great Auckland Local"
 slug: "best-pubs-auckland-nz"
 description: "Auckland has hundreds of pubs. The ones worth going to have something specific: a beer selection, a kitchen, a community, or a room that works. Here is how to find them and what to look for."
-date: "2026-05-14"
+date: "2026-02-05"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best pubs auckland nz", "auckland pub guide", "good pubs auckland", "auckland bars and pubs"]

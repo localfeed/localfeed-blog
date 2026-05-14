@@ -2,7 +2,7 @@
 title: "How to Handle No-Shows at Your NZ Restaurant: The Complete Approach"
 slug: "how-to-handle-no-shows-nz-restaurant"
 description: "No-shows are one of the most damaging things that happen to NZ restaurants. Here's how to handle them structurally — not just reactively — so they stop costing you money."
-date: "2026-05-14"
+date: "2026-02-26"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["how to handle no shows nz restaurant", "nz restaurant no show policy", "restaurant booking nz", "hospo operations nz"]

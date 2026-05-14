@@ -2,7 +2,7 @@
 title: "Locals Feeding Locals: The Philosophy Behind LocalFeed NZ"
 slug: "locals-feeding-locals-nz-hospitality"
 description: "LocalFeed NZ started with a simple idea: local venues deserve a booking platform that's actually on their side. Here's what locals feeding locals means in practice."
-date: "2026-05-14"
+date: "2026-02-27"
 author: "Benoit Boussuge"
 category: "localfeed-story"
 tags: ["locals feeding locals nz", "localfeed nz", "nz hospitality community", "commission free nz"]

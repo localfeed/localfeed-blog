@@ -2,7 +2,7 @@
 title: "Best Dessert Shops in Auckland: Where to Find Something Worth the Calories"
 slug: "best-dessert-shops-auckland"
 description: "Auckland's dessert scene has expanded beyond the standard cheesecake-and-ice-cream format. Here is what is worth finding, which areas to look in, and what separates a genuinely good Auckland dessert shop from a generic one."
-date: "2026-05-14"
+date: "2026-02-16"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best dessert shops auckland", "auckland dessert guide", "dessert shops auckland nz", "sweet treats auckland"]

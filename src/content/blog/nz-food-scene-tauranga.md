@@ -2,7 +2,7 @@
 title: "NZ Food Scene Tauranga: A Serious Guide to Bay of Plenty Dining"
 slug: "nz-food-scene-tauranga"
 description: "The NZ food scene in Tauranga has matured fast. This is what the Bay of Plenty dining scene actually looks like in 2026 — specific, opinionated, and worth knowing."
-date: "2026-05-14"
+date: "2026-02-25"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["nz food scene tauranga", "tauranga restaurants", "bay of plenty dining", "tauranga food"]

@@ -2,7 +2,7 @@
 title: "Restaurant Marketing NZ: What Actually Works in 2026"
 slug: "restaurant-marketing-nz-what-actually-works"
 description: "A straight-talking breakdown of what restaurant and cafe marketing actually moves the needle for NZ independent venues in 2026. No generic advice. No platform spin."
-date: "2026-05-05"
+date: "2026-04-20"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: [restaurant marketing NZ, cafe marketing NZ, hospitality marketing NZ, NZ venue marketing 2026, restaurant social media NZ]

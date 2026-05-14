@@ -2,7 +2,7 @@
 title: "Off-Peak Dining Strategy for NZ Restaurants: Fill the Quiet Hours Without Wrecking Your Margins"
 slug: "off-peak-dining-strategy-nz-restaurants"
 description: "Most NZ restaurants are sitting on 20-30% more revenue capacity in their quietest hours. Here is how to access it without handing your margins to a platform or training diners to wait for discounts."
-date: "2026-05-14"
+date: "2026-03-17"
 author: "Benoit Boussuge"
 category: "off-peak-revenue"
 tags: ["off peak dining strategy nz", "quiet hours restaurant nz", "fill tables nz restaurant", "off peak revenue nz hospo"]

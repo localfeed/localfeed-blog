@@ -2,7 +2,7 @@
 title: "LocalFeed vs First Table NZ: An Honest Comparison"
 slug: "localfeed-vs-first-table-nz"
 description: "LocalFeed and First Table are both NZ booking platforms, but they operate on fundamentally different models. Here's an honest comparison of how they work and what they cost venues."
-date: "2026-05-14"
+date: "2026-04-14"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["localfeed vs first table nz", "first table alternative nz", "commission free booking nz", "nz restaurant booking platform"]

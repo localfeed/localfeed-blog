@@ -2,7 +2,7 @@
 title: "Working in NZ Hospitality in 2026: What to Expect, Your Rights, and How to Build a Career"
 slug: "nz-hospo-worker-guide"
 description: "NZ hospitality work is demanding and rewarding. Here is what workers entering the industry should know about pay, rights, career paths, and finding the right venue."
-date: "2026-05-13"
+date: "2026-01-01"
 author: "Benoit Boussuge"
 category: "industry"
 tags: ["nz hospitality jobs 2026", "hospo worker nz", "restaurant jobs nz", "working hospitality nz"]

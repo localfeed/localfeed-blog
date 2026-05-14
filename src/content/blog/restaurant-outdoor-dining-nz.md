@@ -2,7 +2,7 @@
 title: "Outdoor Dining in NZ Restaurants: How to Make Your Alfresco Space Work Commercially"
 slug: "restaurant-outdoor-dining-nz"
 description: "Outdoor dining is a genuine commercial asset for NZ restaurants in the right seasons. Here is how to set it up, staff it, and market it effectively in 2026."
-date: "2026-05-13"
+date: "2025-12-08"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["outdoor dining nz restaurant", "alfresco dining nz", "restaurant outdoor seating nz", "hospo outdoor nz"]

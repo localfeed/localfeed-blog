@@ -2,7 +2,7 @@
 title: "Wellington Restaurant Marketing Guide 2026: Filling Tables in the Café Capital"
 slug: "wellington-restaurant-marketing-guide"
 description: "Wellington has one of the highest restaurant densities per capita in the world. Here is how venue owners actually build a customer base in 2026."
-date: "2026-05-13"
+date: "2026-04-07"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["wellington restaurant marketing", "wellington hospo 2026", "wellington cafe marketing", "fill tables wellington"]

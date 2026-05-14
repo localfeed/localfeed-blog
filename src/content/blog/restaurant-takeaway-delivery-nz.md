@@ -2,7 +2,7 @@
 title: "Restaurant Takeaway and Delivery in NZ: Is It Worth It in 2026?"
 slug: "restaurant-takeaway-delivery-nz"
 description: "Uber Eats and DoorDash take 25–35% commission. Here is the honest assessment of whether takeaway and delivery is commercially worthwhile for NZ restaurants in 2026."
-date: "2026-05-13"
+date: "2026-01-13"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant delivery nz", "uber eats nz restaurant", "takeaway nz restaurant", "hospo delivery margins nz"]

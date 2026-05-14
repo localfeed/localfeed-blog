@@ -2,7 +2,7 @@
 title: "Google Reviews for NZ Restaurants: The Complete Guide to Building Your Rating"
 slug: "google-reviews-nz-restaurant-guide"
 description: "Google reviews are the most important local SEO signal for NZ restaurants. Here's exactly how to build, manage, and respond to your Google review profile."
-date: "2026-05-14"
+date: "2026-02-23"
 author: "Benoit Boussuge"
 category: "local-seo"
 tags: ["google reviews nz restaurant guide", "google reviews restaurant nz", "local seo nz restaurant", "nz restaurant google"]

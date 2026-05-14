@@ -2,7 +2,7 @@
 title: "NZ Restaurant Industry 2026: What the Numbers Say and What's Changing"
 slug: "nz-restaurant-industry-2026"
 description: "NZ hospitality is in structural transition. Here is what the industry data shows about closures, costs, diner behaviour, and what is actually working in 2026."
-date: "2026-05-13"
+date: "2026-01-12"
 author: "Benoit Boussuge"
 category: "industry"
 tags: ["nz restaurant industry 2026", "nz hospitality trends", "hospo nz outlook", "restaurant industry new zealand"]

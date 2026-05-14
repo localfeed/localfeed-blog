@@ -2,7 +2,7 @@
 title: "First Table NZ Review for Restaurant Owners: The Honest Verdict"
 slug: "first-table-review-nz-restaurant-owners"
 description: "A straight review of First Table NZ from the restaurant owner's perspective. Margins, data, discovery, and whether it is worth it for your venue in 2026."
-date: "2026-05-13"
+date: "2026-05-05"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["first table nz review", "first table restaurant owner", "first table worth it nz", "hospo platform review nz"]

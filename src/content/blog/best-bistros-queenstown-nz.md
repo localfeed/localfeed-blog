@@ -2,7 +2,7 @@
 title: "Best Bistros in Queenstown NZ: Where Locals Actually Eat"
 slug: "best-bistros-queenstown-nz"
 description: "Skip the tourist traps. Here are the best bistros in Queenstown NZ that deliver real food, real atmosphere, and genuine value for locals and savvy visitors."
-date: "2026-05-14"
+date: "2026-03-24"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best bistros queenstown nz", "queenstown restaurants", "queenstown dining", "nz bistro"]

@@ -2,7 +2,7 @@
 title: "Best Cafe Deals in Tauranga: Finding Great Offers in the Bay of Plenty"
 slug: "best-cafes-tauranga-deals"
 description: "Tauranga's cafe scene has grown significantly and the best deals come from venues managing their own offers. Here is where to find them across the Bay of Plenty."
-date: "2026-05-14"
+date: "2026-01-16"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["best cafes tauranga deals", "tauranga cafe deals", "cafe offers tauranga", "bay of plenty cafe deals"]

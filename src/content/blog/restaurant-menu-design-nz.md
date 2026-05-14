@@ -2,7 +2,7 @@
 title: "Restaurant Menu Design in NZ: How to Engineer Your Menu for Profit and Sales"
 slug: "restaurant-menu-design-nz"
 description: "Menu design is one of the highest-leverage activities in running a NZ restaurant. Here is how to engineer your menu to sell the right items at the right margin."
-date: "2026-05-13"
+date: "2026-02-16"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant menu design nz", "menu engineering nz", "hospo menu nz", "restaurant menu pricing nz"]

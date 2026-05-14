@@ -2,7 +2,7 @@
 title: "Napier Restaurant Marketing Guide 2026: Filling Tables in Hawke's Bay"
 slug: "napier-restaurant-marketing-guide"
 description: "Hawke's Bay's food and wine reputation is one of NZ's strongest. Here is how Napier venue owners market effectively in a tourism-driven region in 2026."
-date: "2026-05-13"
+date: "2026-03-11"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["napier restaurant marketing", "hawkes bay hospo 2026", "napier cafe promotion", "fill tables napier hawkes bay"]

@@ -2,7 +2,7 @@
 title: "NZ Minimum Wage Increases and Hospitality: The Real Impact on Venue Economics"
 slug: "nz-minimum-wage-hospitality-impact"
 description: "NZ minimum wage increases directly compress hospo margins. Here is how to calculate the actual impact on your venue and the structural responses that work beyond just raising menu prices."
-date: "2026-05-14"
+date: "2026-04-27"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["nz minimum wage hospitality", "wage increase nz hospo", "minimum wage restaurant nz", "labour cost nz hospitality"]

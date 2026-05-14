@@ -2,7 +2,7 @@
 title: "How to Run Restaurant Events in NZ: Wine Dinners, Guest Chefs, and Anything That Fills the Room"
 slug: "how-to-run-restaurant-events-nz"
 description: "Events are one of the highest-margin, most relationship-building things an NZ restaurant can do. Here is how to plan, promote, and profit from venue events in 2026."
-date: "2026-05-13"
+date: "2026-04-14"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant events nz", "wine dinner nz", "hospo events nz", "restaurant programming nz"]

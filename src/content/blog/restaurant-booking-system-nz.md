@@ -2,7 +2,7 @@
 title: "Restaurant Booking Systems in NZ 2026: What to Look For and What to Avoid"
 slug: "restaurant-booking-system-nz"
 description: "Choosing a restaurant booking system in NZ is a decision that affects your margins, your data, and your customer relationships for years. Here is how to evaluate them correctly."
-date: "2026-05-13"
+date: "2026-01-29"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: ["restaurant booking system nz", "reservation software nz", "booking platform nz 2026", "hospo booking nz"]

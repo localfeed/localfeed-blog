@@ -2,7 +2,7 @@
 title: "Online Reviews Strategy for NZ Venues: How to Build a Review Profile That Works"
 slug: "online-reviews-strategy-nz-venue"
 description: "Online reviews drive discovery and bookings for NZ venues. Here's the strategy for building a review profile that works — without gaming the system or ignoring it."
-date: "2026-05-14"
+date: "2026-04-06"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["online reviews strategy nz venue", "nz restaurant reviews", "google reviews nz venue", "restaurant review strategy nz"]

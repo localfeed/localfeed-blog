@@ -2,7 +2,7 @@
 title: "NZ Food Scene Queenstown: Separating the Real From the Theatrical"
 slug: "nz-food-scene-queenstown"
 description: "Queenstown's food scene is bigger and better than the tourist-trap reputation suggests. The NZ food scene in Queenstown has genuine depth — here's how to find it."
-date: "2026-05-14"
+date: "2025-12-16"
 author: "Benoit Boussuge"
 category: "diner-deals"
 tags: ["nz food scene queenstown", "queenstown restaurants", "queenstown dining", "central otago food"]

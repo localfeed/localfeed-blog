@@ -2,7 +2,7 @@
 title: "Restaurant Loyalty Programs in NZ: Do They Work and What Actually Keeps Customers Coming Back"
 slug: "restaurant-loyalty-program-nz"
 description: "Most restaurant loyalty programs in NZ are expensive to build and low in return. Here is what actually builds customer loyalty in 2026 without a points card."
-date: "2026-05-13"
+date: "2025-12-26"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["restaurant loyalty program nz", "restaurant customer retention nz", "hospo loyalty nz", "restaurant regulars nz"]

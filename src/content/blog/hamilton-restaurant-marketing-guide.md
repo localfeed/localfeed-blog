@@ -2,7 +2,7 @@
 title: "Hamilton Restaurant Marketing Guide 2026: How Waikato Venue Owners Fill Tables"
 slug: "hamilton-restaurant-marketing-guide"
 description: "Hamilton's hospo scene has grown fast. Here is the marketing approach that works for Waikato restaurant and café owners trying to build a sustainable customer base in 2026."
-date: "2026-05-13"
+date: "2026-03-16"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["hamilton restaurant marketing", "waikato hospo 2026", "hamilton cafe promotion", "fill tables hamilton"]

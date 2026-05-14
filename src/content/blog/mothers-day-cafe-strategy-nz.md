@@ -2,7 +2,7 @@
 title: "Mother's Day Cafe Strategy NZ: How to Handle Your Biggest Sunday of the Year"
 slug: "mothers-day-cafe-strategy-nz"
 description: "Mother's Day is the biggest Sunday trading day for most NZ cafes. Here's how to prepare for it, market it, and execute it well enough that families come back."
-date: "2026-05-14"
+date: "2026-05-05"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["mothers day cafe strategy nz", "nz mothers day dining", "cafe mothers day nz", "mothers day venue marketing"]

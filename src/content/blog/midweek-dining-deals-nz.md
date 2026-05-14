@@ -2,7 +2,7 @@
 title: "Midweek Dining Deals in NZ: What Works and What Just Trains Diners to Wait"
 slug: "midweek-dining-deals-nz"
 description: "Midweek dining deals fill tables. They also shape how your customers think about your pricing. Here is how to run them in a way that builds the venue rather than creates a dependency."
-date: "2026-05-14"
+date: "2026-02-09"
 author: "Benoit Boussuge"
 category: "off-peak-revenue"
 tags: ["midweek dining deals nz", "midweek specials nz restaurant", "wednesday dining nz", "weekday deals nz hospo"]

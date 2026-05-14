@@ -2,7 +2,7 @@
 title: "How LocalFeed Works for NZ Venues: The Commission-Free Booking Model Explained"
 slug: "how-localfeed-works-for-nz-venues"
 description: "LocalFeed is a NZ commission-free restaurant booking platform. Here's exactly how it works for venues — the pricing, the booking mechanics, and why it's built differently."
-date: "2026-05-14"
+date: "2026-04-29"
 author: "Benoit Boussuge"
 category: "localfeed-story"
 tags: ["how localfeed works for nz venues", "localfeed nz", "commission free booking nz", "restaurant booking platform nz"]

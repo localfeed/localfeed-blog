@@ -2,7 +2,7 @@
 title: "Restaurant Brunch Marketing in NZ: How to Build a Brunch Following That Actually Fills Tables"
 slug: "restaurant-brunch-marketing-nz"
 description: "Brunch is one of NZ's most competitive hospitality segments. Here is how café and restaurant owners build a brunch following that fills Saturday tables without a platform."
-date: "2026-05-13"
+date: "2026-05-01"
 author: "Benoit Boussuge"
 category: "operations"
 tags: ["restaurant brunch marketing nz", "brunch nz 2026", "cafe brunch nz", "hospo weekend nz"]

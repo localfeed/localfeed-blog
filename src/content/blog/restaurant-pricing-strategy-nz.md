@@ -2,7 +2,7 @@
 title: "Restaurant Pricing Strategy in NZ: How to Price Your Menu Correctly in 2026"
 slug: "restaurant-pricing-strategy-nz"
 description: "Menu pricing is the single highest-leverage decision in running an NZ restaurant. Here is how to price correctly, raise prices without losing customers, and stop undercharging."
-date: "2026-05-13"
+date: "2026-04-10"
 author: "Benoit Boussuge"
 category: "business-strategy"
 tags: ["restaurant pricing strategy nz", "menu pricing nz", "hospo pricing nz", "restaurant margin nz"]

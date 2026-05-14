@@ -2,7 +2,7 @@
 title: "Restaurant Google Reviews in NZ: How to Get More, Respond Better, and Rank Higher"
 slug: "restaurant-google-reviews-nz"
 description: "Google reviews are the most important marketing asset most NZ restaurants are not managing. Here is how to get more, respond correctly, and use them to fill tables."
-date: "2026-05-13"
+date: "2026-04-13"
 author: "Benoit Boussuge"
 category: "digital-marketing"
 tags: ["restaurant google reviews nz", "google reviews restaurant", "hospo reputation nz", "restaurant reviews nz 2026"]

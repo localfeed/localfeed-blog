@@ -2,7 +2,7 @@
 title: "How to Attract Diners on Slow Nights at Your NZ Venue"
 slug: "how-to-attract-diners-on-slow-nights-nz"
 description: "Monday through Wednesday is where most NZ venues bleed margin. Here is what actually brings diners out on slow nights and why deep discounting is usually the wrong answer."
-date: "2026-05-14"
+date: "2026-02-13"
 author: "Benoit Boussuge"
 category: "off-peak-revenue"
 tags: ["slow nights nz restaurant", "attract diners weeknight nz", "fill tables slow nights nz", "weeknight dining nz"]

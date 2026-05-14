@@ -2,7 +2,7 @@
 title: "Commission-Free vs Commission-Based: The Real Numbers for NZ Restaurants"
 slug: "commission-free-restaurant-platforms-nz-compared"
 description: "A factual comparison of commission-based and commission-free booking platforms for NZ restaurants, cafes and bars. The numbers, the terms, and what each model actually means for your venue margin over 12 months."
-date: "2026-05-08"
+date: "2025-12-31"
 author: "Benoit Boussuge"
 category: "platform-comparison"
 tags: [commission free restaurant NZ, booking platform comparison NZ, First Table alternative NZ, restaurant platform NZ, LocalFeed vs commission platforms]

@@ -2,7 +2,7 @@
 title: "Contactless Ordering in NZ Hospitality: When It Works and When It Gets in the Way"
 slug: "contactless-ordering-nz-hospitality"
 description: "Contactless ordering technology has a real place in NZ hospitality. It also has a real misuse problem. Here is an honest assessment of when QR ordering improves the operation and when it replaces service with inconvenience."
-date: "2026-05-14"
+date: "2026-02-12"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["contactless ordering nz hospitality", "qr ordering nz restaurant", "digital ordering nz cafe", "table ordering nz hospo"]

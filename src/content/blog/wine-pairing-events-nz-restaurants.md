@@ -2,7 +2,7 @@
 title: "Wine Pairing Events at NZ Restaurants: How to Run Them and Why They Sell Out"
 slug: "wine-pairing-events-nz-restaurants"
 description: "Wine pairing events are among the most consistently profitable events NZ restaurants run. Here's how to design, price, and market them to sell out every time."
-date: "2026-05-14"
+date: "2026-03-31"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["wine pairing events nz restaurants", "nz wine dinner", "restaurant events nz", "wine dinner marketing nz"]

@@ -2,7 +2,7 @@
 title: "Summer Dining NZ Venue Marketing: How to Win the High Season"
 slug: "summer-dining-nz-venue-marketing"
 description: "New Zealand summer is the most important trading period for many hospitality venues. Here's how to market your venue for summer dining and make the most of the high season."
-date: "2026-05-14"
+date: "2026-04-02"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["summer dining nz venue marketing", "nz summer restaurant marketing", "nz venue summer strategy", "summer hospitality nz"]

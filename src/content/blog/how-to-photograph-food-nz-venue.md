@@ -2,7 +2,7 @@
 title: "How to Photograph Food at Your NZ Venue: A Practical Guide for Hospo Operators"
 slug: "how-to-photograph-food-nz-venue"
 description: "Good food photography does not require a professional photographer. It requires a phone, a window, and an understanding of what NZ diners actually respond to. Here is the practical guide."
-date: "2026-05-14"
+date: "2026-03-03"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["food photography nz venue", "how to photograph food nz", "cafe food photos nz", "restaurant photography nz"]

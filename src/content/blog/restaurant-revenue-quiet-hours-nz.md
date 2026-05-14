@@ -2,7 +2,7 @@
 title: "Restaurant Revenue in Quiet Hours: Making the Dead Zones Work for NZ Venues"
 slug: "restaurant-revenue-quiet-hours-nz"
 description: "The 2pm to 5pm window is bleeding margin in most NZ restaurants. Here is how to extract revenue from quiet hours without discounting the rest of your week in the process."
-date: "2026-05-14"
+date: "2026-03-12"
 author: "Benoit Boussuge"
 category: "off-peak-revenue"
 tags: ["restaurant revenue quiet hours nz", "quiet hours venue nz", "off peak revenue nz", "hospo slow period nz"]

@@ -2,7 +2,7 @@
 title: "Cafe Marketing Auckland: How to Get Found and Keep Customers Coming Back"
 slug: "cafe-marketing-auckland"
 description: "Auckland cafe marketing in 2026 means competing for attention in one of NZ's most saturated hospitality markets. Here is what actually works and what is a waste of your time and money."
-date: "2026-05-14"
+date: "2026-03-04"
 author: "Benoit Boussuge"
 category: "venue-marketing"
 tags: ["cafe marketing auckland", "auckland cafe promotion", "marketing nz cafe", "auckland hospo marketing"]

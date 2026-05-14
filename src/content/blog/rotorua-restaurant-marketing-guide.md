@@ -2,7 +2,7 @@
 title: "Rotorua Restaurant Marketing Guide 2026: Filling Tables in a Tourism-Driven City"
 slug: "rotorua-restaurant-marketing-guide"
 description: "Rotorua is one of NZ's top tourist destinations. Here is how restaurant and café owners market to visitors and locals effectively in 2026."
-date: "2026-05-13"
+date: "2026-03-06"
 author: "Benoit Boussuge"
 category: "city-guides"
 tags: ["rotorua restaurant marketing", "rotorua hospo 2026", "rotorua cafe promotion", "fill tables rotorua"]

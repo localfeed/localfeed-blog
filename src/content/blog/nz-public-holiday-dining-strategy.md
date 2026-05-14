@@ -2,7 +2,7 @@
 title: "NZ Public Holiday Dining Strategy: How to Make the Most of Every Long Weekend"
 slug: "nz-public-holiday-dining-strategy"
 description: "NZ public holidays are high-demand dining opportunities that many venues mismanage. Here's the strategy for making every public holiday weekend profitable."
-date: "2026-05-14"
+date: "2026-02-20"
 author: "Benoit Boussuge"
 category: "hospo-operations"
 tags: ["nz public holiday dining strategy", "nz restaurant public holiday", "long weekend dining nz", "hospo public holiday nz"]
